@@ -84,11 +84,11 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                     }
                     if (empty($gia)) {
                         $errgia = "Vui lòng không bỏ trống giá tiền !";
-                    }
-                    if (empty($thongbao)) {
-                        $thongbao = "Vui lòng không bỏ trống * !";
+                    // }
+                    // if (empty($thongbao)) {
+                    //     $thongbao = "Vui lòng không bỏ trống * !";
                     } else {
-                        insert_phong($tenphong, $gia, $giasale, $sokhach, $img, $mota, $tinhtrang, $idlp);
+                        insert_phong($tenphong, $gia, $giasale, $sokhach, $img, $mota, $idlp);
                         $thongbao = "Thêm mới thành công!";
                     }
                 }

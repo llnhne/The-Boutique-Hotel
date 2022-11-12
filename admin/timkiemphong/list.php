@@ -22,7 +22,7 @@
                         <th>HÌNH ẢNH</th>
                         <th>GIÁ</th>
                         <th>GIÁ SALE</th>
-                        <th>SỐ KHÁCH</th>
+                        <th>SỐ KHÁCH TỐI ĐA</th>
                         <th>TRẠNG THÁI</th>
                     </tr>
                     <?php
@@ -41,9 +41,9 @@
                                         <td>' . $id_phong . '</td>
                                         <td>' . $name_phong . '</td>
                                         <td>' . $img . '</td>
-                                        <td>' . $price . '</td>
-                                        <td>' . $price_sale . '</td>
-                                        <td>' . $sokhach . '</td>
+                                        <td>' . $price . 'vnd/1 đêm</td>
+                                        <td>-' . $price_sale . 'vnd</td>
+                                        <td>' . $sokhach . 'người</td>
                                         <td>' . $tinhtrang . '</td>
                                     </tr>';
                     }

@@ -1,6 +1,6 @@
 <?php
-    function insert_phong($tenphong,$gia,$giasale,$sokhach,$img,$mota,$tinhtrang,$idlp){
-        $sql="INSERT INTO phong(name_phong,price,price_sale,sokhach,img,mota,tinhtrang,id_loaiphong) values('$tenphong','$gia','$giasale','$sokhach','$img','$mota','$tinhtrang','$idlp')";
+    function insert_phong($tenphong,$gia,$giasale,$sokhach,$img,$mota,$idlp){
+        $sql="INSERT INTO phong(name_phong,price,price_sale,sokhach,img,mota,id_loaiphong) values('$tenphong','$gia','$giasale','$sokhach','$img','$mota','$idlp')";
         pdo_execute($sql);
     }
     function delete_phong($id){
