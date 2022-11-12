@@ -88,7 +88,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                     if (empty($thongbao)) {
                         $thongbao = "Vui lòng không bỏ trống * !";
                     } else {
-                        insert_phong($tenphong, $gia, $giasale, $sokhach, $img, $mota, $idlp);
+                        insert_phong($tenphong, $gia, $giasale, $sokhach, $img, $mota, $tinhtrang, $idlp);
                         $thongbao = "Thêm mới thành công!";
                     }
                 }
@@ -144,6 +144,32 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                 $listlp = loadall_loaiphong();
                 $listp = loadall_phong($kyw = "", $idlp = 0);
                 include "phong/list.php";
+                break;
+            case 'searchp':
+                if (isset($_POST['gui']) && ($_POST['gui'])) {
+                    $kyw = $_POST['kyw'];
+                    $idlp = $_POST['idlp'];
+                } else {
+                    $kyw = '';
+                    $idlp = 0;
+                }
+                $listlp = loadall_loaiphong();
+                $listp = loadall_phong($kyw, $idlp);
+                include "timkiemphong/list.php";
+                break;
+            case 'dsdp':
+
+                loadall_datphong();
+                include "datphong/list.php";
+                break;
+            case 'updatedp':
+                include "datphong/list.php";
+                break;
+            case 'suadp':
+                include "datphong/list.php";
+                break;
+            case 'xoadp':
+                include "datphong/list.php";
                 break;
                 // case 'dskh':
                 //     $listtaikhoan = loadall_taikhoan();

@@ -31,10 +31,10 @@
                 <input type="checkbox" name="checkbox" id="">
                 <label for="" style="color: #372948;">Remember account?</label><br><br>
             </div>
-            <div class="form3" style="text-align:center;">
+            <div class="form3" style="text-align:center;margin-bottom:15px;">
                 <input type="submit" value="Log in" name="dangnhap" style="background-color: #FFCACA;border: 1px solid #FFCACA;border-radius: 10px;color: #372948;padding: 8px 35px;">
                 <input type="reset" value="Reset" style="background-color: #FFCACA;border: 1px solid #FFCACA;border-radius: 10px;color: #372948;padding: 8px 35px;">
-                <button style="background-color: #FFCACA;border: 1px solid #FFCACA;border-radius: 10px;padding: 8px 35px;"><a href="index.php?act=dangky" style="color: #372948;text-decoration: none;">Register</a></button><br><br>
+                <!-- <button style="background-color: #FFCACA;border: 1px solid #FFCACA;border-radius: 10px;padding: 8px 35px;"><a href="index.php?act=dangky" style="color: #372948;text-decoration: none;">Register</a></button><br><br> -->
             </div>
             <div class="form4" style="text-align:center;">
                 <button style="background-color: #372948;border: 1px solid #372948;border-radius: 10px;padding: 8px 35px;"><a href="index.php" style="color: #FFCACA;text-decoration: none;">Back to home</a></button>

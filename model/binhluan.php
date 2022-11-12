@@ -8,12 +8,7 @@
         if($idpro>0) $sql.=" AND idpro='".$idpro."'";
         $sql.=" order by id desc";
         $listbl=pdo_query($sql);
-
-
-        return $listbl;
-
-
-        
+        return $listbl;   
     }
     function delete_binhluan($id){
         $sql="delete from binhluan where id=".$id;
