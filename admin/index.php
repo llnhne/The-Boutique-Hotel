@@ -153,6 +153,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                     $kyw = '';
                     $idlp = 0;
                 }
+                $trangthai = '';
                 $listlp = loadall_loaiphong();
                 $listp = loadall_phong($kyw, $idlp);
                 include "timkiemphong/list.php";

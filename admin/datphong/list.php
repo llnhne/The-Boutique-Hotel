@@ -3,10 +3,10 @@
         <h1 style="padding: 15px 0;">ADMIN </h1>
     </div>
     <div class="row formtittle" style="width:1050px;">
-        <h3>DANH SÁCH ĐẶT PHÒNG</h3>
+        <h3>DANH SÁCH ĐẶT PHHÒNG</h3>
     </div>
     <div class="row formcontent">
-        <form action="index.php?act=listdp" method="post">
+        <form action="index.php?act=listp" method="post">
             <input type="text" name="kyw" placeholder="Tìm kiếm phòng" style="width:50%;">
             <select name="idlp" style="padding:10px;width:30%;margin-bottom:20px;border-radius:5px;border: 1px solid #FFCACA;color:#372948;">
                 <option value="0" selected>Tất cả</option>
