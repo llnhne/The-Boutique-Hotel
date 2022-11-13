@@ -6,7 +6,9 @@
         <h3>DANH SÁCH TÀI KHOẢN</h3>
     </div>
     <div class="row formcontent" style="width:1050px;">
-        <form action="" method="post">
+        <form action="index.php?act=dskh" method="post">
+            <input type="text" name="kyw" placeholder="Tìm kiếm tài khoản" style="width:50%;margin-bottom:20px">
+            <input type="submit" name="gui" value="Tìm Kiếm" style="padding:10px;">
             <div class="row mb10 formdshanghoa">
                 <table>
                     <tr>
@@ -23,13 +25,13 @@
                     <?php
                     foreach ($listtaikhoan as $taikhoan) {
                         extract($taikhoan);
-                        $suatk = "index.php?act=suatk&id=" . $id;
-                        $xoatk = "index.php?act=xoatk&id=" . $id;
+                        $suatk = "index.php?act=suatk&id=" . $id_user;
+                        $xoatk = "index.php?act=xoatk&id=" . $id_user;
 
                         echo '<tr>
                                         <td><input type="checkbox" name="name"></td>
-                                        <td>' . $id . '</td>
-                                        <td>' . $user . '</td>
+                                        <td>' . $id_user . '</td>
+                                        <td>' . $username . '</td>
                                         <td>' . $password . '</td>
                                         <td>' . $email . '</td>
                                         <td>' . $address . '</td>
