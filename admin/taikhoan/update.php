@@ -21,7 +21,7 @@ if (is_array($tk)) {
             </div>
             <div class="row mb10">
                 <label for="">TÊN ĐĂNG NHẬP</label><br>
-                <input type="text" name="user" style="width:292%;" value="<?php if (isset($user) && ($user != "")) echo $user; ?>">
+                <input type="text" name="user" style="width:292%;" value="<?php if (isset($username) && ($username != "")) echo $username; ?>">
             </div>
             <div class="row mb10">
                 <label for="">PASSWORD</label><br>
@@ -44,7 +44,7 @@ if (is_array($tk)) {
                 <input type="text" name="role" style="width:292%;" value="<?= $role ?>" disabled>
             </div>
             <div class="row mb10" style="margin-top:10px;">
-                <input type="hidden" name="id" value="<?php if (isset($id) && ($id > 0)) echo $id; ?>">
+                <input type="hidden" name="id" value="<?php if (isset($id_user) && ($id_user > 0)) echo $id_user; ?>">
                 <input type="submit" name="capnhat" value="CẬP NHẬT">
                 <input type="reset" name="nhaplai" value="NHẬP LẠI">
                 <a href="index.php?act=dskh"><input type="button" value="DANH SÁCH"></a>
