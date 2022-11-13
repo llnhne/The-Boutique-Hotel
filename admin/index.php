@@ -6,7 +6,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
     include "../model/pdo.php";
     include "../model/loaiphong.php";
     include "../model/phong.php";
-    // include "../model/taikhoan.php";
+    include "../model/taikhoan.php";
     // include "../model/binhluan.php";
     // include "../model/giophong.php";
     include "header.php";
@@ -84,9 +84,9 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                     }
                     if (empty($gia)) {
                         $errgia = "Vui lòng không bỏ trống giá tiền !";
-                    // }
-                    // if (empty($thongbao)) {
-                    //     $thongbao = "Vui lòng không bỏ trống * !";
+                        // }
+                        // if (empty($thongbao)) {
+                        //     $thongbao = "Vui lòng không bỏ trống * !";
                     } else {
                         insert_phong($tenphong, $gia, $giasale, $sokhach, $img, $mota, $idlp);
                         $thongbao = "Thêm mới thành công!";
@@ -172,38 +172,42 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
             case 'xoadp':
                 include "datphong/list.php";
                 break;
-                // case 'dskh':
-                //     $listtaikhoan = loadall_taikhoan();
-                //     include "taikhoan/list.php";
-                //     break;
-                // case 'xoatk':
-                //     if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                //         delete_taikhoan($_GET['id']);
-                //     }
-                //     $listtaikhoan = loadall_taikhoan("", 0);
-                //     include "taikhoan/list.php";
-                //     break;
-                // case 'suatk':
-                //     if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                //         $tk = loadone_taikhoan($_GET['id']);
-                //     }
-                //     include "taikhoan/update.php";
-                //     break;
-                // case 'updatetk':
-                //     if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
-                //         $id = $_POST['id'];
-                //         $user = $_POST['user'];
-                //         $password = $_POST['password'];
-                //         $email = $_POST['email'];
-                //         $address = $_POST['address'];
-                //         $tel = $_POST['tel'];
-
-                //         update_taikhoan($id, $user, $password, $email, $address, $tel);
-                //         $thongbao = "Cập nhật thành công!";
-                //     }
-                //     $listtaikhoan = loadall_taikhoan("", 0);
-                //     include "taikhoan/list.php";
-                //     break;
+            case 'dskh':
+                if (isset($_POST['gui']) && ($_POST['gui'])) {
+                    $kyw = $_POST['kyw'];
+                } else {
+                    $kyw = '';
+                }
+                $listtaikhoan = loadall_taikhoan($kyw);
+                include "taikhoan/list.php";
+                break;
+            case 'xoatk':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    delete_taikhoan($_GET['id']);
+                }
+                $listtaikhoan = loadall_taikhoan("", 0);
+                include "taikhoan/list.php";
+                break;
+            case 'suatk':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $tk = loadone_taikhoan($_GET['id']);
+                }
+                include "taikhoan/update.php";
+                break;
+            case 'updatetk':
+                if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                    $id = $_POST['id'];
+                    $user = $_POST['user'];
+                    $password = $_POST['password'];
+                    $email = $_POST['email'];
+                    $address = $_POST['address'];
+                    $tel = $_POST['tel'];
+                    update_taikhoan($id, $user, $password, $email, $address, $tel);
+                    $thongbao = "Cập nhật thành công!";
+                }
+                $listtaikhoan = loadall_taikhoan("", 0);
+                include "taikhoan/list.php";
+                break;
                 // case 'dsbl':
                 //     $listbl = loadall_binhluan(0);
                 //     include "../view/binhluan/list.php";
