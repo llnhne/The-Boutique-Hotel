@@ -7,8 +7,8 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
     include "../model/loaiphong.php";
     include "../model/phong.php";
     include "../model/taikhoan.php";
-    // include "../model/binhluan.php";
-    // include "../model/giophong.php";
+    include "../model/binhluan.php";
+    include "../model/hoadon.php";
     include "header.php";
     // controller
     if (isset($_GET['act'])) {
@@ -208,50 +208,29 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                 $listtaikhoan = loadall_taikhoan("", 0);
                 include "taikhoan/list.php";
                 break;
-                // case 'dsbl':
-                //     $listbl = loadall_binhluan(0);
-                //     include "../view/binhluan/list.php";
-                //     break;
-                // case 'xoabl':
-                //     if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                //         delete_binhluan($_GET['id']);
-                //     }
-                //     $listbl = loadall_binhluan("", 0);
-                //     include "../view/binhluan/list.php";
-                //     break;
-                // case 'suabl':
-                //     if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                //         $bl = loadone_binhluan($_GET['id']);
-                //     }
-                //     include "../view/binhluan/update.php";
-                //     break;
-                // case 'updatebl':
-                //     if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
-                //         $noidung = $_POST['noidung'];
-                //         $id = $_POST['id'];
-                //         update_binhluan($id, $noidung);
-                //         $thongbao = "Cập nhật thành công!";
-                //     }
-                //     $listbl = loadall_binhluan("", 0);
-                //     include "../view/binhluan/list.php";
-                //     break;
-                // case 'dsdh':
-                //     $date=date("Y-m-d h:i:sa");
-                //     if(isset($date)){
-                //         $date='Phòng còn trống';
-                //     }else{
-                //         $date='phòng đã hết';  
-                //     }
-                //     $listdh = loadall_donhang();
-                //     include "../view/cart/list.php";
-                //     break;
-                // case 'xoadh':
-                //     if (isset($_GET['iddonphong']) && ($_GET['iddonphong'] > 0)) {
-                //         delete_donhang($_GET['iddonphong']);
-                //     }
-                //     $listdh = loadall_donhang("", 0);
-                //     include "../view/cart/list.php";
-                //     break;
+            case 'listhd':
+                $listhoadon = loadall_hoadon();
+                include "hoadon/list.php";
+                break;
+            case 'xoahd':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    delete_hoadon($_GET['id']);
+                }
+                $listhoadon = loadall_hoadon();
+                include "hoadon/list.php";
+                break;
+            case 'listbl':
+                $listbinhluan =loadall_binhluan();
+                include "binhluan/list.php";
+                break;
+            case 'xoabl':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    delete_binhluan($_GET['id']);
+                }
+                $listbinhluan = loadall_binhluan();
+                include "binhluan/list.php";
+                break;
+               
                 // case 'thongke':
                 //     $listthongke = loadall_thongke();
                 //     include "thongke/list.php";
