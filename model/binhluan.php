@@ -3,15 +3,13 @@
         $sql="insert into binhluan(noidung,iduser,idpro,ngaybinhluan) values('$noidung','$iduser','$idpro','$ngaybinhluan')";
         pdo_execute($sql);
     }
-    function loadall_binhluan($idpro){
-        $sql="select * from binhluan where 1";
-        if($idpro>0) $sql.=" AND idpro='".$idpro."'";
-        $sql.=" order by id desc";
-        $listbl=pdo_query($sql);
-        return $listbl;   
+    function loadall_binhluan(){
+        $query="SELECT * FROM binhluan order by id_comment desc";
+        $listbl=pdo_query($query);
+        return $listbl;
     }
     function delete_binhluan($id){
-        $sql="delete from binhluan where id=".$id;
+        $sql="delete from binhluan where id_comment=".$id;
         pdo_execute($sql);
     }
     function loadone_binhluan($id){
