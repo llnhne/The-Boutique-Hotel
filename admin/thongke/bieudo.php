@@ -18,21 +18,21 @@
 
                 function drawChart() {
                     var data = google.visualization.arrayToDataTable([
-                        ['Danh mục', 'Số lượng sản phẩm'],
+                        ['Loại phòng', 'Số lượng số lượng phòng'],
                         <?php
-                        $tongdm = count($listthongke);
+                        $tonglp = count($listthongke);
                         $i = 1;
                         foreach ($listthongke as $thongke) {
                             extract($thongke);
-                            if ($i == $tongdm) $dauphay = "";
+                            if ($i == $tonglp) $dauphay = "";
                             else $dauphay = ",";
-                            echo "['" . $thongke['tendm'] . "', " . $thongke['countsp'] . "]" . $dauphay;
+                            echo "['" . $thongke['tenlp'] . "', " . $thongke['countp'] . "]" . $dauphay;
                             $i += 1;
                         }
                         ?>
                     ]);
                     var options = {
-                        title: 'Sản Phẩm Theo Danh Mục', 'width':1150, 'height':700,
+                        title: 'Phòng Theo Loại Phòng', 'width':1150, 'height':700,
                         is3D: true
                     };
                     var chart = new google.visualization.PieChart(document.getElementById('myChart'));

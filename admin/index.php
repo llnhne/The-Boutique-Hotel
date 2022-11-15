@@ -8,7 +8,9 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
     include "../model/phong.php";
     include "../model/taikhoan.php";
     include "../model/binhluan.php";
+    include "../model/giophong.php";
     include "../model/hoadon.php";
+    include "../model/hotro.php";
     include "header.php";
     // controller
     if (isset($_GET['act'])) {
@@ -230,14 +232,18 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                 include "binhluan/list.php";
                 break;
                
-                // case 'thongke':
-                //     $listthongke = loadall_thongke();
-                //     include "thongke/list.php";
-                //     break;
-                // case 'bieudo':
-                //     $listthongke = loadall_thongke();
-                //     include "thongke/bieudo.php";
-                //     break;
+                case 'dsht':
+                    $listhotro = loadall_hotro(0);
+                    include "hotro/list.php";
+                    break;
+                case 'thongke':
+                    $listthongke = loadall_thongke();
+                    include "thongke/list.php";
+                    break;
+                case 'bieudo':
+                    $listthongke = loadall_thongke();
+                    include "thongke/bieudo.php";
+                    break;
                 // case 'chitietdonphong':
                 //     // if(isset($_POST['xemct'])&&($_POST['xemct'])){
                 //     //     $id=$_POST['id'];
