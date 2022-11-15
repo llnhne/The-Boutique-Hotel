@@ -3,7 +3,7 @@
         <h1 style="padding: 15px 0;">ADMIN </h1>
     </div>
     <div class="row formtittle" style="width:148%;">
-        <h3>DANH SÁCH Bình Luận</h3>
+        <h3>DANH SÁCH BÌNH LUẬN</h3>
     </div>
     <div class="row formcontent" style="width:1040px;">
         <form action="" method="post">
@@ -34,7 +34,7 @@
                                                 <input type="button" value="Xóa">
                                             </a>
                                         </td>
-                                    </tr>';
+                                    </tr>
                    <?php } ?>
                     
                 </table>

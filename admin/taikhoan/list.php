@@ -9,7 +9,7 @@
         <form action="index.php?act=dskh" method="post">
             <input type="text" name="kyw" placeholder="Tìm kiếm tài khoản" style="width:50%;margin-bottom:20px">
             <input type="submit" name="gui" value="Tìm Kiếm" style="padding:10px;">
-            <div class="row mb10 formdshanghoa">
+            <div class="row mb10 formdshanghoa" style="width:103%;">
                 <table>
                     <tr>
                         <th></th>

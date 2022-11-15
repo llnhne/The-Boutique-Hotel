@@ -37,7 +37,7 @@
                                                 <input type="button" value="Xóa">
                                             </a>
                                         </td>
-                                    </tr>';
+                                    </tr>
                    <?php } ?>
                     
                 </table>
