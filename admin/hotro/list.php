@@ -11,7 +11,7 @@
                 <table>
                     <tr>
                         <th>MÃ HỖ TRỢ</th>
-                        <th>MÃ KHÁCH Hàng</th>
+                        <th>MÃ KHÁCH HÀNG</th>
                         <th>SỐ ĐIỆN THOẠI</th>
                     </tr>
                     <?php
