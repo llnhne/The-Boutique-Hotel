@@ -7,7 +7,7 @@
     </div>
 
     <div class="row formcontent">
-        <form action="index.php?act=listp" method="post">
+        <form action="index.php?act=listdp" method="post">
             <input type="text" name="kyw" placeholder="Tìm kiếm phòng" style="width:50%;">
             <select name="idlp" style="padding:10px;width:30%;margin-bottom:20px;border-radius:5px;border: 1px solid #FFCACA;color:#372948;">
                 <option value="0" selected>Tất cả</option>
@@ -28,7 +28,7 @@
                         <th>HÌNH ẢNH</th>
                         <th>GIÁ</th>
                         <th>GIÁ SALE</th>
-                        <th>SỐ KHÁCH</th>
+                        <th>SỐ KHÁCH TỐI ĐA</th>
                         <th>MÔ TẢ</th>
                         <th></th>
                     </tr>
@@ -45,12 +45,12 @@
                         }
                         echo '<tr>
                                         <td><input type="checkbox" name="name"></td>
-                                        <td>' . $id_phong . '</td>
+                                        <td>P' . $id_phong . '</td>
                                         <td>' . $name_phong . '</td>
                                         <td>' . $img . '</td>
-                                        <td>' . $price . '</td>
-                                        <td>' . $price_sale . '</td>
-                                        <td>' . $sokhach . '</td>
+                                        <td>' . $price . 'vnd</td>
+                                        <td>-' . $price_sale . 'vng</td>
+                                        <td>' . $sokhach . 'người</td>
                                         <td>' . $mota . '</td>
                                         <td><a href="' . $suap . '"><input type="button" value="Sửa"></a>  <a onclick="return DELETE()" href="' . $xoap . '"><input type="button" value="Xóa"></a></td>
                                     </tr>';
