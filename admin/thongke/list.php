@@ -10,8 +10,8 @@
             <div class="row mb10 formdshanghoa" style="width:1050px;">
                 <table>
                     <tr>
-                        <th>MÃ DANH MỤC</th>
-                        <th>TÊN DANH MỤC</th>
+                        <th>MÃ LOẠI PHÒNG</th>
+                        <th>TÊN LOẠI PHÒNG</th>
                         <th>SỐ LƯỢNG</th>
                         <th>GIÁ CAO NHẤT</th>
                         <th>GIÁ THẤP NHẤT</th>
@@ -21,9 +21,9 @@
                     foreach ($listthongke as $thongke) {
                         extract($thongke);
                         echo '<tr>
-                                        <td>' . $madm . '</td>
-                                        <td>' . $tendm . '</td>
-                                        <td>' . $countsp . '</td>
+                                        <td>' . $malp . '</td>
+                                        <td>' . $tenlp . '</td>
+                                        <td>' . $countp . '</td>
                                         <td>' . $maxprice . '</td>
                                         <td>' . $minprice . '</td>
                                         <td>' . $avgprice . '</td>
