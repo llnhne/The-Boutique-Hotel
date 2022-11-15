@@ -34,8 +34,6 @@
                                         
                                         <td>
                                             <a onclick="return confirm('Bạn có thực sự muốn xóa không?');" href="<?php echo $xoahd ?>">
-
-                                            
                                                 <input type="button" value="Xóa">
                                             </a>
                                         </td>
