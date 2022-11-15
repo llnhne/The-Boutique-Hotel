@@ -11,11 +11,11 @@
                 <table>
                     <tr>
                         <th></th>
-                        <th>MÃ hóa đơn</th>
-                        <th>Mã đặt phòng</th>
-                        <th>Mã phòng</th>
-                        <th>Mã khách hàng</th>
-                        <th>Tổng tiền</th>
+                        <th>MÃ HÓA ĐƠN</th>
+                        <th>MÃ ĐẶT PHÒNG</th>
+                        <th>MÃ PHÒNG</th>
+                        <th>MÃ KHÁCH HÀNG</th>
+                        <th>TỔNG TIỀN</th>
                         
                         <th style="background-color: #FFCACA;"></th>
                     </tr>
