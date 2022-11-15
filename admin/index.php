@@ -272,15 +272,18 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                 $listbinhluan = loadall_binhluan();
                 include "binhluan/list.php";
                 break;
-               
-                case 'thongke':
-                    $listthongke = loadall_thongke();
-                    include "thongke/list.php";
-                    break;
-                case 'bieudo':
-                    $listthongke = loadall_thongke();
-                    include "thongke/bieudo.php";
-                    break;
+            case'dsht':
+                $listhotro= loadall_hotro(0);
+                include "hotro/list.php";
+                break;
+            case 'thongke':
+                $listthongke = loadall_thongke();
+                include "thongke/list.php";
+                break;
+            case 'bieudo':
+                $listthongke = loadall_thongke();
+                include "thongke/bieudo.php";
+                break;
                 // case 'chitietdonphong':
                 //     // if(isset($_POST['xemct'])&&($_POST['xemct'])){
                 //     //     $id=$_POST['id'];
