@@ -272,8 +272,15 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                 $listbinhluan = loadall_binhluan();
                 include "binhluan/list.php";
                 break;
-            case'dsht':
-                $listhotro= loadall_hotro(0);
+            case 'dsht':
+                $listhotro = loadall_hotro(0);
+                include "hotro/list.php";
+                break;
+            case 'xoaht':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    delete_hotro($_GET['id']);
+                }
+                $listhotro = loadall_hotro(0);
                 include "hotro/list.php";
                 break;
             case 'thongke':
