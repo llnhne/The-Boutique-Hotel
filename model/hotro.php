@@ -6,5 +6,9 @@
         $listhotro=pdo_query($sql);
         return $listhotro;   
     }
+    function delete_hotro($id){
+        $sql="delete from hotro where id_hotro=".$id;
+        pdo_execute($sql);
+    }
 
 ?>
