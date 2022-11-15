@@ -3,55 +3,38 @@
         <h1 style="padding: 15px 0;">ADMIN </h1>
     </div>
     <div class="row formtittle" style="width:1050px;">
-        <h3>DANH SÁCH ĐẶT PHHÒNG</h3>
+        <h3>DANH SÁCH ĐẶT PHÒNG</h3>
     </div>
     <div class="row formcontent">
-        <form action="index.php?act=listp" method="post">
-            <input type="text" name="kyw" placeholder="Tìm kiếm phòng" style="width:50%;">
-            <select name="idlp" style="padding:10px;width:30%;margin-bottom:20px;border-radius:5px;border: 1px solid #FFCACA;color:#372948;">
-                <option value="0" selected>Tất cả</option>
-                <?php
-                foreach ($listlp as $loaiphong) {
-                    extract($loaiphong);
-                    echo '<option value="' . $id_loaiphong . '">' . $name_loaiphong . '</option>';
-                }
-                ?>
-            </select>
-            <input type="submit" name="gui" value="Tìm Kiếm" style="padding:10px;">
+        <form action="index.php?act=listdp" method="post">
             <div class="row mb10 formdshanghoa" style="width:1050px;">
                 <table>
                     <tr>
                         <th></th>
+                        <th>MÃ ĐẶT PHÒNG</th>
                         <th>MÃ PHÒNG</th>
-                        <th>TÊN PHÒNG</th>
-                        <th>HÌNH ẢNH</th>
-                        <th>GIÁ</th>
-                        <th>GIÁ SALE</th>
+                        <th>MÃ KHÁCH HÀNG</th>
                         <th>SỐ KHÁCH</th>
-                        <th>MÔ TẢ</th>
+                        <th>NGÀY ĐẾN</th>
+                        <th>NGÀY TRẢ</th>
+                        <th>TÌNH TRẠNG</th>
                         <th></th>
                     </tr>
                     <?php
-                    foreach ($listp as $phong) {
-                        extract($phong);
-                        $suap = "index.php?act=suap&id=" . $id_phong;
-                        $xoap = "index.php?act=xoap&id=" . $id_phong;
-                        $img = "../upload/" . $img;
-                        if (is_file($img)) {
-                            $img = "<img src='" . $img . "' height='80px'>";
-                        } else {
-                            $img = "No photo";
-                        }
+                    foreach ($listdp as $datphong) {
+                        extract($datphong);
+                        $suadp = "index.php?act=suadp&id=" . $id_order;
+                        $xoadp = "index.php?act=xoadp&id=" . $id_order;
                         echo '<tr>
                                         <td><input type="checkbox" name="name"></td>
-                                        <td>' . $id_phong . '</td>
-                                        <td>' . $name_phong . '</td>
-                                        <td>' . $img . '</td>
-                                        <td>' . $price . '</td>
-                                        <td>' . $price_sale . '</td>
-                                        <td>' . $sokhach . '</td>
-                                        <td>' . $mota . '</td>
-                                        <td><a href="' . $suap . '"><input type="button" value="Sửa"></a>  <a onclick="return DELETE()" href="' . $xoap . '"><input type="button" value="Xóa"></a></td>
+                                        <td>' . $id_order . '</td>
+                                        <td>P' . $id_phong . '</td>
+                                        <td>' . $id_user . '</td>
+                                        <td>' . $sokhach . 'người</td>
+                                        <td>' . $ngayden . '</td>
+                                        <td>' . $ngaytra . '</td>
+                                        <td>' . $tinhtrang . '</td>
+                                        <td><a href="' . $suadp . '"><input type="button" value="Sửa"></a>  <a onclick="return DELETE()" href="' . $xoadp . '"><input type="button" value="Xóa"></a></td>
                                     </tr>';
                     }
                     ?>
@@ -61,7 +44,6 @@
                 <input type="button" id="btn1" value="Chọn tất cả">
                 <input type="button" id="btn2" value="Bỏ chọn tất cả" style="margin-left:10px;">
                 <input type="button" value="Xóa các mục đã chọn" style="margin-left:10px;">
-                <a href="index.php?act=addp"><input type="button" value="Nhập thêm" style="margin-left:10px;"></a>
             </div>
         </form>
         <script>

@@ -7,6 +7,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
     include "../model/loaiphong.php";
     include "../model/phong.php";
     include "../model/taikhoan.php";
+    include "../model/datphong.php";
     include "../model/binhluan.php";
     include "../model/hoadon.php";
     include "header.php";
@@ -146,30 +147,70 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                 include "phong/list.php";
                 break;
             case 'searchp':
-                if (isset($_POST['gui']) && ($_POST['gui'])) {
-                    $kyw = $_POST['kyw'];
-                    $idlp = $_POST['idlp'];
-                } else {
-                    $kyw = '';
-                    $idlp = 0;
+                if (isset($_POST['check']) && ($_POST['check'])) {
+                    // $ngayden = $_POST['ngayden'];
+                    // $ngaytra = $_POST['ngaytra'];
+                    // if (($_POST['ngayden'] == $ngayden) || ($_POST['ngaytra'] == $ngaytra) || (($_POST['ngaytra']) == ($_POST['ngayden']))) {
+                    //     $update = "update phong set tinhtrang= 'Đã hết'";
+                    //     $listp = loadall_phong();
+                    //     }elseif (($_POST['ngayden'] == $ngayden) || ($_POST['ngaytra'] < $ngaytra)){
+                    //         $update = "update phong set tinhtrang= 'Đã hết'";
+                    //         $tinhtrang = "trống";
+                    //         $listp = loadall_phong();
+                    //     }elseif (($_POST['ngayden'] < $ngayden) || ($_POST['ngaytra'] < $ngaytra)){
+                    //         $update = "update phong set tinhtrang= 'Đã hết'";
+                    //         $tinhtrang = "trống";
+                    //         $listp = loadall_phong();
+                    //     }elseif (($_POST['ngayden'] == $ngayden) || ($_POST['ngaytra'] < $ngaytra)){
+                    //         $update = "update phong set tinhtrang= 'Trống'";
+                    //         $tinhtrang = "trống";
+                    //         $listp = loadall_phong();
+                    //     }elseif (($_POST['ngayden'] < $ngayden) || ($_POST['ngaytra'] == $ngaytra)){
+                    //         $update = "update phong set tinhtrang= 'Trống'";
+                    //         $tinhtrang = "trống";
+                    //         $listp = loadall_phong();
+                    //     }elseif (($_POST['ngayden'] > $ngayden) || ($_POST['ngaytra'] < $ngaytra)){
+                    //         $update = "update phong set tinhtrang= 'Trống'";
+                    //         $tinhtrang = "trống";
+                    //         $listp = loadall_phong();
+                    // }else{
+                    //     $thongbao = 'Không hợp lệ';
+                    // }
                 }
-                $trangthai = '';
-                $listlp = loadall_loaiphong();
-                $listp = loadall_phong($kyw, $idlp);
+                $listp = loadall_phong();
+                $listdp = loadall_datphong("");
                 include "timkiemphong/list.php";
                 break;
-            case 'dsdp':
-
-                loadall_datphong();
-                include "datphong/list.php";
-                break;
-            case 'updatedp':
+            case 'listdp':
+                $listdp = loadall_datphong("");
                 include "datphong/list.php";
                 break;
             case 'suadp':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $dp = loadone_datphong($_GET['id']);
+                }
+                include "datphong/update.php";
+                break;
+            case 'updatedp':
+                if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                    $id = $_POST['id'];
+                    $maphong = $_POST['maphong'];
+                    $makhachhang = $_POST['makhachhang'];
+                    $tinhtrang = $_POST['tinhtrang'];
+                    $sokhach = $_POST['sokhach'];
+                    $ngayden = $_POST['ngayden'];
+                    $ngaytra = $_POST['ngaytra'];
+                    update_datphong($id, $maphong, $makhachhang, $sokhach, $ngayden, $ngaytra, $tinhtrang);
+                    $thongbao = "Cập nhật thành công!";
+                }
+                $listdp = loadall_datphong();
                 include "datphong/list.php";
                 break;
             case 'xoadp':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    delete_datphong($_GET['id']);
+                }
+                $listdp = loadall_datphong();
                 include "datphong/list.php";
                 break;
             case 'dskh':
@@ -220,7 +261,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                 include "hoadon/list.php";
                 break;
             case 'listbl':
-                $listbinhluan =loadall_binhluan();
+                $listbinhluan = loadall_binhluan();
                 include "binhluan/list.php";
                 break;
             case 'xoabl':
@@ -230,7 +271,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                 $listbinhluan = loadall_binhluan();
                 include "binhluan/list.php";
                 break;
-               
+
                 // case 'thongke':
                 //     $listthongke = loadall_thongke();
                 //     include "thongke/list.php";

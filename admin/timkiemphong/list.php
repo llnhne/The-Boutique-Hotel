@@ -11,9 +11,9 @@
             <div class="timkiemphong" style="margin-bottom:20px;display:flex;">
             <input type="date" name="ngayden" placeholder="Check phòng" style="width:50%;border-radius:5px;border: 1px solid #FFCACA;">
             <input type="date" name="ngaytra" placeholder="Check phòng" style="width:50%;margin-left:10px;border-radius:5px;border: 1px solid #FFCACA;">
-            <input type="submit" name="gui" value="Check" style="padding:10px;margin-left:10px;border: 1px solid #FFCACA;">
+            <input type="submit" name="check" value="Check" style="padding:10px;margin-left:10px;border: 1px solid #FFCACA;">
             <?php
-                            if (isset($trangthai) && ($trangthai != "")) echo $trangthai;
+                            if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
                         ?>    
         </div>
             <div class="row mb10 formdshanghoa" style="width:1050px;">
@@ -28,6 +28,9 @@
                         <th>SỐ KHÁCH TỐI ĐA</th>
                         <th>TRẠNG THÁI</th>
                     </tr>
+                    <?php
+                            if (isset($tinhtrang) && ($tinhtrang != "")) echo $tinhtrang;
+                        ?>   
                     <?php
                     foreach ($listp as $phong) {
                         extract($phong);
@@ -47,7 +50,7 @@
                                         <td>' . $price . 'vnd/1 đêm</td>
                                         <td>-' . $price_sale . 'vnd</td>
                                         <td>' . $sokhach . 'người</td>
-                                        <td>'. $trangthai.'</td>
+                                        <td>'. $tinhtrang.'</td>
                                     </tr>';
                     }
                     ?>

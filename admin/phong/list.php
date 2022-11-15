@@ -7,7 +7,7 @@
     </div>
 
     <div class="row formcontent">
-        <form action="index.php?act=listp" method="post">
+        <form action="index.php?act=listdp" method="post">
             <input type="text" name="kyw" placeholder="Tìm kiếm phòng" style="width:50%;">
             <select name="idlp" style="padding:10px;width:30%;margin-bottom:20px;border-radius:5px;border: 1px solid #FFCACA;color:#372948;">
                 <option value="0" selected>Tất cả</option>

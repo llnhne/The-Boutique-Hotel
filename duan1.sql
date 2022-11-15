@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 12, 2022 lúc 08:44 PM
+-- Thời gian đã tạo: Th10 14, 2022 lúc 07:16 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `duan1`
 --
-
+create database 
 -- --------------------------------------------------------
 
 --
@@ -55,8 +55,8 @@ CREATE TABLE `datphong` (
 --
 
 INSERT INTO `datphong` (`id_order`, `id_phong`, `id_user`, `sokhach`, `ngayden`, `ngaytra`, `tinhtrang`) VALUES
-(1, 4, 1, 2, '2022-11-17', '2022-11-20', ''),
-(2, 50, 2, 2, '2022-11-19', '2022-11-22', '');
+(1, 4, 1, 2, '2022-11-17', '2022-11-20', 'Thành Công'),
+(2, 50, 2, 2, '2022-11-27', '2022-11-29', 'Thành Công');
 
 -- --------------------------------------------------------
 
@@ -120,6 +120,7 @@ CREATE TABLE `phong` (
   `sokhach` int(2) NOT NULL,
   `img` varchar(255) NOT NULL,
   `mota` text NOT NULL,
+  `trangthai` varchar(255) NOT NULL,
   `id_loaiphong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -127,18 +128,18 @@ CREATE TABLE `phong` (
 -- Đang đổ dữ liệu cho bảng `phong`
 --
 
-INSERT INTO `phong` (`id_phong`, `name_phong`, `price`, `price_sale`, `sokhach`, `img`, `mota`, `id_loaiphong`) VALUES
-(1, 'luxuryA12', 500000.00, 0.00, 0, '132098157_159127059327577_895541964277773996_n.jpg', 'fdfdf', 2),
-(2, 'luxuryA12', 500000.00, 0.00, 0, '132098157_159127059327577_895541964277773996_n.jpg', 'fdfdf', 2),
-(4, 'luxuryA13', 500000.00, 0.00, 0, 'cafc12ef6f08a556fc19.jpg', 'fdfdf', 7),
-(49, 'luxuryA13', 510000.00, 50.00, 3, 'cafc12ef6f08a556fc19.jpg', 'dsds', 7),
-(50, 'luxuryA14', 510000.00, 50.00, 3, 'cafc12ef6f08a556fc19.jpg', 'hjhu', 4),
-(51, 'luxuryA14', 710000.00, 50.00, 3, '132842099_2732894950266738_5740516309422092546_n.jpg', 'bhbu', 3),
-(59, 'luxuryA17', 600000.00, 50.00, 3, '132516188_446341446369859_2636483857770018555_n.jpg', 'dfdf', 1),
-(63, 'luxuryA19', 710000.00, 0.00, 3, 'assc2.jpg', 'dsdsfd', 1),
-(64, 'luxuryA20', 510000.00, 0.00, 2, '', '', 2),
-(65, 'basicA4', 600000.00, 50.00, 4, '', '', 3),
-(66, 'basicA5', 510000.00, 50000.00, 2, '', '', 3);
+INSERT INTO `phong` (`id_phong`, `name_phong`, `price`, `price_sale`, `sokhach`, `img`, `mota`, `trangthai`, `id_loaiphong`) VALUES
+(1, 'luxuryA12', 500000.00, 0.00, 0, '132098157_159127059327577_895541964277773996_n.jpg', 'fdfdf', '', 2),
+(2, 'luxuryA12', 500000.00, 0.00, 0, '132098157_159127059327577_895541964277773996_n.jpg', 'fdfdf', '', 2),
+(4, 'luxuryA13', 500000.00, 0.00, 0, 'cafc12ef6f08a556fc19.jpg', 'fdfdf', '', 7),
+(49, 'luxuryA13', 510000.00, 50.00, 3, 'cafc12ef6f08a556fc19.jpg', 'dsds', '', 7),
+(50, 'luxuryA14', 510000.00, 50.00, 3, 'cafc12ef6f08a556fc19.jpg', 'hjhu', '', 4),
+(51, 'luxuryA14', 710000.00, 50.00, 3, '132842099_2732894950266738_5740516309422092546_n.jpg', 'bhbu', '', 3),
+(59, 'luxuryA17', 600000.00, 50.00, 3, '132516188_446341446369859_2636483857770018555_n.jpg', 'dfdf', '', 1),
+(63, 'luxuryA19', 710000.00, 0.00, 3, 'assc2.jpg', 'dsdsfd', '', 1),
+(64, 'luxuryA20', 510000.00, 0.00, 2, '', '', '', 2),
+(65, 'basicA4', 600000.00, 50.00, 4, '', '', '', 3),
+(66, 'basicA5', 510000.00, 50000.00, 2, '', '', '', 3);
 
 -- --------------------------------------------------------
 
@@ -230,7 +231,7 @@ ALTER TABLE `binhluan`
 -- AUTO_INCREMENT cho bảng `datphong`
 --
 ALTER TABLE `datphong`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `hoadon`
