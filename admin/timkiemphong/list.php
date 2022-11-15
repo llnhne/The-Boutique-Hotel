@@ -29,7 +29,7 @@
                         <th>TRẠNG THÁI</th>
                     </tr>
                     <?php
-                            if (isset($tinhtrang) && ($tinhtrang != "")) echo $tinhtrang;
+                            if (isset($trangthai) && ($trangthai != "")) echo $trangthai;
                         ?>   
                     <?php
                     foreach ($listp as $phong) {
@@ -50,7 +50,7 @@
                                         <td>' . $price . 'vnd/1 đêm</td>
                                         <td>-' . $price_sale . 'vnd</td>
                                         <td>' . $sokhach . 'người</td>
-                                        <td>'. $tinhtrang.'</td>
+                                        <td>'. $trangthai.'</td>
                                     </tr>';
                     }
                     ?>

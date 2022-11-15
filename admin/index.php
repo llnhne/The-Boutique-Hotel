@@ -151,27 +151,26 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                     // $ngayden = $_POST['ngayden'];
                     // $ngaytra = $_POST['ngaytra'];
                     // if (($_POST['ngayden'] == $ngayden) || ($_POST['ngaytra'] == $ngaytra) || (($_POST['ngaytra']) == ($_POST['ngayden']))) {
-                    //     $update = "update phong set tinhtrang= 'Đã hết'";
+                    //     $update = "update phong set trangthai= 'Đã hết'";
                     //     $listp = loadall_phong();
                     //     }elseif (($_POST['ngayden'] == $ngayden) || ($_POST['ngaytra'] < $ngaytra)){
-                    //         $update = "update phong set tinhtrang= 'Đã hết'";
-                    //         $tinhtrang = "trống";
+                    //         $update = "update phong set trangthai= 'Đã hết'";
+                    //         $trangthai = "trống";
                     //         $listp = loadall_phong();
                     //     }elseif (($_POST['ngayden'] < $ngayden) || ($_POST['ngaytra'] < $ngaytra)){
-                    //         $update = "update phong set tinhtrang= 'Đã hết'";
-                    //         $tinhtrang = "trống";
+                    //         $update = "update phong set trangthai= 'Đã hết'";
+                    //         $trangthai = "trống";
                     //         $listp = loadall_phong();
                     //     }elseif (($_POST['ngayden'] == $ngayden) || ($_POST['ngaytra'] < $ngaytra)){
-                    //         $update = "update phong set tinhtrang= 'Trống'";
-                    //         $tinhtrang = "trống";
+                    //         $update = "update phong set trangthai= 'Trống'";
+                    //         $trangthai = "trống";
                     //         $listp = loadall_phong();
                     //     }elseif (($_POST['ngayden'] < $ngayden) || ($_POST['ngaytra'] == $ngaytra)){
-                    //         $update = "update phong set tinhtrang= 'Trống'";
-                    //         $tinhtrang = "trống";
+                    //         $update = "update phong set trangthai= 'Trống'";
+                    //         $trangthai = "trống";
                     //         $listp = loadall_phong();
                     //     }elseif (($_POST['ngayden'] > $ngayden) || ($_POST['ngaytra'] < $ngaytra)){
-                    //         $update = "update phong set tinhtrang= 'Trống'";
-                    //         $tinhtrang = "trống";
+                    //         $update = "update phong set trangthai= 'Trống'";
                     //         $listp = loadall_phong();
                     // }else{
                     //     $thongbao = 'Không hợp lệ';
