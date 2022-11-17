@@ -7,17 +7,17 @@
     </div>
 
     <div class="row formcontent">
-        <form action="index.php?act=searchp" method="post">
+        <form action="index.php?act=dstk" method="post">
             <div class="timkiemphong" style="margin-bottom:20px;display:flex;">
             <input type="date" name="ngayden" placeholder="Check phòng" style="width:50%;border-radius:5px;border: 1px solid #FFCACA;">
             <input type="date" name="ngaytra" placeholder="Check phòng" style="width:50%;margin-left:10px;border-radius:5px;border: 1px solid #FFCACA;">
-            <input type="submit" name="check" value="Check" style="padding:10px;margin-left:10px;border: 1px solid #FFCACA;">   
+            <input type="submit" name="check1" value="Check" style="padding:10px;margin-left:10px;border: 1px solid #FFCACA;">   
         </div>
         <div style="color:red; margin-bottom:10px;">
             <?php
                 if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
             ?> 
-           
+            
         </div>
             <div class="row mb10 formdshanghoa" style="width:1050px;">
                 <table>
@@ -33,11 +33,8 @@
                     </tr>
                       
                     <?php
-                    foreach ($listp as $phong) {
+                    foreach ($listsearch as $phong) {
                         extract($phong);
-                        
-                        
-                        
                         echo '<tr>      
                                         <td>' . $id_loaiphong . '</td>
                                         <td>P' . $id_phong . '</td>
@@ -47,6 +44,21 @@
                                         <td>-' . $price_sale . 'vnd</td>
                                         <td>' . $sokhach . 'người</td>
                                         <td>'. $trangthai.'</td>
+                                    </tr>';
+                    }
+                    ?>
+                    <?php
+                    foreach ($listp as $phong) {
+                        extract($phong);
+                        echo '<tr>      
+                                        <td>' . $id_loaiphong . '</td>
+                                        <td>P' . $id_phong . '</td>
+                                        <td>' . $name_phong . '</td>
+                                        <td>' . $img . '</td>
+                                        <td>' . $price . 'vnd/1 đêm</td>
+                                        <td>-' . $price_sale . 'vnd</td>
+                                        <td>' . $sokhach . 'người</td>
+                                        <td></td>
                                     </tr>';
                     }
                     ?>
