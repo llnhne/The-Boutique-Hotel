@@ -150,36 +150,43 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                 break;
             case 'searchp':
                 if (isset($_POST['check']) && ($_POST['check'])) {
-                    // $ngayden = $_POST['ngayden'];
-                    // $ngaytra = $_POST['ngaytra'];
-                    // if (($_POST['ngayden'] == $ngayden) || ($_POST['ngaytra'] == $ngaytra) || (($_POST['ngaytra']) == ($_POST['ngayden']))) {
-                    //     $update = "update phong set trangthai= 'Đã hết'";
-                    //     $listp = loadall_phong();
-                    //     }elseif (($_POST['ngayden'] == $ngayden) || ($_POST['ngaytra'] < $ngaytra)){
-                    //         $update = "update phong set trangthai= 'Đã hết'";
-                    //         $trangthai = "trống";
-                    //         $listp = loadall_phong();
-                    //     }elseif (($_POST['ngayden'] < $ngayden) || ($_POST['ngaytra'] < $ngaytra)){
-                    //         $update = "update phong set trangthai= 'Đã hết'";
-                    //         $trangthai = "trống";
-                    //         $listp = loadall_phong();
-                    //     }elseif (($_POST['ngayden'] == $ngayden) || ($_POST['ngaytra'] < $ngaytra)){
-                    //         $update = "update phong set trangthai= 'Trống'";
-                    //         $trangthai = "trống";
-                    //         $listp = loadall_phong();
-                    //     }elseif (($_POST['ngayden'] < $ngayden) || ($_POST['ngaytra'] == $ngaytra)){
-                    //         $update = "update phong set trangthai= 'Trống'";
-                    //         $trangthai = "trống";
-                    //         $listp = loadall_phong();
-                    //     }elseif (($_POST['ngayden'] > $ngayden) || ($_POST['ngaytra'] < $ngaytra)){
-                    //         $update = "update phong set trangthai= 'Trống'";
-                    //         $listp = loadall_phong();
-                    // }else{
-                    //     $thongbao = 'Không hợp lệ';
-                    // }
+                    $ngayden = $_POST['ngayden'];
+                    $ngaytra = $_POST['ngaytra'];
+                    if(isset($_POST['ngayden']) && ($_POST['ngaytra'])){
+                        if(($_POST['ngayden'] === $ngayden) || ($_POST['ngaytra'] === $ngaytra)){
+                            
+                            
+                            $listp=loadall_phong_tk($id_phong,$trangthai);
+                            // var_dump(loadall_phong_timkiem());
+                        if(($_POST['ngayden'] === $ngayden) || ($_POST['ngaytra'] <= $ngaytra))
+                        
+                        $listp=loadall_phong_tk($id_phong,$trangthai);
+                        // var_dump(loadall_phong_timkiem());
+                        if(($_POST['ngayden'] <= $ngayden) || ($_POST['ngaytra'] <= $ngaytra))
+                        // var_dump(loadall_phong_timkiem());
+                        $listp=loadall_phong_tk($id_phong,$trangthai);   
+                        if(($_POST['ngayden'] === $ngayden) || ($_POST['ngaytra'] <= $ngaytra))
+                        // var_dump(loadall_phong_timkiem());
+                        loadall_phong_tk($id_phong,$trangthai);
+                        if(($_POST['ngayden'] <= $ngayden) || ($_POST['ngaytra'] === $ngaytra))
+                        // var_dump(loadall_phong_timkiem());
+                        $listp=loadall_phong_tk($id_phong,$trangthai);
+                        if(($_POST['ngayden'] >= $ngayden) || ($_POST['ngaytra'] <= $ngaytra))
+                        // var_dump(loadall_phong_timkiem());
+                        $listp=loadall_phong_tk($id_phong,$trangthai); 
+            
+                   
+                    
+                    }else{
+                            $thongbao = 'Tìm kiếm không hợp lệ';
+                            
+                        }
                 }
-                $listp = loadall_phong();
-                $listdp = loadall_datphong("");
+            }  
+                echo"<pre>";
+                var_dump(loadall_phong_timkiem());
+               
+                $listsearch=loadall_phong_timkiem();
                 include "timkiemphong/list.php";
                 break;
             case 'listdp':

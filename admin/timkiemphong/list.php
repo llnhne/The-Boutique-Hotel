@@ -11,10 +11,13 @@
             <div class="timkiemphong" style="margin-bottom:20px;display:flex;">
             <input type="date" name="ngayden" placeholder="Check phòng" style="width:50%;border-radius:5px;border: 1px solid #FFCACA;">
             <input type="date" name="ngaytra" placeholder="Check phòng" style="width:50%;margin-left:10px;border-radius:5px;border: 1px solid #FFCACA;">
-            <input type="submit" name="check" value="Check" style="padding:10px;margin-left:10px;border: 1px solid #FFCACA;">
+            <input type="submit" name="check" value="Check" style="padding:10px;margin-left:10px;border: 1px solid #FFCACA;">   
+        </div>
+        <div style="color:red; margin-bottom:10px;">
             <?php
-                            if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
-                        ?>    
+                if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
+            ?> 
+           
         </div>
             <div class="row mb10 formdshanghoa" style="width:1050px;">
                 <table>
@@ -28,20 +31,13 @@
                         <th>SỐ KHÁCH TỐI ĐA</th>
                         <th>TRẠNG THÁI</th>
                     </tr>
-                    <?php
-                            if (isset($trangthai) && ($trangthai != "")) echo $trangthai;
-                        ?>   
+                      
                     <?php
                     foreach ($listp as $phong) {
                         extract($phong);
-                        $suap = "index.php?act=suap&id=" . $id_phong;
-                        $xoap = "index.php?act=xoap&id=" . $id_phong;
-                        $img = "../upload/" . $img;
-                        if (is_file($img)) {
-                            $img = "<img src='" . $img . "' height='80px'>";
-                        } else {
-                            $img = "No photo";
-                        }
+                        
+                        
+                        
                         echo '<tr>      
                                         <td>' . $id_loaiphong . '</td>
                                         <td>P' . $id_phong . '</td>
