@@ -37,14 +37,16 @@
                         extract($phong);
                         if ((($_POST['ngayden'] === $ngayden) || ($_POST['ngaytra'] === $ngaytra)) || (($_POST['ngayden'] === $ngayden) || ($_POST['ngaytra'] <= $ngaytra )) || (($_POST['ngayden'] <= $ngayden) || ($_POST['ngaytra'] <= $ngaytra))){
                             $sql = "update phong set trangthai='Hết' where id_phong=" . $id_phong;
-                            pdo_query($sql);
+                            
+                           
                         }if ((($_POST['ngayden'] === $ngayden) || ($_POST['ngaytra'] <= $ngaytra)) || (($_POST['ngayden'] <= $ngayden) || ($_POST['ngaytra'] === $ngaytra)) || (($_POST['ngayden'] >= $ngayden) || ($_POST['ngaytra'] <= $ngaytra))){
                             $sql = "update phong set trangthai='Trống' where id_phong=" . $id_phong;
-                            pdo_query($sql);
-                                
+                        
                         } else {
                             $thongbao = 'Tìm kiếm không hợp lệ';
                         }
+                        pdo_query($sql);
+                        die();
                         var_dump($_POST['ngayden']);
                         var_dump($_POST['ngaytra']);
                         
