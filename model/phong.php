@@ -19,20 +19,20 @@
         $listsearch=pdo_query($sql);
         return $listsearch;
     }
-    function loadall_phong_tk($id_phong,$trangthai){
-        $sql="select phong.id_phong,phong.name_phong,phong.img,phong.sokhach,phong.price,phong.price,phong.trangthai,phong.id_loaiphong,phong.price_sale,datphong.ngayden,datphong.ngaytra from datphong
-        inner join phong on datphong.id_phong=phong.id_phong";
-        if($trangthai!=""){
-            $sql.="update phong set trangthai='Trống' where id_phong=".$id_phong;
-        }
-        if($trangthai>0){
-            $sql.="update phong set trangthai='Trống' where id_phong=".$id_phong;
-        }
-        $sql.=" order by id_phong desc";
+    // function loadall_phong_tk(){
+    //     $sql="select phong.id_phong,phong.name_phong,phong.img,phong.sokhach,phong.price,phong.price,phong.trangthai,phong.id_loaiphong,phong.price_sale,datphong.ngayden,datphong.ngaytra from datphong
+    //     inner join phong on datphong.id_phong=phong.id_phong";
+        // if($trangthai!=""){
+        //     $sql.="update phong set trangthai='Trống' where id_phong=".$id_phong;
+        // }
+        // if($trangthai>0){
+        //     $sql.="update phong set trangthai='Trống' where id_phong=".$id_phong;
+        // }
+        // $sql.=" order by id_phong desc";
         
-        $listp=pdo_query($sql);
-        return $listp;
-    }
+    //     $listp=pdo_query($sql);
+    //     return $listp;
+    // }
     function loadall_phong($kyw="",$idlp=0){
         $sql="SELECT * FROM phong where 1";
         if($kyw!=""){
