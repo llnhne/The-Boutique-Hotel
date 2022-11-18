@@ -22,15 +22,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'deluxe':
             include "deluxe-room.php";
             break;
-        case 'superior':
-            // include "deluxe-room.php";
-            break;
-        case 'signature':
-            // include "deluxe-room.php";
-            break;
-        case 'luxury':
-            // include "deluxe-room.php";
-            break;
         default:
             include "home.php";
             break;
