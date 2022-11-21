@@ -10,5 +10,9 @@
         $sql="delete from hotro where id_hotro=".$id;
         pdo_execute($sql);
     }
+    function insert_hotro($name_user,$tel,$ghichu){
+        $sql="INSERT INTO hotro(name_user,tel,ghichu) values('$name_user','$tel','$ghichu')";
+        pdo_execute($sql);
+    }
 
 ?>

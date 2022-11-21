@@ -239,18 +239,15 @@
                                                                             <div class="elementor-shortcode">
                                                                                 <div role="form" class="wpcf7" id="wpcf7-f6-p704-o1" lang="en-US" dir="ltr">
                                                                                     <div class="screen-reader-response" role="alert" aria-live="polite"></div>
-                                                                                    <form method="post" action="https://max-themes.net/demos/hoteller/hoteller/boutique/contactform/contactengine.php">
+                                                                                    <form method="post" action="index.php?act=contact">
                                                                                         <label for="Name">Name:</label>
-                                                                                        <input type="text" name="Name" id="Name"  class="input"/>
+                                                                                        <input type="text" name="name_user" id="name_user"  class="input"/>
                                                                                         
-                                                                                        <label for="City">City:</label>
-                                                                                        <input type="text" name="City" id="City"  class="input"/>
-
-                                                                                        <label for="Email">Email:</label>
-                                                                                        <input type="text" name="Email" id="Email"  class="input"/>
-                                                                                        
+                                                                                        <label for="Email">Tel</label>
+                                                                                        <input type="text" name="tel" id="tel"  class="input"/>
+                                                                                        <span style="color: red;"><?php echo isset($error['tel']) ? $error['tel']:'';?></span>
                                                                                         <label for="Message">Message:</label><br />
-                                                                                        <textarea name="Message" rows="20" cols="20" id="Message" class="input"></textarea>
+                                                                                        <textarea name="ghichu" rows="20" cols="20" id="ghichu" class="input"></textarea>
 
                                                                                         <input type="submit" name="submit" value="Submit" class="submit-button" />
                                                                                     </form>
