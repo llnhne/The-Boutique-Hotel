@@ -70,7 +70,7 @@
                                                                 <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-391" method="post" data-id="391" data-name="Mailing List Form">
                                                                     <div class="mc4wp-form-fields">
                                                                         <span>
-                                                                            <input type="email" name="EMAIL" placeholder="Your tel" required="" />
+                                                                            <input type="email" name="EMAIL" placeholder="Your email address" required="" />
                                                                         </span>
 
                                                                         <span>
