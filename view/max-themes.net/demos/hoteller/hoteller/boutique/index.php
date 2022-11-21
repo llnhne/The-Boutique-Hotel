@@ -8,8 +8,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
         case 'ourrooms':
-            $id=$_GET['idlp'];
-            $listlp=loadall_loaiphong_ourrooms($id);
+            
+            $listlp=loadall_loaiphong_ourrooms();
             $listp=loadall_phong();
             include "our-rooms.php";
             break;
