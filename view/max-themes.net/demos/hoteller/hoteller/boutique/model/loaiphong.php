@@ -9,10 +9,8 @@
         $sql="delete from loaiphong where id_loaiphong=".$id;
         pdo_execute($sql);
     }
-    function loadall_loaiphong_ourrooms($id){   
-        $sql="select * from loaiphong";
-        if($id>1)
-        $sql.=" order by id_loaiphong asc";
+    function loadall_loaiphong_ourrooms(){   
+        $sql="select * from loaiphong order by id_loaiphong desc limit 0,4";
         $listlp=pdo_query($sql);
         return $listlp;
 

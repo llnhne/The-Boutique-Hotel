@@ -29,8 +29,8 @@
         $p=pdo_query_one($sql);
         return $p;
     }
-    function load_phong_cungloai($id,$idlp){
-        $sql="select * from phong where id_loaiphong=".$idlp." AND id_phong <> ".$id;
+    function load_phong_cungloai($id){
+        $sql="select * from phong where id_loaiphong=".$id." ";
         $listp=pdo_query($sql);
         return $listp;
     }

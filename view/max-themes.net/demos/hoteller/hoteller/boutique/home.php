@@ -1,3 +1,4 @@
+
 <!-- Begin content -->
 <div id="page_content_wrapper" class="noheader">
                     <div class="inner">
@@ -110,7 +111,7 @@
                                                                         <div class="elementor-widget-container">
                                                                             <div class="availability_search_wrapper">
                                                                                 <div class="mphb_sc_search-wrapper">
-                                                                                    <form method="GET" class="mphb_sc_search-form" action="https://themes.themegoods.com/hoteller/sites/search-results/">
+                                                                                    <form method="POST" class="mphb_sc_search-form" action="">
                                                                                         <p class="mphb-required-fields-tip">
                                                                                             <small> Required fields are followed by <abbr title="required">*</abbr> </small>
                                                                                         </p>

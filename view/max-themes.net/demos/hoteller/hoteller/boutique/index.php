@@ -10,9 +10,16 @@ if((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
         case 'ourrooms':
-            $id=$_GET['idlp'];
-            $listlp=loadall_loaiphong_ourrooms($id);
-            $listp=loadall_phong();
+            
+            if(isset($_GET['idlp'])){
+                $id = $_GET['idlp'];
+                $listlp=loadall_loaiphong_ourrooms();
+                $listpcungloai = load_phong_cungloai($id);
+            }else{
+                $listpcungloai=loadall_phong();
+                $listlp=loadall_loaiphong_ourrooms();
+
+            }
             include "our-rooms.php";
             break;
         case 'dining':
@@ -38,6 +45,11 @@ if((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
         case 'deluxe':
             include "deluxe-room.php";
+            break;
+        case 'room':
+            $id = $_GET['id'];
+            $room = loadone_phong($id);
+            include "room.php";
             break;
         case 'dangki':
             if(isset($_POST['dangki']) && ($_POST['dangki'])){
