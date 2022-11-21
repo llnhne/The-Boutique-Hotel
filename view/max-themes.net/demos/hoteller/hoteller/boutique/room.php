@@ -1,6 +1,6 @@
 
 
-<form action="index.php?act=room" method="post">
+
                 <!-- Begin content -->
                 <div id="page_content_wrapper" class="noheader">
                     <div class="inner">
@@ -137,7 +137,7 @@
                                                                         data-widget_type="heading.default"
                                                                     >
                                                                         <div class="elementor-widget-container">
-                                                                            <h3 class="elementor-heading-title elementor-size-default">3 People</h3>
+                                                                            <h3 class="elementor-heading-title elementor-size-default"><?php echo $room['name_phong']?></h3>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -159,7 +159,7 @@
                                                                         data-widget_type="heading.default"
                                                                     >
                                                                         <div class="elementor-widget-container">
-                                                                            <h3 class="elementor-heading-title elementor-size-default">From $249</h3>
+                                                                            <h3 class="elementor-heading-title elementor-size-default">From <?php echo $room['price']?></h3>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -865,4 +865,4 @@
 
 
             </div>
-            </form>
+            

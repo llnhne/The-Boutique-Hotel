@@ -8,6 +8,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta name="format-detection" content="telephone=no" />
+        <script src="https://cdn.tailwindcss.com"></script>
 
         <link rel="stylesheet" href="css/reset.css" type="text/css" media="all" />
         <link rel="stylesheet" href="css/wordpress.css" type="text/css" media="all" />
@@ -17,6 +18,8 @@
         <link rel="stylesheet" href="css/themify-icons.css" type="text/css" media="all" />
         <link rel="stylesheet" href="css/tooltipster.css" type="text/css" media="all" />
         <link rel="stylesheet" href="css/demo.css" type="text/css" media="all" />
+
+
         <link rel="stylesheet" href="js/plugins/loftloader/assets/css/loftloader.minc3cd.css?ver=2020081301" type="text/css" media="all" />
         <link rel="stylesheet" href="js/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css" type="text/css" media="all" />
         <link rel="stylesheet" href="js/plugins/elementor/assets/lib/animations/animations.min.css" type="text/css" media="all" />
@@ -36,6 +39,7 @@
 	    <link rel="icon" href="upload/TG-Thumb.png" sizes="32x32" />
         <link rel="icon" href="upload/TG-Thumb.png" sizes="192x192" />
         <link rel="apple-touch-icon" href="upload/TG-Thumb.png" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
         <meta name="msapplication-TileImage" content="upload/TG-Thumb.png" />
 
 
@@ -126,7 +130,7 @@
                                                         >
                                                             <div class="elementor-widget-container">
                                                                 <div class="elementor-image">
-                                                                    <a href="index.php"> <img src="upload/logo_white.png" title="" alt="" /> </a>
+                                                                    <a href="index.html"> <img src="upload/logo_white.png" title="" alt="" /> </a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -156,7 +160,45 @@
                                                                             <li class="menu-item"><a href="index.php?act=dining">Dining</a></li>
                                                                             <li class="menu-item"><a href="index.php?act=about">About The Hotel</a></li>
                                                                             <li class="menu-item"><a href="index.php?act=contact">Contact</a></li>
-                                                                            <li class="menu-item"><a href="index.php?act=booknow">Book Now</a></li>
+                                                                            <li class="menu-item"><a href="index.php?act=booknow">Book Now </a></li>
+                                                                            <?php if(isset($_SESSION['user'])) { ?>
+                                                                                <li class="header__navbar-item header__navbar-user">
+                                                                                    <a href="" >
+                                                                                        <div class="flex">
+                                                                                            <div class="w-9 rounded-full border border-white overflow-hidden">
+                                                                                                <img class="w-full" src="/upload/132083046_3702406189839103_501186624219407700_n.jpg" alt="" >
+                                                                                            </div>
+                                                                                            <span class="text-white text-base mt-2 ml-2"><?php echo $_SESSION['user']['username']?></span>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                    <ol class="header__navbar-user-menu">
+                                                                                        <li class="header__navbar-user-item">
+                                                                                            <a class="header__navbar-item-link" href="./taikhoan/info.php">Tài khoản của tôi</a>
+                                                                                        </li>
+
+                                                                                    
+                                                                                        <li class="header__navbar-user-item header__navbar-user-item--separate">
+                                                                                            <a href="./index.php?act=thoat">Đăng xuất</a>
+                                                                                        </li>
+                                                                                    </ol>
+                                                                                </li>
+                                                                            <?php }else{ ?>
+                                                                                <li class="header__navbar-item header__navbar-user">
+                                                                                
+                                                                                    <i class="text-2xl text-white fa-solid fa-user"></i>
+                                                                                    
+                                                                                    <ol class="header__navbar-user-menu">
+                                                                                        <li class="header__navbar-user-item">
+                                                                                            <a class="header__navbar-item-link" href="./taikhoan/dangki.php">Đăng kí        </a>
+                                                                                        </li>
+    
+                                                                                       
+                                                                                        <li class="header__navbar-user-item header__navbar-user-item--separate">
+                                                                                            <a href="./taikhoan/dangnhap.php">Đăng nhập</a>
+                                                                                        </li>
+                                                                                    </ol>
+                                                                                </li>
+                                                                           <?php } ?>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
@@ -214,7 +256,7 @@
                                                         >
                                                             <div class="elementor-widget-container">
                                                                 <div class="elementor-image">
-                                                                    <a href="index.php"> <img src="upload/logo_black.png" title="" alt="" /> </a>
+                                                                    <a href="index.html"> <img src="upload/logo_black.png" title="" alt="" /> </a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -245,6 +287,44 @@
                                                                             <li class="menu-item"><a href="index.php?act=about">About The Hotel</a></li>
                                                                             <li class="menu-item"><a href="index.php?act=contact">Contact</a></li>
                                                                             <li class="menu-item"><a href="index.php?act=booknow">Book Now</a></li>
+                                                                            <?php if(isset($_SESSION['user'])) { ?>
+                                                                                <li class="header__navbar-item header__navbar-user">
+                                                                                    <a href="" >
+                                                                                        <div class="flex">
+                                                                                            <div class="w-9 rounded-full border border-white overflow-hidden">
+                                                                                                <img class="w-full" src="/upload/132083046_3702406189839103_501186624219407700_n.jpg" alt="" >
+                                                                                            </div>
+                                                                                            <span class="text-blue text-base mt-2 ml-2"><?php echo $_SESSION['user']['username']?></span>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                    <ol class="header__navbar-user-menu">
+                                                                                        <li class="header__navbar-user-item">
+                                                                                            <a class="header__navbar-item-link" href="./taikhoan/info.php">Tài khoản của tôi</a>
+                                                                                        </li>
+
+                                                                                    
+                                                                                        <li class="header__navbar-user-item header__navbar-user-item--separate">
+                                                                                            <a href="./index.php?act=thoat">Đăng xuất</a>
+                                                                                        </li>
+                                                                                    </ol>
+                                                                                </li>
+                                                                            <?php }else{ ?>
+                                                                                <li class="header__navbar-item header__navbar-user">
+                                                                                
+                                                                                    <i class="text-2xl text-black fa-solid fa-user"></i>
+                                                                                    
+                                                                                    <ol class="header__navbar-user-menu">
+                                                                                        <li class="header__navbar-user-item">
+                                                                                            <a class="header__navbar-item-link" href="./taikhoan/dangki.php">Đăng kí        </a>
+                                                                                        </li>
+    
+                                                                                       
+                                                                                        <li class="header__navbar-user-item header__navbar-user-item--separate">
+                                                                                            <a href="./taikhoan/dangnhap.php">Đăng nhập</a>
+                                                                                        </li>
+                                                                                    </ol>
+                                                                                </li>
+                                                                           <?php } ?>
                                                                         </ul>
                                                                     </div>
                                                                 </div>

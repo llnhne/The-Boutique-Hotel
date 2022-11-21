@@ -1,4 +1,4 @@
-<form action="index.php?act=our-rooms" method="post">
+
  <!-- Begin content -->
   <div id="page_content_wrapper" class="noheader">
                     <div class="inner">
@@ -134,12 +134,39 @@
                                                     </div>
                                                 </div>
                                             </section>
+                                            <section class="grid grid-cols-3 my-4 gap-2">
+                                                <?php foreach($listpcungloai as $item) {?>
+                                                    
+                                                    <div class="shadow-lg p-2 ">
+                                                        <div>
+                                                            <img src="./upload/<?php echo $item['img']?>" alt="">
+                                                        </div>
+                                                        <div>
+                                                            <h2 class="font-serif text-2xl"><?php echo $item['name_phong']?></h2>
+                                                            <div class=" text-2xl flex">
+                                                                <i class="font-serif text-4xl pt-4 fa-solid fa-dollar-sign"></i> 
+                                                                <p class=""><?php echo $item['price']?></p>
+                                                            </div>
+                                                            <p class="font-serif text-2xl"><?php echo $item['mota']?></p>
+                                                            <div>
+                                                                <a href="index.php?act=room&id=<?php echo $item['id_phong'] ?>">
+                                                                    <button class="bg-amber-600 text-white rounded border border-black border-solid p-2 hover:border-y-amber-700 hover:border-x-neutral-50 hover:bg-white shadow-lg hover:text-amber-600">Xem chi tiết</button>
+                                                                </a>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                <?php } ?>
+
+
+                                                
+                                            </section>
             
 
                                             
                                             <!-- end -->
                                            
-                                            <section
+                                            <!-- <section
                                                 class="elementor-section elementor-top-section elementor-element elementor-element-7a4c6e1 elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                                                 data-id="7a4c6e1"
                                                 data-element_type="section"
@@ -290,7 +317,7 @@
                                                         
                                                     </div>
                                                 </div>
-                                            </section>
+                                            </section> -->
                                         </div>
                                     </div>
                                 </div>
@@ -301,4 +328,4 @@
                     <br class="clear" />
                 </div>
             </div>       
-            </form>
+         
