@@ -1,6 +1,6 @@
 
 
-
+<form action="index.php?act=room" method="post">
                 <!-- Begin content -->
                 <div id="page_content_wrapper" class="noheader">
                     <div class="inner">
@@ -865,3 +865,4 @@
 
 
             </div>
+            </form>

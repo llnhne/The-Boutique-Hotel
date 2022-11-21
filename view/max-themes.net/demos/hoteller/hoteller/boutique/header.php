@@ -126,7 +126,7 @@
                                                         >
                                                             <div class="elementor-widget-container">
                                                                 <div class="elementor-image">
-                                                                    <a href="index.html"> <img src="upload/logo_white.png" title="" alt="" /> </a>
+                                                                    <a href="index.php"> <img src="upload/logo_white.png" title="" alt="" /> </a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -214,7 +214,7 @@
                                                         >
                                                             <div class="elementor-widget-container">
                                                                 <div class="elementor-image">
-                                                                    <a href="index.html"> <img src="upload/logo_black.png" title="" alt="" /> </a>
+                                                                    <a href="index.php"> <img src="upload/logo_black.png" title="" alt="" /> </a>
                                                                 </div>
                                                             </div>
                                                         </div>

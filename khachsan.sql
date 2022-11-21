@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 15, 2022 lúc 04:59 PM
+-- Thời gian đã tạo: Th10 21, 2022 lúc 06:32 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -34,6 +34,14 @@ CREATE TABLE `binhluan` (
   `ngaybinhluan` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `binhluan`
+--
+
+INSERT INTO `binhluan` (`id_comment`, `noidung`, `id_user`, `ngaybinhluan`) VALUES
+(1, 'deifgif', 1, '2022-11-19'),
+(2, 'deifgif', 1, '2022-11-19');
+
 -- --------------------------------------------------------
 
 --
@@ -47,8 +55,16 @@ CREATE TABLE `datphong` (
   `sokhach` int(2) NOT NULL,
   `ngayden` date NOT NULL,
   `ngaytra` date NOT NULL,
-  `tinhtrang` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL
+  `tinhtrang` tinyint(2) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `datphong`
+--
+
+INSERT INTO `datphong` (`id_order`, `id_phong`, `id_user`, `sokhach`, `ngayden`, `ngaytra`, `tinhtrang`) VALUES
+(1, 4, 1, 2, '2022-11-17', '2022-11-20', 0),
+(2, 50, 2, 2, '2022-11-27', '2022-11-29', 0);
 
 -- --------------------------------------------------------
 
@@ -64,6 +80,13 @@ CREATE TABLE `hoadon` (
   `tongtien` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `hoadon`
+--
+
+INSERT INTO `hoadon` (`id_bill`, `id_order`, `id_phong`, `id_user`, `tongtien`) VALUES
+(1, 1, 4, 1, 500000);
+
 -- --------------------------------------------------------
 
 --
@@ -72,9 +95,18 @@ CREATE TABLE `hoadon` (
 
 CREATE TABLE `hotro` (
   `id_hotro` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL,
-  `tel` int(10) NOT NULL
+  `name_user` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `tel` int(10) NOT NULL,
+  `ghichu` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `hotro`
+--
+
+INSERT INTO `hotro` (`id_hotro`, `name_user`, `tel`, `ghichu`) VALUES
+(1, 'Lan Anh', 123456789, 'ffd'),
+(3, 'lelananh', 838397376, 'cần tư vấn phòng luxury');
 
 -- --------------------------------------------------------
 
@@ -93,10 +125,10 @@ CREATE TABLE `loaiphong` (
 
 INSERT INTO `loaiphong` (`id_loaiphong`, `name_loaiphong`) VALUES
 (1, 'Chưa phân loại'),
-(2, 'luxury'),
-(3, 'basic'),
-(4, 'suit'),
-(7, 'double');
+(2, 'Superior Room'),
+(3, 'Deluxe Room'),
+(4, 'Signature Room'),
+(7, 'Luxury Suite Room');
 
 -- --------------------------------------------------------
 
@@ -112,7 +144,6 @@ CREATE TABLE `phong` (
   `sokhach` int(2) NOT NULL,
   `img` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `mota` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `trangthai` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `id_loaiphong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
@@ -120,18 +151,23 @@ CREATE TABLE `phong` (
 -- Đang đổ dữ liệu cho bảng `phong`
 --
 
-INSERT INTO `phong` (`id_phong`, `name_phong`, `price`, `price_sale`, `sokhach`, `img`, `mota`, `trangthai`, `id_loaiphong`) VALUES
-(1, 'luxuryA12', 500000.00, 0.00, 0, '132098157_159127059327577_895541964277773996_n.jpg', 'fdfdf', '', 2),
-(2, 'luxuryA12', 500000.00, 0.00, 0, '132098157_159127059327577_895541964277773996_n.jpg', 'fdfdf', '', 2),
-(4, 'luxuryA13', 500000.00, 0.00, 0, 'cafc12ef6f08a556fc19.jpg', 'fdfdf', '', 7),
-(49, 'luxuryA13', 510000.00, 50000.00, 3, 'cafc12ef6f08a556fc19.jpg', 'dsds', '', 7),
-(50, 'luxuryA14', 510000.00, 50000.00, 3, 'cafc12ef6f08a556fc19.jpg', 'hjhu', '', 4),
-(51, 'luxuryA14', 710000.00, 50000.00, 3, '132842099_2732894950266738_5740516309422092546_n.jpg', 'bhbu', '', 3),
-(59, 'luxuryA17', 600000.00, 50000.00, 3, '132516188_446341446369859_2636483857770018555_n.jpg', 'dfdf', '', 1),
-(63, 'luxuryA19', 710000.00, 0.00, 3, 'assc2.jpg', 'dsdsfd', '', 1),
-(64, 'luxuryA20', 510000.00, 0.00, 2, '', '', '', 2),
-(65, 'basicA4', 600000.00, 50000.00, 4, '', '', '', 3),
-(66, 'basicA5', 510000.00, 50000.00, 2, '', '', '', 3);
+INSERT INTO `phong` (`id_phong`, `name_phong`, `price`, `price_sale`, `sokhach`, `img`, `mota`, `id_loaiphong`) VALUES
+(1, 'superior room S20', 150.00, 0.00, 3, 'room4_portrait.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 2),
+(2, 'superior room P21', 150.00, 0.00, 3, 'room2_portrait.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 2),
+(4, 'superior room P22', 150.00, 0.00, 3, 'room3_portrait.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 2),
+(49, 'superior room P23', 150.00, 0.00, 3, 'food-on-a-table-in-a-hotel-room-PU969F8.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 7),
+(50, 'deluxe room D20', 120.00, 0.00, 3, 'food-on-a-table-in-a-hotel-room-PU969F8.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 3),
+(51, 'deluxe room D21', 120.00, 0.00, 3, 'room1_portrait.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 3),
+(59, 'deluxe room D22', 150.00, 0.00, 3, 'room2_portrait.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 3),
+(63, 'deluxe room D23', 150.00, 0.00, 3, 'room3_portrait.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 3),
+(64, 'signature room S20', 150.00, 0.00, 3, 'food-on-a-table-in-a-hotel-room-PU969F8.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 4),
+(65, 'signature room S21', 150.00, 0.00, 3, 'room4_portrait.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 4),
+(66, 'signature room S22', 160.00, 0.00, 3, 'room3_portrait.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 4),
+(67, 'signature room S23', 160.00, 0.00, 3, 'room2_portrait.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 4),
+(68, 'luxury room L20', 170.00, 0.00, 3, 'room1_portrait.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 7),
+(69, 'luxury room L21', 170.00, 0.00, 3, 'room2_portrait.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 7),
+(70, 'luxury room L22', 180.00, 0.00, 3, 'room4_portrait.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 7),
+(71, 'luxury room L23', 180.00, 0.00, 3, 'food-on-a-table-in-a-hotel-room-PU969F8.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 7);
 
 -- --------------------------------------------------------
 
@@ -187,8 +223,7 @@ ALTER TABLE `hoadon`
 -- Chỉ mục cho bảng `hotro`
 --
 ALTER TABLE `hotro`
-  ADD PRIMARY KEY (`id_hotro`),
-  ADD KEY `id-user` (`id_user`);
+  ADD PRIMARY KEY (`id_hotro`);
 
 --
 -- Chỉ mục cho bảng `loaiphong`
@@ -223,7 +258,7 @@ ALTER TABLE `loaiphong`
 -- AUTO_INCREMENT cho bảng `phong`
 --
 ALTER TABLE `phong`
-  MODIFY `id_phong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id_phong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
