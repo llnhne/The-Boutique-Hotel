@@ -15,7 +15,7 @@ if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
                     if ($checkuser['role'] == 1) {
                         header("location:admin/index.php");
                     } else {
-                        header("location:../index.php");
+                        header('Location: ../index.php?act=home');
                         $thongbao = "Đã đăng nhập thành công!";
                     }
                 } else {

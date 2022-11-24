@@ -136,7 +136,6 @@
                                             </section>
                                             <section class="grid grid-cols-3 my-4 gap-2">
                                                 <?php foreach($listpcungloai as $item) {?>
-                                                    
                                                     <div class="shadow-lg p-2 ">
                                                         <div>
                                                             <img src="./upload/<?php echo $item['img']?>" alt="">
@@ -157,9 +156,6 @@
                                                         </div>
                                                     </div>
                                                 <?php } ?>
-
-
-                                                
                                             </section>
             
 

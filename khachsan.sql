@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 21, 2022 lúc 06:32 AM
+-- Thời gian đã tạo: Th10 24, 2022 lúc 11:29 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -39,8 +39,8 @@ CREATE TABLE `binhluan` (
 --
 
 INSERT INTO `binhluan` (`id_comment`, `noidung`, `id_user`, `ngaybinhluan`) VALUES
-(1, 'deifgif', 1, '2022-11-19'),
-(2, 'deifgif', 1, '2022-11-19');
+(1, 'fgfhf', 1, '2022-11-19'),
+(2, 'hggh', 1, '2022-11-19');
 
 -- --------------------------------------------------------
 
@@ -75,7 +75,7 @@ INSERT INTO `datphong` (`id_order`, `id_phong`, `id_user`, `sokhach`, `ngayden`,
 CREATE TABLE `hoadon` (
   `id_bill` int(11) NOT NULL,
   `id_order` int(11) NOT NULL,
-  `id_phong` int(11) NOT NULL,
+  `id_phong` int(10) NOT NULL,
   `id_user` int(11) NOT NULL,
   `tongtien` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
@@ -85,7 +85,8 @@ CREATE TABLE `hoadon` (
 --
 
 INSERT INTO `hoadon` (`id_bill`, `id_order`, `id_phong`, `id_user`, `tongtien`) VALUES
-(1, 1, 4, 1, 500000);
+(1, 1, 50, 1, 700000),
+(2, 1, 4, 4, 500000);
 
 -- --------------------------------------------------------
 
@@ -97,7 +98,7 @@ CREATE TABLE `hotro` (
   `id_hotro` int(11) NOT NULL,
   `name_user` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `tel` int(10) NOT NULL,
-  `ghichu` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL
+  `ghichu` text COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
@@ -105,8 +106,11 @@ CREATE TABLE `hotro` (
 --
 
 INSERT INTO `hotro` (`id_hotro`, `name_user`, `tel`, `ghichu`) VALUES
-(1, 'Lan Anh', 123456789, 'ffd'),
-(3, 'lelananh', 838397376, 'cần tư vấn phòng luxury');
+(1, 'LeLanAnh', 838397376, 'fffgfgf'),
+(2, 'LeLanAnh', 838397376, 'thỵytjyj'),
+(3, 'LeLanAnh', 838397376, 'thỵytjyj'),
+(4, 'LeLanAnh', 838397376, 'thỵytjyj'),
+(5, 'LeLanAnh', 838397376, 'gnhgkh');
 
 -- --------------------------------------------------------
 
@@ -124,7 +128,7 @@ CREATE TABLE `loaiphong` (
 --
 
 INSERT INTO `loaiphong` (`id_loaiphong`, `name_loaiphong`) VALUES
-(1, 'Chưa phân loại'),
+(1, 'Chưa xác định'),
 (2, 'Superior Room'),
 (3, 'Deluxe Room'),
 (4, 'Signature Room'),
@@ -190,7 +194,8 @@ CREATE TABLE `taikhoan` (
 --
 
 INSERT INTO `taikhoan` (`id_user`, `username`, `password`, `email`, `tel`, `address`, `role`) VALUES
-(1, 'admin', '12345', '', 0, '', 1),
+(1, 'lananh', '12345', '', 838397376, '', 0),
+(3, 'lla', '12345', '', 0, '', 0),
 (4, 'lananh261', '123456', '', 0, '', 1);
 
 --
@@ -249,16 +254,46 @@ ALTER TABLE `taikhoan`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `binhluan`
+--
+ALTER TABLE `binhluan`
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT cho bảng `datphong`
+--
+ALTER TABLE `datphong`
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT cho bảng `hoadon`
+--
+ALTER TABLE `hoadon`
+  MODIFY `id_bill` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT cho bảng `hotro`
+--
+ALTER TABLE `hotro`
+  MODIFY `id_hotro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT cho bảng `loaiphong`
 --
 ALTER TABLE `loaiphong`
-  MODIFY `id_loaiphong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_loaiphong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `phong`
 --
 ALTER TABLE `phong`
   MODIFY `id_phong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+
+--
+-- AUTO_INCREMENT cho bảng `taikhoan`
+--
+ALTER TABLE `taikhoan`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -282,12 +317,6 @@ ALTER TABLE `datphong`
 ALTER TABLE `hoadon`
   ADD CONSTRAINT `idphong` FOREIGN KEY (`id_phong`) REFERENCES `phong` (`id_phong`),
   ADD CONSTRAINT `iduser` FOREIGN KEY (`id_user`) REFERENCES `taikhoan` (`id_user`);
-
---
--- Các ràng buộc cho bảng `hotro`
---
-ALTER TABLE `hotro`
-  ADD CONSTRAINT `id-user` FOREIGN KEY (`id_user`) REFERENCES `taikhoan` (`id_user`);
 
 --
 -- Các ràng buộc cho bảng `phong`

@@ -26,8 +26,8 @@
     }
     function loadone_phong($id){
         $sql="select * from phong where id_phong=".$id;
-        $p=pdo_query_one($sql);
-        return $p;
+        $room=pdo_query_one($sql);
+        return $room;
     }
     function load_phong_cungloai($id){
         $sql="select * from phong where id_loaiphong=".$id." ";

@@ -17,7 +17,7 @@
                                                     <div class="elementor-element elementor-element-7e941017 elementor-widget elementor-widget-heading" data-id="7e941017" data-element_type="widget" data-settings='{"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
                                                             <h1 class="elementor-heading-title elementor-size-default">
-                                                                · Superior Room ·<br />
+                                                                · <?php echo $room['name_phong'] ?> ·<br />
                                                                 Designed for natural living
                                                             </h1>
                                                         </div>
@@ -47,7 +47,7 @@
                                                 <div class="elementor-widget-wrap">
                                                     <div class="elementor-element elementor-element-3e1c9c92 elementor-invisible elementor-widget elementor-widget-heading" data-id="3e1c9c92" data-element_type="widget" data-settings='{"_animation":"fadeInLeft","hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
-                                                            <h3 class="elementor-heading-title elementor-size-default">55m²</h3>
+                                                            <h3 class="elementor-heading-title elementor-size-default">Max <?php echo $room['sokhach'] ?> people</h3>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -80,7 +80,7 @@
                                                 <div class="elementor-widget-wrap">
                                                     <div class="elementor-element elementor-element-15436ad8 elementor-invisible elementor-widget elementor-widget-heading" data-id="15436ad8" data-element_type="widget" data-settings='{"_animation":"fadeInLeft","_animation_delay":600,"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
-                                                            <h3 class="elementor-heading-title elementor-size-default" name="price">From <?php echo $room['price'] ?></h3>
+                                                            <h3 class="elementor-heading-title elementor-size-default" name="price">From <?php echo $room['price'] ?>$/night</h3>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -140,10 +140,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </section>
                             <section class="elementor-section elementor-top-section elementor-element elementor-element-4588ade9 elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="4588ade9" data-element_type="section" data-settings='{"stretch_section":"section-stretched","hoteller_ext_is_background_parallax":"false","hoteller_ext_is_background_on_scroll":"false"}'>
                                 <div class="elementor-container elementor-column-gap-default">
@@ -230,12 +226,6 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </section>
                             <section class="elementor-section elementor-top-section elementor-element elementor-element-796e778 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="796e778" data-element_type="section" data-settings='{"hoteller_ext_is_background_parallax":"false","hoteller_ext_is_background_on_scroll":"false"}'>
                                 <div class="elementor-container elementor-column-gap-default">
@@ -327,8 +317,8 @@
                                                             <h2 class="elementor-heading-title elementor-size-default">Ready to book?</h2><br><br>
                                                         </div>
                                                     </div>
-                                                    <div class="elementor-element elementor-element-323c9db6 elementor-invisible elementor-widget elementor-widget-heading" data-id="323c9db6" data-element_type="widget" data-settings='{"_animation":"fadeInUp","_animation_delay":200,"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">  
-                                                    <form method="post" action="" class="mphb-booking-form" id="booking-form-96">
+                                                    <div class="elementor-element elementor-element-323c9db6 elementor-invisible elementor-widget elementor-widget-heading" data-id="323c9db6" data-element_type="widget" data-settings='{"_animation":"fadeInUp","_animation_delay":200,"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
+                                                        <form method="post" action="./index.php?act=room&id=<?php echo $id ?>" class="mphb-booking-form" id="booking-form-96">
                                                             <?php
                                                             if (isset($_SESSION['user'])) {
                                                                 $id_user = $_SESSION['user']['id_user'];
@@ -344,15 +334,29 @@
                                                                 $tel = "";
                                                             }
                                                             ?>
-                                                            <input type="hidden" name="id_user" value="<?= $id_user ?>">
-                                                            <label for="">Tên Khách Hàng:</label><br>
-                                                            <input type="text" name="username" value="<?= $username ?>"><br><br>
-                                                            <label for="">Số Điện Thoại:</label><br>
-                                                            <input type="text" name="tel" value="<?= $tel ?>"><br><br>
-                                                            <label for="">Tên Phòng:</label><br>
-                                                            <input type="text" name="name_phong" value="<?php echo $room['name_phong'] ?>" disabled /><br><br>
-                                                            <label for="">Giá Phòng:</label><br>
-                                                            <input type="text" name="price" value="<?php echo $room['price'] ?>$/1 night" disabled><br><br>
+                                                                <input type="hidden" name="id_user" value="<?= $id_user ?>">
+                                                                <label for="">Tên Khách Hàng:</label><br>
+                                                                <input type="text" name="username" value="<?= $username ?>"><br><br>
+                                                                <label for="">Số Điện Thoại:</label><br>
+                                                                <input type="text" name="tel" value="<?= $tel ?>"><br><br>
+                                                                <input type="hidden" name="idphong" value="<?php echo $room['id_phong'] ?>">
+
+                                                                <label for="">Tên Phòng:</label><br>
+                                                                <input type="text" name="name_phong" value="<?php echo $room['name_phong'] ?>" disabled /><br><br>
+
+                                                                <label for="">Giá Phòng:</label><br>
+                                                                <input type="text" name="price" value="<?php echo $room['price'] ?>$/1 night" disabled><br><br>
+                                                                <div id="content"></div>
+                                                            <p class="mphb-reserve-btn-wrapper">
+                                                                <input class="mphb-reserve-btn button" type="submit" name="comfirm" id="comfirm" value="Chi Tiết" />
+                                                                <span class="mphb-preloader mphb-hide"></span>
+                                                            </p>
+                                                            <script>
+                                                                $("#comfirm").click(function(e) {
+                                                                    e.preventDefault();
+                                                                    $("#content").load("comfirm.php");
+                                                                });
+                                                            </script>
                                                     </div>
                                                     <div class="elementor-element elementor-element-41ea943d elementor-invisible elementor-widget elementor-widget-shortcode" data-id="41ea943d" data-element_type="widget" data-settings='{"_animation":"fadeIn","_animation_delay":400,"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="shortcode.default">
                                                         <div class="elementor-widget-container">
@@ -379,10 +383,10 @@
                                                             <div class="elementor-shortcode">
                                                                 <div class="mphb_sc_booking_form-wrapper">
                                                                     <span class="thongbao" style="color:red;">
-                                                                    <?php
-                                                                    if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
-                                                                    var_dump($_POST);
-                                                                    ?>
+                                                                        <?php
+                                                                        if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
+
+                                                                        ?>
                                                                     </span>
                                                                     <?php
                                                                     if (isset($_SESSION['user'])) {
@@ -395,14 +399,14 @@
                                                                             <label for="mphb_check_in_date-6061a3921343a"> Check-in Date <abbr title="Formatted as dd/mm/yyyy">*</abbr> </label>
                                                                             <br />
                                                                             <input id="mphb_check_in_date-6061a3921343a" type="date" class="mphb-datepick" name="ngayden" value="" required="required" autocomplete="off" placeholder="Check-in Date" />
-                                                                            
+
                                                                         </p>
 
                                                                         <p class="mphb-check-out-date-wrapper">
                                                                             <label for="mphb_check_out_date-6061a3921343a"> Check-out Date <abbr title="Formatted as dd/mm/yyyy">*</abbr> </label>
                                                                             <br />
                                                                             <input id="mphb_check_out_date-6061a3921343a" type="date" class="mphb-datepick" name="ngaytra" value="" required="required" autocomplete="off" placeholder="Check-out Date" />
-                                                                            
+
                                                                         </p>
 
                                                                         <p class="mphb-adults-wrapper mphb-capacity-wrapper">
@@ -424,8 +428,9 @@
                                                                                 <option value="2">2</option>
                                                                             </select>
                                                                         </p>
+
                                                                         <p class="mphb-reserve-btn-wrapper">
-                                                                            <input class="mphb-reserve-btn button" type="submit" name="datphong" value="Đặt Phòng" />
+                                                                            <input class="mphb-reserve-btn button" type="submit" name="datphong" id="datphong" value="Đặt Phòng" />
                                                                             <span class="mphb-preloader mphb-hide"></span>
                                                                         </p>
                                                                         <div class="mphb-errors-wrapper mphb-hide"></div>

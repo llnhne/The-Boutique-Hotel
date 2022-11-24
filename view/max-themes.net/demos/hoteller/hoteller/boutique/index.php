@@ -1,12 +1,12 @@
 <?php
 session_start();
-include 'header.php';
 include 'model/pdo.php';
 include 'model/loaiphong.php';
 include 'model/phong.php';
-include 'model/datphong.php';
 include 'model/hotro.php';
+include 'model/datphong.php';
 include 'model/taikhoan.php';
+include 'header.php';
 
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
@@ -20,6 +20,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $listpcungloai = loadall_phong();
                 $listlp = loadall_loaiphong_ourrooms();
             }
+
             include "our-rooms.php";
             break;
         case 'dining':
@@ -28,17 +29,43 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'about':
             include "about.php";
             break;
+        case 'home':
+            if (isset($_POST['submit']) && ($_POST['submit'])) {
+                $ngaydat = $_POST['mphb_check_in_date'];
+                $ngaytra = $_POST['mphb_check_out_date'];
+                $month = date("m");
+                $year = date("Y");
+                // echo $month;
+                // echo $year;
+
+                $datphong = loadall_phongdadat();
+                if (isset($ngaydat) && isset($ngaytra)) {
+                    foreach ($datphong as $item) {
+                        if ($ngaytra === $item['ngaytra'] && $ngaydat === $item['ngayden']) {
+                            echo "tìm kiếm của khách có trùng với một số phòng có ngày trả và ngày đến giống với khách tìm kiếm , hiển thị những phòng còn trống";
+                            $listpchuadat = loadall_phongchuadat2($ngaydat, $ngaytra);
+                            break;
+                        } else if ($ngaytra != $item['ngaytra'] && $ngaydat != $item['ngayden']) {
+                            echo "Ngày khác ngày trong bảng dặt phòng";
+                            $listpchuadat = loadall_phongchuadat();
+                            break;
+                        } else {
+                            echo "Ngày khác ngày trong bảng dặt phòng jfakdfhkj";
+                            $listpchuadat = loadall_phongchuadat3($ngaydat, $ngaytra);
+                            break;
+                        }
+                    }
+                }
+            }
+            include "home.php";
+            break;
         case 'contact':
             if (isset($_POST['submit']) && ($_POST['submit'])) {
                 $name_user = $_POST['name_user'];
                 $tel = $_POST['tel'];
                 $ghichu = $_POST['ghichu'];
-                if (empty($tel)) {
-                    $errname = "Vui lòng điền số điện thoại !";
-                } else {
-                    insert_hotro($name_user, $tel, $ghichu);
-                    $thongbao = "Dữ liệu được gửi thành công!";
-                }
+                insert_hotro($name_user, $tel, $ghichu);
+                $thongbao = "Dữ liệu được gửi thành công!";
             }
             include "contact.php";
             break;
@@ -49,50 +76,48 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include "deluxe-room.php";
             break;
         case 'room':
-            
-            
-            if (isset($_POST['submit']) && ($_POST['submit'])) {
-                
-                $id_user=$_SESSION['user']['id_user'];
-                $sokhach = $_POST['sokhach'];
-               
-                $price=$_POST['price'];
-                $ngayden = $_POST['ngayden'];
-                $ngaytra = $_POST['ngaytra'];
-                $id=$room['id_phong'];
-                // $ngayden = strtotime('ngayden');
-                // $ngaytra = strtotime('ngaytra');
-                // $datediff = abs ($ngayden - $ngaytra);
-                // $songay = floor($datediff / (60*60*24));
-                // $tongtien = $songay * $price;
-                insert_datphong($id, $id_user, $sokhach, $ngayden, $ngaytra);
-                
-                $thongbao = "Đặt phòng thành công!";
-        } else {
-            $thongbao = "Thất bại";
-        }
             $id = $_GET['id'];
             $room = loadone_phong($id);
-            include "room.php";
+            if (isset($_POST['datphong']) && ($_POST['datphong'])) {
+                $id_user=$_SESSION['user']['id_user'];
+                $sokhach = $_POST['sokhach'];
+                $price= $room['price'];
+                $ngayden = $_POST['ngayden'];
+                $ngaytra = $_POST['ngaytra'];
+                $id_phong =$room['id_phong'];
+                // $ngayden = strtotime('ngayden');
+                // $ngaytra = strtotime('ngaytra');
+                // $price = $room['price'];
+                // $datediff = abs($ngayden - $ngaytra);
+                // $songay = floor($datediff / (60 * 60 * 24));
+                // $tongtien = $songay * $price;
+                insert_datphong($id_phong, $id_user, $sokhach, $ngayden, $ngaytra);
+                // header('Location: ../standbox/vnpay_php/index.php');
+            }
+            include 'room.php';
             break;
-        // case 'comfirm':
-        //     if (isset($_POST['thanhtoan']) && ($_POST['thanhtoan'])) {
-        //         $sokhach = $_POST['sokhach'];
-        //         $name_phong=$_POST['name_phong'];
-        //         $price=$_POST['price'];
-        //         $ngayden = strtotime('ngayden');
-        //         $ngaytra = strtotime('ngaytra');
-        //         $datediff = abs ($ngayden - $ngaytra);
-        //         $songay = floor($datediff / (60*60*24));
-        //         $tongtien = $songay * $price;
-        //         $ngayden = $_POST['ngayden'];
-        //         $ngaytra = $_POST['ngaytra'];
-        //         insert_datphong($id_phong, $id_user, $sokhach, $ngayden, $ngaytra);
-        //         $thongbao = "Đặt phòng thành công!";
-        //         // var_dump(insert_datphong($id_phong, $id_user, $sokhach, $ngayden, $ngaytra));
-        //     }
-        //     include "comfirm.php";
+        // case 'room':
+
+        //     include 'comfirm.php';
         //     break;
+            // case 'comfirm':
+            //     if (isset($_POST['thanhtoan']) && ($_POST['thanhtoan'])) {
+            //         $sokhach = $_POST['sokhach'];
+            //         $name_phong=$_POST['name_phong'];
+            //         $price=$_POST['price'];
+            //         $ngayden = strtotime('ngayden');
+            //         $ngaytra = strtotime('ngaytra');
+            //         $datediff = abs ($ngayden - $ngaytra);
+            //         $songay = floor($datediff / (60*60*24));
+            //         $tongtien = $songay * $price;
+            //         $ngayden = $_POST['ngayden'];
+            //         $ngaytra = $_POST['ngaytra'];
+            //         insert_datphong($id_phong, $id_user, $sokhach, $ngayden, $ngaytra);
+            //         $thongbao = "Đặt phòng thành công!";
+            //         // var_dump(insert_datphong($id_phong, $id_user, $sokhach, $ngayden, $ngaytra));
+            //     }
+            //     include "comfirm.php";
+            //     break;
         case 'tk':
             include "taikhoan/info.php";
             break;
@@ -126,7 +151,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $tel = $_POST['phone'];
                 $address = $_POST['add'];
                 // echo $user,$pass, $email,$tel,$address;
-                insert_taikhoan($user, $email, $pass, $tel, $address);
+                insert_taikhoan($user, $pass, $email, $tel, $address);
                 $thongbao = "Đã đăng kí thành công!.Vui lòng đăng nhập để thực hiện các chức năng";
             }
             include "./taikhoan/dangki.php";
@@ -140,7 +165,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             $tel = $_POST['tel'];
             // echo $id, $user, $password, $email, $address, $tel;
             $update = update_taikhoan($id, $user, $password, $email, $address, $tel);
+            $_SESSION['user'] = $update;
             include "home.php";
+
             break;
 
         case 'quenmk':
@@ -159,10 +186,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include "./taikhoan/quenmk.php";
             break;
         case 'thoat':
-            session_unset();
-            include "home.php";
-            break;
-        case 'home':
+            if (isset($_SESSION['user'])) {
+                unset($_SESSION['user']);
+            }
+
             include "home.php";
             break;
         default:

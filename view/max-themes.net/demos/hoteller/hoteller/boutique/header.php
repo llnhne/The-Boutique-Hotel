@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta name="format-detection" content="telephone=no" />
         <script src="https://cdn.tailwindcss.com"></script>
-
+        <script src="jquery-3.6.1.js"></script>
         <link rel="stylesheet" href="css/reset.css" type="text/css" media="all" />
         <link rel="stylesheet" href="css/wordpress.css" type="text/css" media="all" />
         <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
@@ -145,8 +145,7 @@
                                             >
                                                 <div class="elementor-column-wrap elementor-element-populated">
                                                     <div class="elementor-widget-wrap">
-                                                        <div
-                                                            class="elementor-element elementor-element-faeca36 elementor-widget__width-auto elementor-hidden-tablet elementor-hidden-phone elementor-widget elementor-widget-hoteller-navigation-menu"
+                                                        <div class="elementor-element elementor-element-faeca36 elementor-widget__width-auto elementor-hidden-tablet elementor-hidden-phone elementor-widget elementor-widget-hoteller-navigation-menu"
                                                             data-id="faeca36"
                                                             data-element_type="widget"
                                                             data-settings='{"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}'
@@ -196,7 +195,7 @@
                                                                                         <li class="header__navbar-user-item header__navbar-user-item--separate">
                                                                                             <a href="./taikhoan/dangnhap.php">ĐĂNG NHẬP</a>
                                                                                         </li>
-                                                                                    </ol>
+                                                                                        </ol>
                                                                                 </li>
                                                                            <?php } ?>
                                                                         </ul>
@@ -231,8 +230,7 @@
                     <div data-elementor-type="wp-post" data-elementor-id="194" class="elementor elementor-194" data-elementor-settings="[]">
                         <div class="elementor-inner">
                             <div class="elementor-section-wrap">
-                                <section
-                                    class="elementor-section elementor-top-section elementor-element elementor-element-0055d6c elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                <section class="elementor-section elementor-top-section elementor-element elementor-element-0055d6c elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                                     data-id="0055d6c"
                                     data-element_type="section"
                                     data-settings='{"background_background":"classic","hoteller_ext_is_background_parallax":"false","hoteller_ext_is_background_on_scroll":"false"}'
@@ -261,7 +259,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                    </div>
                                             </div>
                                             <div
                                                 class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-014f2cf"
@@ -312,7 +310,6 @@
                                                                                 <li class="header__navbar-item header__navbar-user">
                                                                                 
                                                                                     <i class="text-2xl text-black fa-solid fa-user"></i>
-                                                                                    
                                                                                     <ol class="header__navbar-user-menu">
                                                                                         <li class="header__navbar-user-item">
                                                                                             <a class="header__navbar-item-link" href="./taikhoan/dangki.php">ĐĂNG KÍ/        </a>
@@ -342,7 +339,7 @@
                                                                     <img width="68" height="50" src="upload/menu_icon.png" class="attachment-full size-full" alt="" loading="lazy" />
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                            </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -353,5 +350,3 @@
                         </div>
                     </div>
                 </div>
-
-                

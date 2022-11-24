@@ -85,7 +85,7 @@
                                                     </div>
                                                 </div>
                                             </section>
-<section
+                                            <section
                                                 class="elementor-section elementor-top-section elementor-element elementor-element-b10bbac elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                                                 data-id="b10bbac"
                                                 data-element_type="section"
@@ -111,7 +111,11 @@
                                                                         <div class="elementor-widget-container">
                                                                             <div class="availability_search_wrapper">
                                                                                 <div class="mphb_sc_search-wrapper">
+
+                                                                                    <form method="POST" class="mphb_sc_search-form" action="./index.php?act=home">
+
                                                                                     <form method="post" class="mphb_sc_search-form" action="index.php?act=timkiem">
+
                                                                                         <p class="mphb-required-fields-tip">
                                                                                             <small> Required fields are followed by <abbr title="required">*</abbr> </small>
                                                                                         </p>
@@ -123,7 +127,7 @@
                                                                                                 data-datepick-group="mphb-search-form-6061a36060295"
                                                                                                 value="date"
                                                                                                 placeholder="Check-in Date"
-                                                                                                required="required"
+                                                                                                
                                                                                                 type="date"
                                                                                                 name="ngaydat"
                                                                                                 class="mphb-datepick"
@@ -139,7 +143,7 @@
                                                                                                 data-datepick-group="mphb-search-form-6061a36060295"
                                                                                                 value="date"
                                                                                                 placeholder="Check-out Date"
-                                                                                                required="required"
+                                                                                               
                                                                                                 type="date"
                                                                                                 name="ngaytra"
                                                                                                 class="mphb-datepick"
@@ -168,11 +172,16 @@
                                                                                             </select>
                                                                                         </p>
 
+
+                                                                                        
+                                                                                        <p class="mphb_sc_search-submit-button-wrapper">
+                                                                                            <input type="submit" name="submit" value="Search" />
+
                                                                                         <input id="mphb_check_in_date-mphb-search-form-6061a36060295-hidden" value="" type="hidden" name="ngayden" />
                                                                                         <input id="mphb_check_out_date-mphb-search-form-6061a36060295-hidden" value="" type="hidden" name="ngaytra" />
                                                                                       
                                                                                         <p class="mphb_sc_search-submit-button-wrapper">
-                                                                                            <input type="submit" value="Search" name="search"/>
+                                                                                            <!-- <input type="submit" value="Search" name="search"/> -->
                                                                                         </p>
                                                                                     </form>
                                                                                 </div>
@@ -184,6 +193,36 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </section>
+
+                                            <section class="grid grid-cols-3 my-4 gap-2">
+                                                <?php if(isset($listpchuadat)) {?>
+                                                    <?php foreach($listpchuadat as $item) {?>
+                                                        
+                                                        <div class="shadow-lg p-2 ">
+                                                            <div>
+                                                                <img src="./upload/<?php echo $item['img']?>" alt="">
+                                                            </div>
+                                                            <div>
+                                                                <h2 class="font-serif text-2xl"><?php echo $item['name_phong']?></h2>
+                                                                <div class=" text-2xl flex">
+                                                                    <i class="font-serif text-4xl pt-4 fa-solid fa-dollar-sign"></i> 
+                                                                    <p class=""><?php echo $item['price']?></p>
+                                                                </div>
+                                                                <p class="font-serif text-2xl"><?php echo $item['mota']?></p>
+                                                                <div>
+                                                                    <a href="index.php?act=room&id=<?php echo $item['id_phong'] ?>">
+                                                                        <button class="bg-amber-600 text-white rounded border border-black border-solid p-2 hover:border-y-amber-700 hover:border-x-neutral-50 hover:bg-white shadow-lg hover:text-amber-600">Xem chi tiết</button>
+                                                                    </a>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    <?php } ?>
+                                                <?php } ?>
+
+
+                                                
                                             </section>
                                             <section
                                                 class="elementor-section elementor-top-section elementor-element elementor-element-f194cea elementor-section-boxed elementor-section-height-default elementor-section-height-default"
