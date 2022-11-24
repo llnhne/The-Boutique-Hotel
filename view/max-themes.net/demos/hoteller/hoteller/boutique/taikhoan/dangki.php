@@ -136,6 +136,7 @@ of Simple CSS Waves-->
         <br>
         <form action="../index.php?act=dangki" method="post">
             <div class="form1" style="text-align:center;">
+            <input type="hidden" name="id">
                 <div>
                   <label for="" class="text-lg" style="color: #fff;margin-left:-38%; ">Username</label><br>
                   <input type="text" name="username" class="bg-inherit" style="padding: 8px 0;width:50%;border-radius:10px;border:1px solid #FFCACA" required>

@@ -12,6 +12,12 @@
         $listdp=pdo_query($sql);
         return $listdp; 
     }
+    function loadall_datphong_timkiem($id_phong){
+        $sql= "select DISTINCT phong.id_phong,phong.name_phong,phong.img,phong.sokhach,phong.price,phong.id_loaiphong,datphong.tinhtrang from phong
+             ,datphong where phong.id_phong !=".$id_phong;
+        $listsearch=pdo_query($sql);
+        return $listsearch;
+    }
     function loadone_datphong($id){
         $sql="select * from datphong where id_order=".$id;
         $dp=pdo_query_one($sql);

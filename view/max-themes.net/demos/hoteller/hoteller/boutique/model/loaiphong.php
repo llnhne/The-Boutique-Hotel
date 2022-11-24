@@ -4,9 +4,8 @@
         pdo_execute($sql);
     }
     function delete_loaiphong($id){
-        $query="update phong set id_loaiphong = 1 where id_loaiphong=".$id;
-        pdo_execute($query);
-        $sql="delete from loaiphong where id_loaiphong=".$id;
+        $sql="update phong set id_loaiphong = 1 where id_loaiphong=".$id;
+        $sql.="delete from loaiphong where id_loaiphong=".$id;
         pdo_execute($sql);
     }
     function loadall_loaiphong_ourrooms(){   

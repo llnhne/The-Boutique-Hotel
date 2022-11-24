@@ -47,21 +47,6 @@
                                     </tr>';
                     }
                     ?>
-                    <?php
-                    foreach ($listp as $phong) {
-                        extract($phong);
-                        echo '<tr>      
-                                        <td>' . $id_loaiphong . '</td>
-                                        <td>P' . $id_phong . '</td>
-                                        <td>' . $name_phong . '</td>
-                                        <td>' . $img . '</td>
-                                        <td>' . $price . 'vnd/1 đêm</td>
-                                        <td>-' . $price_sale . 'vnd</td>
-                                        <td>' . $sokhach . 'người</td>
-                                        <td></td>
-                                    </tr>';
-                    }
-                    ?>
                 </table>
             </div>
         </form>

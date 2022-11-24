@@ -1,30 +1,28 @@
 <?php
-    session_start();
-    include '../model/pdo.php';
-    include '../model/taikhoan.php';
+session_start();
+include '../model/pdo.php';
+include '../model/taikhoan.php';
+if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
+                $user = $_POST['username'];
+                $pass = $_POST['password'];
+                // echo $user, $pass;
+                $checkuser = checkUser($user, $pass);
+                // echo "<pre>";
+                // var_dump($checkuser);
+                if (is_array($checkuser)) {
+                    $_SESSION['user'] = $checkuser;
 
-    if(isset($_POST['dangnhap']) && ($_POST['dangnhap'])){
-      $user = $_POST['username'];
-      $pass = $_POST['password'];
-      // echo $user, $pass;
-      $checkuser = checkUser($user, $pass);
-      // echo "<pre>";
-      // var_dump($checkuser);
-      if(is_array($checkuser)){
-          $_SESSION['user'] = $checkuser;
-          
-          if($checkuser['role'] == 1){
-              header("location:/admin/index.php");
-          }else{
-              header("location:/view/max-themes.net/demos/hoteller/hoteller/boutique/index.php");
-              $thongbao = "Đã đăng nhập thành công!";
-            
-          }
-      }else{
-          $thongbao = "Tài khoản không tồn tại. Vui lòng kiểm tra đăng ký";
-      }
-  }
-?>
+                    if ($checkuser['role'] == 1) {
+                        header("location:admin/index.php");
+                    } else {
+                        header("location:../index.php");
+                        $thongbao = "Đã đăng nhập thành công!";
+                    }
+                } else {
+                    $thongbao = "Tài khoản không tồn tại. Vui lòng kiểm tra đăng ký";
+                }
+            }
+            ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,6 +1,6 @@
 <?php
-    function insert_hotro($id,$name_user,$tel,$ghichu){
-        $sql="INSERT INTO hotro (id_hotro,name_user,tel, ghichu) values('$id','$name_user','$tel','$ghichu')";
+    function insert_hotro($name_user,$tel,$ghichu){
+        $sql = "INSERT INTO hotro(name_user,tel,ghichu) values ('$name_user','$tel','$ghichu')";
         pdo_execute($sql);
     }
     function loadall_hotro($id){

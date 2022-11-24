@@ -1,6 +1,6 @@
 <?php
-    function insert_datphong($id,$maphong,$makhachhang,$sokhach,$ngayden,$ngaytra,$tinhtrang){
-        $sql = "INSERT INTO datphong(id_order,id_phong,id_user,sokhach,ngaydat,ngaytra,tinhtrang) values ('$id','$maphong','$makhachhang','$sokhach','$ngayden','$ngaytra','$tinhtrang')";
+    function insert_datphong($id_user,$sokhach,$ngayden,$ngaytra){
+        $sql = "INSERT INTO datphong(id_user,sokhach,ngaydat,ngaytra) values ('$id_user','$sokhach','$ngayden','$ngaytra',)";
         pdo_execute($sql);
     }
     function delete_datphong($id){
@@ -11,6 +11,12 @@
         $sql="SELECT * FROM datphong order by id_order desc";
         $listdp=pdo_query($sql);
         return $listdp; 
+    }
+    function loadall_datphong_timkiem(){
+        $sql= "select phong.id_phong,phong.name_phong,phong.img,phong.sokhach,phong.price,phong.id_loaiphong from phong
+             ,datphong where datphong.id_phong !=phong.id_phong";
+        $listsearch=pdo_query($sql);
+        return $listsearch;
     }
     function loadone_datphong($id){
         $sql="select * from datphong where id_order=".$id;

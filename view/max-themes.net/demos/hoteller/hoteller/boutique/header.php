@@ -130,7 +130,7 @@
                                                         >
                                                             <div class="elementor-widget-container">
                                                                 <div class="elementor-image">
-                                                                    <a href="index.html"> <img src="upload/logo_white.png" title="" alt="" /> </a>
+                                                                    <a href="index.php"> <img src="upload/logo_white.png" title="" alt="" /> </a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -173,12 +173,12 @@
                                                                                     </a>
                                                                                     <ol class="header__navbar-user-menu">
                                                                                         <li class="header__navbar-user-item">
-                                                                                            <a class="header__navbar-item-link" href="./taikhoan/info.php">Tài khoản của tôi</a>
+                                                                                            <a class="header__navbar-item-link" href="./taikhoan/info.php">TÀI KHOẢN CỦA TÔI/</a>
                                                                                         </li>
 
                                                                                     
                                                                                         <li class="header__navbar-user-item header__navbar-user-item--separate">
-                                                                                            <a href="./index.php?act=thoat">Đăng xuất</a>
+                                                                                            <a href="./index.php?act=thoat">ĐĂNG XUẤT</a>
                                                                                         </li>
                                                                                     </ol>
                                                                                 </li>
@@ -189,12 +189,12 @@
                                                                                     
                                                                                     <ol class="header__navbar-user-menu">
                                                                                         <li class="header__navbar-user-item">
-                                                                                            <a class="header__navbar-item-link" href="./taikhoan/dangki.php">Đăng kí        </a>
+                                                                                            <a class="header__navbar-item-link" href="./taikhoan/dangki.php">ĐĂNG KÍ       </a>
                                                                                         </li>
     
                                                                                        
                                                                                         <li class="header__navbar-user-item header__navbar-user-item--separate">
-                                                                                            <a href="./taikhoan/dangnhap.php">Đăng nhập</a>
+                                                                                            <a href="./taikhoan/dangnhap.php">ĐĂNG NHẬP</a>
                                                                                         </li>
                                                                                     </ol>
                                                                                 </li>
@@ -256,7 +256,7 @@
                                                         >
                                                             <div class="elementor-widget-container">
                                                                 <div class="elementor-image">
-                                                                    <a href="index.html"> <img src="upload/logo_black.png" title="" alt="" /> </a>
+                                                                    <a href="index.php"> <img src="upload/logo_black.png" title="" alt="" /> </a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -299,12 +299,12 @@
                                                                                     </a>
                                                                                     <ol class="header__navbar-user-menu">
                                                                                         <li class="header__navbar-user-item">
-                                                                                            <a class="header__navbar-item-link" href="./taikhoan/info.php">Tài khoản của tôi</a>
+                                                                                            <a class="header__navbar-item-link" href="./taikhoan/info.php">TÀI KHOẢN CỦA TÔI/</a>
                                                                                         </li>
 
                                                                                     
                                                                                         <li class="header__navbar-user-item header__navbar-user-item--separate">
-                                                                                            <a href="./index.php?act=thoat">Đăng xuất</a>
+                                                                                            <a href="./index.php?act=thoat">ĐĂNG XUẤT</a>
                                                                                         </li>
                                                                                     </ol>
                                                                                 </li>
@@ -315,12 +315,12 @@
                                                                                     
                                                                                     <ol class="header__navbar-user-menu">
                                                                                         <li class="header__navbar-user-item">
-                                                                                            <a class="header__navbar-item-link" href="./taikhoan/dangki.php">Đăng kí        </a>
+                                                                                            <a class="header__navbar-item-link" href="./taikhoan/dangki.php">ĐĂNG KÍ/        </a>
                                                                                         </li>
     
                                                                                        
                                                                                         <li class="header__navbar-user-item header__navbar-user-item--separate">
-                                                                                            <a href="./taikhoan/dangnhap.php">Đăng nhập</a>
+                                                                                            <a href="./taikhoan/dangnhap.php">ĐĂNG NHẬP</a>
                                                                                         </li>
                                                                                     </ol>
                                                                                 </li>

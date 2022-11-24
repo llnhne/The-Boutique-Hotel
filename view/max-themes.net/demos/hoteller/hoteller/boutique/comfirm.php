@@ -324,35 +324,13 @@
                                                 <div class="elementor-widget-wrap">
                                                     <div class="elementor-element elementor-element-38bc8d29 elementor-invisible elementor-widget elementor-widget-heading" data-id="38bc8d29" data-element_type="widget" data-settings='{"_animation":"fadeInUp","hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
-                                                            <h2 class="elementor-heading-title elementor-size-default">Ready to book?</h2><br><br>
+                                                            <h2 class="elementor-heading-title elementor-size-default">Ready to book?</h2>
                                                         </div>
                                                     </div>
-                                                    <div class="elementor-element elementor-element-323c9db6 elementor-invisible elementor-widget elementor-widget-heading" data-id="323c9db6" data-element_type="widget" data-settings='{"_animation":"fadeInUp","_animation_delay":200,"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">  
-                                                    <form method="post" action="" class="mphb-booking-form" id="booking-form-96">
-                                                            <?php
-                                                            if (isset($_SESSION['user'])) {
-                                                                $id_user = $_SESSION['user']['id_user'];
-                                                                $username = $_SESSION['user']['username'];
-                                                                $address = $_SESSION['user']['address'];
-                                                                $email = $_SESSION['user']['email'];
-                                                                $tel = $_SESSION['user']['tel'];
-                                                            } else {
-                                                                $id_user = "";
-                                                                $username = "";
-                                                                $address = "";
-                                                                $email = "";
-                                                                $tel = "";
-                                                            }
-                                                            ?>
-                                                            <input type="hidden" name="id_user" value="<?= $id_user ?>">
-                                                            <label for="">Tên Khách Hàng:</label><br>
-                                                            <input type="text" name="username" value="<?= $username ?>"><br><br>
-                                                            <label for="">Số Điện Thoại:</label><br>
-                                                            <input type="text" name="tel" value="<?= $tel ?>"><br><br>
-                                                            <label for="">Tên Phòng:</label><br>
-                                                            <input type="text" name="name_phong" value="<?php echo $room['name_phong'] ?>" disabled /><br><br>
-                                                            <label for="">Giá Phòng:</label><br>
-                                                            <input type="text" name="price" value="<?php echo $room['price'] ?>$/1 night" disabled><br><br>
+                                                    <div class="elementor-element elementor-element-323c9db6 elementor-invisible elementor-widget elementor-widget-heading" data-id="323c9db6" data-element_type="widget" data-settings='{"_animation":"fadeInUp","_animation_delay":200,"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
+                                                        <div class="elementor-widget-container">
+                                                            <h2 class="elementor-heading-title elementor-size-default">When would you like to stay?</h2>
+                                                        </div>
                                                     </div>
                                                     <div class="elementor-element elementor-element-41ea943d elementor-invisible elementor-widget elementor-widget-shortcode" data-id="41ea943d" data-element_type="widget" data-settings='{"_animation":"fadeIn","_animation_delay":400,"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="shortcode.default">
                                                         <div class="elementor-widget-container">
@@ -378,65 +356,48 @@
                                                         <div class="elementor-widget-container">
                                                             <div class="elementor-shortcode">
                                                                 <div class="mphb_sc_booking_form-wrapper">
-                                                                    <span class="thongbao" style="color:red;">
-                                                                    <?php
-                                                                    if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
-                                                                    var_dump($_POST);
-                                                                    ?>
-                                                                    </span>
-                                                                    <?php
-                                                                    if (isset($_SESSION['user'])) {
-                                                                        extract($_SESSION['user']);
-                                                                    ?>
+
+                                                                    <form method="post" action="index.php?act=comfirm" class="mphb-booking-form" id="booking-form-96">
+
+                                                                        <input type="text">
                                                                         <p class="mphb-required-fields-tip">
                                                                             <small>Required fields are followed by <abbr title="required">*</abbr></small>
                                                                         </p>
-                                                                        <p class="mphb-check-in-date-wrapper">
-                                                                            <label for="mphb_check_in_date-6061a3921343a"> Check-in Date <abbr title="Formatted as dd/mm/yyyy">*</abbr> </label>
-                                                                            <br />
-                                                                            <input id="mphb_check_in_date-6061a3921343a" type="date" class="mphb-datepick" name="ngayden" value="" required="required" autocomplete="off" placeholder="Check-in Date" />
-                                                                            
-                                                                        </p>
-
-                                                                        <p class="mphb-check-out-date-wrapper">
-                                                                            <label for="mphb_check_out_date-6061a3921343a"> Check-out Date <abbr title="Formatted as dd/mm/yyyy">*</abbr> </label>
-                                                                            <br />
-                                                                            <input id="mphb_check_out_date-6061a3921343a" type="date" class="mphb-datepick" name="ngaytra" value="" required="required" autocomplete="off" placeholder="Check-out Date" />
-                                                                            
-                                                                        </p>
-
-                                                                        <p class="mphb-adults-wrapper mphb-capacity-wrapper">
-                                                                            <label for="mphb_adults-6061a3921343a"> Adults </label>
-                                                                            <br />
-                                                                            <select id="mphb_adults-6061a3921343a" name="sokhach">
-                                                                                <option value="1">1</option>
-                                                                                <option value="2">2</option>
-                                                                                <option value="3">3</option>
-
-                                                                            </select>
-                                                                        </p>
-                                                                        <p class="mphb-children-wrapper mphb-capacity-wrapper">
-                                                                            <label for="mphb_children-6061a3921343a"> Children </label>
-                                                                            <br />
-                                                                            <select id="mphb_children-6061a3921343a" name="mphb_children">
-                                                                                <option value="0">0</option>
-                                                                                <option value="1">1</option>
-                                                                                <option value="2">2</option>
-                                                                            </select>
-                                                                        </p>
+                                                                        <?php
+                                                                        if (isset($_SESSION['user'])) {
+                                                                            $id_user = $_SESSION['user']['id_user'];
+                                                                            $username = $_SESSION['user']['username'];
+                                                                            $address = $_SESSION['user']['address'];
+                                                                            $email = $_SESSION['user']['email'];
+                                                                            $tel = $_SESSION['user']['tel'];
+                                                                        } else {
+                                                                            $id_user="";
+                                                                            $username = "";
+                                                                            $address = "";
+                                                                            $email = "";
+                                                                            $tel = "";
+                                                                        }
+                                                                        ?>
+                                                                        <input type="hidden" name="id_user" value="<?=$id_user?>">
+                                                                        <label for="">Tên Khách Hàng:</label><br>
+                                                                        <input type="text" name="username" value="<?= $username ?>">
+                                                                        <label for="">Số Điện Thoại:</label><br>
+                                                                        <input type="text" name="tel" value="<?= $tel ?>">
+                                                                        <label for="">Tên Phòng:</label>
+                                                                        <input type="text" name="name_phong" value="<?php echo $room['name_phong'] ?>" disabled />
+                                                                        <label for="">Giá Phòng:</label>
+                                                                        <input type="text" name="price" value="<?php echo $room['price'] ?>$/1 night" disabled>
+                                                                        <label for="">Ngày Đến:</label>
+                                                                        <input type="text" name="ngayden" value="<??>">
+                                                                        <label for="">Ngày Trả:</label>
+                                                                        <input type="text" name="ngaytra" value="<??>">
+                                                                        <label for="">Tổng Tiền:</label>
+                                                                        <input type="text" name="tongtien" value="">
                                                                         <p class="mphb-reserve-btn-wrapper">
-                                                                            <input class="mphb-reserve-btn button" type="submit" name="datphong" value="Đặt Phòng" />
+                                                                            <input class="mphb-reserve-btn button" type="submit" type="" value="Thanh Toán" name="thanhtoan" />
                                                                             <span class="mphb-preloader mphb-hide"></span>
                                                                         </p>
-                                                                        <div class="mphb-errors-wrapper mphb-hide"></div>
-                                                                        </form>
-                                                                    <?php
-                                                                    } else {
-                                                                    ?>
-                                                                        <div>
-                                                                            <button style="background-color:#06283D;margin-left:8px;border:1px solid #DFF6FF;border-radius:5px;"><a style="padding: 10px 20px;color:#DFF6FF;text-decoration:none;" href="taikhoan/dangnhap.php">Đăng Nhập Để Đặt Phòng</a> </button>
-                                                                        </div>
-                                                                    <?php } ?>
+                                                                    </form>
                                                                 </div>
                                                             </div>
                                                         </div>

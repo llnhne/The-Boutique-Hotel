@@ -111,7 +111,7 @@
                                                                         <div class="elementor-widget-container">
                                                                             <div class="availability_search_wrapper">
                                                                                 <div class="mphb_sc_search-wrapper">
-                                                                                    <form method="POST" class="mphb_sc_search-form" action="">
+                                                                                    <form method="post" class="mphb_sc_search-form" action="index.php?act=timkiem">
                                                                                         <p class="mphb-required-fields-tip">
                                                                                             <small> Required fields are followed by <abbr title="required">*</abbr> </small>
                                                                                         </p>
@@ -125,7 +125,7 @@
                                                                                                 placeholder="Check-in Date"
                                                                                                 required="required"
                                                                                                 type="date"
-                                                                                                name="mphb_check_in_date"
+                                                                                                name="ngaydat"
                                                                                                 class="mphb-datepick"
                                                                                                 autocomplete="off"
                                                                                             />
@@ -141,7 +141,7 @@
                                                                                                 placeholder="Check-out Date"
                                                                                                 required="required"
                                                                                                 type="date"
-                                                                                                name="mphb_check_out_date"
+                                                                                                name="ngaytra"
                                                                                                 class="mphb-datepick"
                                                                                                 autocomplete="off"
                                                                                             />
@@ -150,62 +150,29 @@
                                                                                         <p class="mphb_sc_search-adults">
                                                                                             <label for="mphb_adults-mphb-search-form-6061a36060295"> Adults </label>
                                                                                             <br />
-                                                                                            <select id="mphb_adults-mphb-search-form-6061a36060295" name="mphb_adults">
+                                                                                            <select id="mphb_adults-mphb-search-form-6061a36060295" name="sokhach">
                                                                                                 <option value="1" selected="selected">1</option>
                                                                                                 <option value="2">2</option>
                                                                                                 <option value="3">3</option>
-                                                                                                <option value="4">4</option>
-                                                                                                <option value="5">5</option>
-                                                                                                <option value="6">6</option>
-                                                                                                <option value="7">7</option>
-                                                                                                <option value="8">8</option>
-                                                                                                <option value="9">9</option>
-                                                                                                <option value="10">10</option>
-                                                                                                <option value="11">11</option>
-                                                                                                <option value="12">12</option>
-                                                                                                <option value="13">13</option>
-                                                                                                <option value="14">14</option>
-                                                                                                <option value="15">15</option>
-                                                                                                <option value="16">16</option>
-                                                                                                <option value="17">17</option>
-                                                                                                <option value="18">18</option>
-                                                                                                <option value="19">19</option>
-                                                                                                <option value="20">20</option>
-                                                                                                <option value="21">21</option>
-                                                                                                <option value="22">22</option>
-                                                                                                <option value="23">23</option>
-                                                                                                <option value="24">24</option>
-                                                                                                <option value="25">25</option>
-                                                                                                <option value="26">26</option>
-                                                                                                <option value="27">27</option>
-                                                                                                <option value="28">28</option>
-                                                                                                <option value="29">29</option>
-                                                                                                <option value="30">30</option>
                                                                                             </select>
                                                                                         </p>
 
                                                                                         <p class="mphb_sc_search-children">
                                                                                             <label for="mphb_children-mphb-search-form-6061a36060295"> Children </label>
                                                                                             <br />
-                                                                                            <select id="mphb_children-mphb-search-form-6061a36060295" name="mphb_children">
+                                                                                            <select id="mphb_children-mphb-search-form-6061a36060295" name="sokhach">
                                                                                                 <option value="0" selected="selected">0</option>
                                                                                                 <option value="1">1</option>
                                                                                                 <option value="2">2</option>
                                                                                                 <option value="3">3</option>
-                                                                                                <option value="4">4</option>
-                                                                                                <option value="5">5</option>
-                                                                                                <option value="6">6</option>
-                                                                                                <option value="7">7</option>
-                                                                                                <option value="8">8</option>
-                                                                                                <option value="9">9</option>
-                                                                                                <option value="10">10</option>
                                                                                             </select>
                                                                                         </p>
 
-                                                                                        <input id="mphb_check_in_date-mphb-search-form-6061a36060295-hidden" value="" type="hidden" name="mphb_check_in_date" />
-                                                                                        <input id="mphb_check_out_date-mphb-search-form-6061a36060295-hidden" value="" type="hidden" name="mphb_check_out_date" />
+                                                                                        <input id="mphb_check_in_date-mphb-search-form-6061a36060295-hidden" value="" type="hidden" name="ngayden" />
+                                                                                        <input id="mphb_check_out_date-mphb-search-form-6061a36060295-hidden" value="" type="hidden" name="ngaytra" />
+                                                                                      
                                                                                         <p class="mphb_sc_search-submit-button-wrapper">
-                                                                                            <input type="submit" value="Search" />
+                                                                                            <input type="submit" value="Search" name="search"/>
                                                                                         </p>
                                                                                     </form>
                                                                                 </div>

@@ -8,7 +8,7 @@ ob_start();
     include "../model/phong.php";
     include "../model/datphong.php";
     include "../model/binhluan.php";
-    include "../model/giophong.php";
+    include "../model/thongke.php";
     include "../model/hoadon.php";
     include "../model/taikhoan.php";
     include "../model/hotro.php";
@@ -149,67 +149,7 @@ ob_start();
                 include "phong/list.php";
                 break;
             case 'searchp':
-                if (isset($_POST['check']) && ($_POST['check'])) {
-                    $ngayden = $_POST['ngayden'];
-                    $ngaytra = $_POST['ngaytra'];
-                    if (isset($_POST['ngayden']) && ($_POST['ngaytra'])) {
-                    // foreach ($listp as $phong) {
-                    //     extract($phong);
-                    //     if (($_POST['ngayden'] === $ngayden) || ($_POST['ngaytra'] === $ngaytra) || ($_POST['ngayden'] === $ngayden) || ($_POST['ngaytra'] <= $ngaytra ) || ($_POST['ngayden'] <= $ngayden) || ($_POST['ngaytra'] <= $ngaytra) ) {
-                    //         $sql = "update phong set trangthai='Hết' where id_phong=" . $id_phong;
-                    //         pdo_query($sql);
-                    //     if (($_POST['ngayden'] === $ngayden) || ($_POST['ngaytra'] <= $ngaytra) || ($_POST['ngayden'] <= $ngayden) || ($_POST['ngaytra'] === $ngaytra) || ($_POST['ngayden'] >= $ngayden) || ($_POST['ngaytra'] <= $ngaytra))
-                    //         $sql = "update phong set trangthai='Trống' where id_phong=" . $id_phong;
-                    //         pdo_query($sql);
-                                
-                    //     } else {
-                    //         $thongbao = 'Tìm kiếm không hợp lệ';
-                    //     }
-                        // if (($_POST['ngayden'] === $ngayden) || ($_POST['ngaytra'] === $ngaytra)) {
-
-                        //     $trangthai = "update phong set trangthai='Trống' where id_phong=" . $id_phong;
-                        //     // pdo_query($trangthai);
-                        //     if (($_POST['ngayden'] === $ngayden) || ($_POST['ngaytra'] <= $ngaytra))
-
-                        //         $listp = loadall_phong();
-                                
-                        //         $trangthai = "update phong set trangthai='Trống' where id_phong=" . $id_phong;
-                            
-                        //         // pdo_query($trangthai);
-
-                        //     if (($_POST['ngayden'] <= $ngayden) || ($_POST['ngaytra'] <= $ngaytra))
-                        //         $trangthai = "update phong set trangthai='Trống' where id_phong=" . $id_phong;
-                        //         // pdo_query($trangthai);
-                        //         $listp = loadall_phong();
-
-                        //     if (($_POST['ngayden'] === $ngayden) || ($_POST['ngaytra'] <= $ngaytra))
-                        //         $trangthai = "update phong set trangthai='Trống' where id_phong=" . $id_phong;
-                        //         // pdo_query($trangthai);
-                        //         $listp = loadall_phong();
-
-                        //     if (($_POST['ngayden'] <= $ngayden) || ($_POST['ngaytra'] === $ngaytra))
-                        //         $trangthai = "update phong set trangthai='Trống' where id_phong=" . $id_phong;
-                        //         // pdo_query($trangthai);
-                        //         $listp = loadall_phong();
-
-                        //     if (($_POST['ngayden'] >= $ngayden) || ($_POST['ngaytra'] <= $ngaytra))
-                        //         $trangthai = "update phong set trangthai='Trống' where id_phong=" . $id_phong;
-                        //         // pdo_query($trangthai);
-                        //         $listp = loadall_phong();
-
-                        // } else {
-                        //     $thongbao = 'Tìm kiếm không hợp lệ';
-                        // }
-                        $listp = loadall_phong();
-                    }
-                }
-            // }
-                echo "<pre>";
-                var_dump(loadall_phong_timkiem());
-                // $listp = loadall_phong();
-                $listsearch = loadall_phong_timkiem();
-                include "timkiemphong/list.php";
-                break;
+               
             case 'listdp':
                 $listdp = loadall_datphong("");
                 include "datphong/list.php";
