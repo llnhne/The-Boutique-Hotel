@@ -92,6 +92,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     $songay = floor($datediff / (60 * 60 * 24));
                     $tongtien = $songay * ($price * 23000);
                     $format_tongtien = number_format($tongtien);
+                    $date = date('m/d/Y h:i:s a', time());
                     insert_datphong($id_phong, $id_user, $sokhach, $ngayden, $ngaytra);
                     $thongbao = "Vui lòng thanh toán trong 24h để đặt phòng!";
                     

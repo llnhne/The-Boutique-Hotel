@@ -318,8 +318,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="elementor-element elementor-element-323c9db6 elementor-invisible elementor-widget elementor-widget-heading" data-id="323c9db6" data-element_type="widget" data-settings='{"_animation":"fadeInUp","_animation_delay":200,"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
-                                                        
-                                                    <form method="post" action="./index.php?act=room&id=<?php echo $id ?>" class="mphb-booking-form" id="booking-form-96">
+
+                                                        <form method="post" action="./index.php?act=room&id=<?php echo $id ?>" class="mphb-booking-form" id="booking-form-96">
                                                             <?php
                                                             if (isset($_SESSION['user'])) {
                                                                 $id_user = $_SESSION['user']['id_user'];
@@ -383,18 +383,26 @@
                                                         <div class="elementor-widget-container">
                                                             <div class="elementor-shortcode">
                                                                 <div class="mphb_sc_booking_form-wrapper">
-                                                                    <span class="thongbao" style="color:red;">
+                                                                    <span class="thongbao" style="color:red;font-weight:bold;">
                                                                         <?php
                                                                         if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
+                                                                        ?>
+                                                                    </span>
+                                                                    <span class="thongbao" style="color:#A9A9A9;">
+                                                                        <?php
+                                                                        if (isset($datecount) && ($datecount != "")) echo $datecount;
                                                                         ?>
                                                                         <?php
                                                                         if (isset($err) && ($err != "")) echo $err;
                                                                         ?>
                                                                         <?php
-                                                                        if (isset($songay) && ($songay != "")) echo '<h3>Total days: </h3>' . $songay;
+                                                                        if (isset($songay) && ($songay != "")) echo '<h3 style="font-weight:500;">Total days: </h3>' . $songay;
                                                                         ?>
-                                                                         <?php
-                                                                        if (isset($tongtien) && ($tongtien != "")) echo '<h3>The total amount: </h3>' . $format_tongtien;
+                                                                        <?php
+                                                                        if (isset($tongtien) && ($tongtien != "")) echo '<h3 style="font-weight:500;">The total amount: </h3>' . $format_tongtien;
+                                                                        ?>
+                                                                        <?php
+                                                                        if (isset($date) && ($date != "")) echo '<h3 style="font-weight:500;">Thời gian đặt phòng: </h3>' .$date;
                                                                         ?>
                                                                     </span>
                                                                     <?php
@@ -445,10 +453,10 @@
                                                                         <div class="mphb-errors-wrapper mphb-hide"></div>
                                                                         </form>
                                                                         <form action="index.php?act=thanhtoan" method="post">
-                                                                        <p class="mphb-reserve-btn-wrapper">
-                                                                            <input class="mphb-reserve-btn button" type="submit" name="thanhtoan" id="thanhtoan" value="--Thanh Toán Qua VNPAY---" />
-                                                                            
-                                                                        </p>
+                                                                            <p class="mphb-reserve-btn-wrapper">
+                                                                                <input class="mphb-reserve-btn button" type="submit" name="thanhtoan" id="thanhtoan" value="--Thanh Toán Qua VNPAY---" />
+
+                                                                            </p>
                                                                         </form>
                                                                     <?php
                                                                     } else {
