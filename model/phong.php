@@ -58,4 +58,3 @@
         }
         pdo_execute($sql);
     }
-?>

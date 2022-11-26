@@ -151,9 +151,11 @@ ob_start();
             case 'searchp':
                
             case 'listdp':
-                $listdp = loadall_datphong("");
+                $listdp = loadall_datphong();
+                update_tinhtrang();
                 include "datphong/list.php";
                 break;
+    
             case 'suadp':
                 if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                     $dp = loadone_datphong($_GET['id']);

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="format-detection" content="telephone=no" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="jquery-3.6.1.js"></script>
+
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="all" />
     <link rel="stylesheet" href="css/wordpress.css" type="text/css" media="all" />
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
@@ -19,6 +19,15 @@
     <link rel="stylesheet" href="css/themify-icons.css" type="text/css" media="all" />
     <link rel="stylesheet" href="css/tooltipster.css" type="text/css" media="all" />
     <link rel="stylesheet" href="css/demo.css" type="text/css" media="all" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="js/plugins/loftloader/assets/css/loftloader.minc3cd.css?ver=2020081301" type="text/css" media="all" />
     <link rel="stylesheet" href="js/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css" type="text/css" media="all" />
@@ -85,12 +94,10 @@
         <div class="mobile_menu_wrapper">
             <div class="mobile_menu_content">
                 <div class="menu-main-menu-container">
-                    <ul id="nav_menu37" class="nav">
-                        <li class="menu-item"><a href="index.php?act=ourrooms">Our Rooms</a></li>
+                    <ul id="mobile_main_menu" class="mobile_main_nav">
                         <li class="header__navbar-item header__navbar-user">
                             <a href="index.php?act=ourrooms">
                                 Our Rooms
-
                             </a>
                             <ol class="header__navbar-user-menu">
                                 <?php
@@ -99,10 +106,11 @@
                                     extract($loaiphong);
                                     $linklp = "index.php?act=ourrooms&idlp=" . $id_loaiphong;
                                     echo '
-                                        <li class="header__navbar-user-item">
-                                            <a href="' . $linklp . '">' . $name_loaiphong . '</a>
-                                        </li>                                          
-                                    ';
+                                                <li class="header__navbar-user-item">
+                                                    <a class="text-xl" href="' . $linklp . '">' . $name_loaiphong . '</a>
+                                                </li>
+                                                                                        
+                                        ';
                                 } ?>
                             </ol>
 
@@ -146,7 +154,26 @@
                                                             <div class="tg_navigation_wrapper menu_style1">
                                                                 <div class="menu-main-menu-container">
                                                                     <ul id="nav_menu37" class="nav">
-                                                                        <li class="menu-item"><a href="index.php?act=ourrooms">Our Rooms</a></li>
+                                                                        <li class="header__navbar-item header__navbar-user">
+                                                                            <a href="index.php?act=ourrooms">
+                                                                                Our Rooms
+
+                                                                            </a>
+                                                                            <ol class="header__navbar-user-menu">
+                                                                                <?php
+                                                                                $listlp = loadall_loaiphong_ourrooms();
+                                                                                foreach ($listlp as $loaiphong) {
+                                                                                    extract($loaiphong);
+                                                                                    $linklp = "index.php?act=ourrooms&idlp=" . $id_loaiphong;
+                                                                                    echo '
+                                                                                            <li class="header__navbar-user-item">
+                                                                                                <a class="text-xl" href="' . $linklp . '">' . $name_loaiphong . '</a>
+                                                                                            </li>
+                                                                                        
+                                                                                    ';
+                                                                                } ?>
+                                                                            </ol>
+                                                                        </li>
                                                                         <li class="menu-item"><a href="index.php?act=dining">Dining</a></li>
                                                                         <li class="menu-item"><a href="index.php?act=about">About The Hotel</a></li>
                                                                         <li class="menu-item"><a href="index.php?act=contact">Contact</a></li>
@@ -156,7 +183,7 @@
                                                                                 <a href="">
                                                                                     <div class="flex">
                                                                                         <div class="w-9 rounded-full border border-white overflow-hidden">
-                                                                                            <img class="w-full" src="/upload/132083046_3702406189839103_501186624219407700_n.jpg" alt="">
+                                                                                            <img class="w-full" src="./upload/101048866-768x576.jpg" alt="">
                                                                                         </div>
                                                                                         <span class="text-white text-base mt-2 ml-2"><?php echo $_SESSION['user']['username'] ?></span>
                                                                                     </div>
@@ -239,7 +266,26 @@
                                                             <div class="tg_navigation_wrapper menu_style1">
                                                                 <div class="menu-main-menu-container">
                                                                     <ul id="nav_menu38" class="nav">
-                                                                        <li class="menu-item"><a href="index.php?act=ourrooms">Our Rooms</a></li>
+                                                                        <li class="header__navbar-item header__navbar-user">
+                                                                            <a href="index.php?act=ourrooms">
+                                                                                Our Rooms
+                                                                            </a>
+                                                                            <ol class="header__navbar-user-menu">
+                                                                                <?php
+                                                                                $listlp = loadall_loaiphong_ourrooms();
+                                                                                foreach ($listlp as $loaiphong) {
+                                                                                    extract($loaiphong);
+                                                                                    $linklp = "index.php?act=ourrooms&idlp=" . $id_loaiphong;
+                                                                                    echo '
+                                                                                            <li class="header__navbar-user-item">
+                                                                                                <a class="text-xl" href="' . $linklp . '">' . $name_loaiphong . '</a>
+                                                                                            </li>
+                                                                                        
+                                                                                    ';
+                                                                                } ?>
+                                                                            </ol>
+
+                                                                        </li>
                                                                         <li class="menu-item"><a href="index.php?act=dining">Dining</a></li>
                                                                         <li class="menu-item"><a href="index.php?act=about">About The Hotel</a></li>
                                                                         <li class="menu-item"><a href="index.php?act=contact">Contact</a></li>
@@ -269,12 +315,11 @@
                                                                             <li class="header__navbar-item header__navbar-user">
 
                                                                                 <i class="text-2xl text-black fa-solid fa-user"></i>
+
                                                                                 <ol class="header__navbar-user-menu">
                                                                                     <li class="header__navbar-user-item">
                                                                                         <a class="header__navbar-item-link" href="./taikhoan/dangki.php">ĐĂNG KÍ/ </a>
                                                                                     </li>
-
-
                                                                                     <li class="header__navbar-user-item header__navbar-user-item--separate">
                                                                                         <a href="./taikhoan/dangnhap.php">ĐĂNG NHẬP</a>
                                                                                     </li>

@@ -43,4 +43,24 @@
         }
         return $listp;
     }
+    function update_tinhtrang(){
+        $sql="SELECT * FROM datphong";
+        $listdp=pdo_query($sql);
+        $date = getdate();
+        $ngaykt = $date['year']."-". $date['mon']."-".$date['mday'];
+            
+        foreach($listdp as $item){
+            $idorder = $item['id_order'];
+            
+            if($ngaykt === $item['ngayden'] || $ngaykt === $item['ngaytra']){
+                    // nếu true thì cập nhật lại tình trạng ở bảng phòng
+                $updateroom = "update datphong set tinhtrang = 1 where id_order = $idorder";
+                pdo_execute($updateroom);
+            }else {
+                    // nếu true thì cập nhật lại tình trạng ở bảng phòng
+                $updateroom = "update datphong set tinhtrang = 0 where id_order = $idorder";
+                pdo_execute($updateroom);
+            }
+        }
+    }
 ?>
