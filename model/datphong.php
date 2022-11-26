@@ -1,6 +1,7 @@
 <?php
-    function insert_datphong($id,$maphong,$makhachhang,$sokhach,$ngayden,$ngaytra,$tinhtrang){
-        $sql = "INSERT INTO datphong(id_order,id_phong,id_user,sokhach,ngaydat,ngaytra,tinhtrang) values ('$id','$maphong','$makhachhang','$sokhach','$ngayden','$ngaytra','$tinhtrang')";
+    function insert_datphong($id_phong, $id_user,$sokhach,$ngayden,$ngaytra){
+        $sql = "INSERT INTO datphong(id_order,id_phong,id_user,sokhach,ngayden,ngaytra,tinhtrang) values('','$id_phong','$id_user','$sokhach','$ngayden','$ngaytra', '')";
+        $sql = "INSERT INTO datphong(id_phong,id_user,sokhach,ngayden,ngaytra) values ('$id_phong','$id_user','$sokhach','$ngayden','$ngaytra')";
         pdo_execute($sql);
     }
     function delete_datphong($id){
@@ -12,9 +13,9 @@
         $listdp=pdo_query($sql);
         return $listdp; 
     }
-    function loadall_datphong_timkiem($id_phong){
-        $sql= "select DISTINCT phong.id_phong,phong.name_phong,phong.img,phong.sokhach,phong.price,phong.id_loaiphong,datphong.tinhtrang from phong
-             ,datphong where phong.id_phong !=".$id_phong;
+    function loadall_datphong_timkiem(){
+        $sql= "select phong.id_phong,phong.name_phong,phong.img,phong.sokhach,phong.price,phong.id_loaiphong from phong
+             ,datphong where datphong.id_phong !=phong.id_phong";
         $listsearch=pdo_query($sql);
         return $listsearch;
     }
@@ -28,5 +29,18 @@
             SET id_phong = $maphong,id_user = '$makhachhang',sokhach = '$sokhach',ngayden = '$ngayden',ngaytra = '$ngaytra',tinhtrang = '$tinhtrang'
             WHERE id_order=$id";
         pdo_execute($sql);
+    }
+    function loadall_phongdadat(){
+        $sql = "select * from datphong inner join phong on phong.id_phong = datphong.id_phong";
+        $listpdadat = pdo_query($sql);
+        return $listpdadat; 
+    }
+    function loadall_phongtrong($calendar){
+        $dates = array($calendar);
+        foreach($dates as $item){
+            $sql = "select * from datphong where ngayden = '$item' OR ngaytra = '$item'";
+            $listp = pdo_query($sql);
+        }
+        return $listp;
     }
 ?>

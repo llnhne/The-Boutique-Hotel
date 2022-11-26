@@ -29,6 +29,21 @@
         $room=pdo_query_one($sql);
         return $room;
     }
+    function loadall_phongchuadat2($ngaydat , $ngaytra){
+        $sql = "select * from phong where id_phong IN (select id_phong from datphong where tinhtrang = 0 AND ngayden = '$ngaydat' AND ngaytra = '$ngaytra')";
+        $listphongtk = pdo_query($sql);
+        return $listphongtk;
+    }
+    function loadall_phongchuadat3($ngaydat , $ngaytra){
+        $sql = "select * from phong where id_phong IN (select id_phong from datphong where tinhtrang = 0 AND ngayden <= '$ngaydat' AND ngaytra <= '$ngaytra')";
+        $listphongtk = pdo_query($sql);
+        return $listphongtk;
+    }
+    function loadall_phongchuadat(){
+        $sql = "select * from phong where id_phong NOT IN (select id_phong from datphong where tinhtrang = 0)";
+        $listphongtk = pdo_query($sql);
+        return $listphongtk;
+    }
     function load_phong_cungloai($id){
         $sql="select * from phong where id_loaiphong=".$id." ";
         $listp=pdo_query($sql);

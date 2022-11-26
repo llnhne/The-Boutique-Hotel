@@ -1,5 +1,6 @@
 <?php
     function insert_datphong($id_phong, $id_user,$sokhach,$ngayden,$ngaytra){
+        $sql = "INSERT INTO datphong(id_order,id_phong,id_user,sokhach,ngayden,ngaytra,tinhtrang) values('','$id_phong','$id_user','$sokhach','$ngayden','$ngaytra', '')";
         $sql = "INSERT INTO datphong(id_phong,id_user,sokhach,ngayden,ngaytra) values ('$id_phong','$id_user','$sokhach','$ngayden','$ngaytra')";
         pdo_execute($sql);
     }
@@ -28,5 +29,18 @@
             SET id_phong = $maphong,id_user = '$makhachhang',sokhach = '$sokhach',ngayden = '$ngayden',ngaytra = '$ngaytra',tinhtrang = '$tinhtrang'
             WHERE id_order=$id";
         pdo_execute($sql);
+    }
+    function loadall_phongdadat(){
+        $sql = "select * from datphong inner join phong on phong.id_phong = datphong.id_phong";
+        $listpdadat = pdo_query($sql);
+        return $listpdadat; 
+    }
+    function loadall_phongtrong($calendar){
+        $dates = array($calendar);
+        foreach($dates as $item){
+            $sql = "select * from datphong where ngayden = '$item' OR ngaytra = '$item'";
+            $listp = pdo_query($sql);
+        }
+        return $listp;
     }
 ?>

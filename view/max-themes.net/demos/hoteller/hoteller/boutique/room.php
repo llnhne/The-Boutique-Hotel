@@ -334,19 +334,19 @@
                                                                 $tel = "";
                                                             }
                                                             ?>
-                                                                <input type="hidden" name="id_user" value="<?= $id_user ?>">
-                                                                <label for="">Tên Khách Hàng:</label><br>
-                                                                <input type="text" name="username" value="<?= $username ?>"><br><br>
-                                                                <label for="">Số Điện Thoại:</label><br>
-                                                                <input type="text" name="tel" value="<?= $tel ?>"><br><br>
-                                                                <input type="hidden" name="idphong" value="<?php echo $room['id_phong'] ?>">
+                                                            <input type="hidden" name="id_user" value="<?= $id_user ?>">
+                                                            <label for="">Tên Khách Hàng:</label><br>
+                                                            <input type="text" name="username" value="<?= $username ?>"><br><br>
+                                                            <label for="">Số Điện Thoại:</label><br>
+                                                            <input type="text" name="tel" value="<?= $tel ?>"><br><br>
+                                                            <input type="hidden" name="idphong" value="<?php echo $room['id_phong'] ?>">
 
-                                                                <label for="">Tên Phòng:</label><br>
-                                                                <input type="text" name="name_phong" value="<?php echo $room['name_phong'] ?>" disabled /><br><br>
+                                                            <label for="">Tên Phòng:</label><br>
+                                                            <input type="text" name="name_phong" value="<?php echo $room['name_phong'] ?>" disabled /><br><br>
 
-                                                                <label for="">Giá Phòng:</label><br>
-                                                                <input type="text" name="price" value="<?php echo $room['price'] ?>$/1 night" disabled><br><br>
-                                                                <div id="content"></div>
+                                                            <label for="">Giá Phòng:</label><br>
+                                                            <input type="text" name="price" value="<?php echo $room['price'] ?>$/1 night" disabled><br><br>
+                                                            <div id="content"></div>
                                                             <p class="mphb-reserve-btn-wrapper">
                                                                 <input class="mphb-reserve-btn button" type="submit" name="comfirm" id="comfirm" value="Chi Tiết" />
                                                                 <span class="mphb-preloader mphb-hide"></span>
@@ -385,7 +385,19 @@
                                                                     <span class="thongbao" style="color:red;">
                                                                         <?php
                                                                         if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
-
+                                                                        ?>
+                                                                        <?php
+                                                                        if (isset($err) && ($err != "")) echo $err;
+                                                                        ?>
+                                                                        <?php
+                                                                        if (isset($songay) && ($songay != "")) echo '<h3>Total days: </h3>' . $songay;
+                                                                        ?>
+                                                                        <?php
+                                                                        if (isset($tongtien) && ($tongtien != "")) echo '<h3>The total amount: </h3>' . $format_tongtien;
+                                                                        echo '<p class="mphb-reserve-btn-wrapper">
+                                                                                <input class="mphb-reserve-btn button" type="submit" name="thanhtoan" id="thanhtoan" value="--Thanh toán qua VNPAY--" />
+                                                                                
+                                                                            </p>';
                                                                         ?>
                                                                     </span>
                                                                     <?php

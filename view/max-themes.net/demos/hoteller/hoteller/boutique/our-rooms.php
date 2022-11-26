@@ -1,6 +1,6 @@
 
  <!-- Begin content -->
-  <div id="page_content_wrapper" class="noheader">
+ <div id="page_content_wrapper" class="noheader">
                     <div class="inner">
                         <!-- Begin main content -->
                         <div class="inner_wrapper">
@@ -148,6 +148,7 @@
                                                             </div>
                                                             <p class="font-serif text-2xl"><?php echo $item['mota']?></p>
                                                             <div>
+
                                                                 <a href="index.php?act=room&id=<?php echo $item['id_phong'] ?>">
                                                                     <button class="bg-amber-600 text-white rounded border border-black border-solid p-2 hover:border-y-amber-700 hover:border-x-neutral-50 hover:bg-white shadow-lg hover:text-amber-600">Xem chi tiết</button>
                                                                 </a>
@@ -158,7 +159,6 @@
                                                 <?php } ?>
                                             </section>
             
-
                                             
                                             <!-- end -->
                                            
@@ -324,4 +324,5 @@
                     <br class="clear" />
                 </div>
             </div>       
+           
          
