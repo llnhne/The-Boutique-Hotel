@@ -318,7 +318,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="elementor-element elementor-element-323c9db6 elementor-invisible elementor-widget elementor-widget-heading" data-id="323c9db6" data-element_type="widget" data-settings='{"_animation":"fadeInUp","_animation_delay":200,"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
-                                                        <form method="post" action="./index.php?act=room&id=<?php echo $id ?>" class="mphb-booking-form" id="booking-form-96">
+                                                        
+                                                    <form method="post" action="./index.php?act=room&id=<?php echo $id ?>" class="mphb-booking-form" id="booking-form-96">
                                                             <?php
                                                             if (isset($_SESSION['user'])) {
                                                                 $id_user = $_SESSION['user']['id_user'];
@@ -392,12 +393,8 @@
                                                                         <?php
                                                                         if (isset($songay) && ($songay != "")) echo '<h3>Total days: </h3>' . $songay;
                                                                         ?>
-                                                                        <?php
+                                                                         <?php
                                                                         if (isset($tongtien) && ($tongtien != "")) echo '<h3>The total amount: </h3>' . $format_tongtien;
-                                                                        echo '<p class="mphb-reserve-btn-wrapper">
-                                                                                <input class="mphb-reserve-btn button" type="submit" name="thanhtoan" id="thanhtoan" value="--Thanh toán qua VNPAY--" />
-                                                                                
-                                                                            </p>';
                                                                         ?>
                                                                     </span>
                                                                     <?php
@@ -446,6 +443,12 @@
                                                                             <span class="mphb-preloader mphb-hide"></span>
                                                                         </p>
                                                                         <div class="mphb-errors-wrapper mphb-hide"></div>
+                                                                        </form>
+                                                                        <form action="index.php?act=thanhtoan" method="post">
+                                                                        <p class="mphb-reserve-btn-wrapper">
+                                                                            <input class="mphb-reserve-btn button" type="submit" name="thanhtoan" id="thanhtoan" value="--Thanh Toán Qua VNPAY---" />
+                                                                            
+                                                                        </p>
                                                                         </form>
                                                                     <?php
                                                                     } else {

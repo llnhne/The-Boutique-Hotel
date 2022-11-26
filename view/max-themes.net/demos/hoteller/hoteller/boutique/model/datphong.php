@@ -1,7 +1,6 @@
 <?php
     function insert_datphong($id_phong, $id_user,$sokhach,$ngayden,$ngaytra){
-        $sql = "INSERT INTO datphong(id_order,id_phong,id_user,sokhach,ngayden,ngaytra,tinhtrang) values('','$id_phong','$id_user','$sokhach','$ngayden','$ngaytra', '')";
-        $sql = "INSERT INTO datphong(id_phong,id_user,sokhach,ngayden,ngaytra) values ('$id_phong','$id_user','$sokhach','$ngayden','$ngaytra')";
+        $sql = "INSERT INTO datphong(id_order,id_phong,id_user,sokhach,ngayden,ngaytra,tinhtrang) values('','$id_phong','$id_user','$sokhach','$ngayden','$ngaytra', 1)";
         pdo_execute($sql);
     }
     function delete_datphong($id){

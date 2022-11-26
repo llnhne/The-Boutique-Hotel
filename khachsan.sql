@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 24, 2022 lúc 11:29 AM
+-- Thời gian đã tạo: Th10 26, 2022 lúc 03:54 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -63,8 +63,11 @@ CREATE TABLE `datphong` (
 --
 
 INSERT INTO `datphong` (`id_order`, `id_phong`, `id_user`, `sokhach`, `ngayden`, `ngaytra`, `tinhtrang`) VALUES
-(1, 4, 1, 2, '2022-11-17', '2022-11-20', 0),
-(2, 50, 2, 2, '2022-11-27', '2022-11-29', 0);
+(1, 4, 1, 2, '2022-11-17', '2022-11-20', 1),
+(2, 50, 2, 2, '2022-11-27', '2022-11-29', 1),
+(3, 69, 1, 2, '2022-12-02', '2022-12-04', 1),
+(5, 64, 1, 2, '2022-12-08', '2022-12-10', 1),
+(6, 63, 1, 2, '2022-12-04', '2022-12-06', 1);
 
 -- --------------------------------------------------------
 
@@ -128,7 +131,6 @@ CREATE TABLE `loaiphong` (
 --
 
 INSERT INTO `loaiphong` (`id_loaiphong`, `name_loaiphong`) VALUES
-(1, 'Chưa xác định'),
 (2, 'Superior Room'),
 (3, 'Deluxe Room'),
 (4, 'Signature Room'),
@@ -159,7 +161,7 @@ INSERT INTO `phong` (`id_phong`, `name_phong`, `price`, `price_sale`, `sokhach`,
 (1, 'superior room S20', 150.00, 0.00, 3, 'room4_portrait.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 2),
 (2, 'superior room P21', 150.00, 0.00, 3, 'room2_portrait.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 2),
 (4, 'superior room P22', 150.00, 0.00, 3, 'room3_portrait.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 2),
-(49, 'superior room P23', 150.00, 0.00, 3, 'food-on-a-table-in-a-hotel-room-PU969F8.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 7),
+(49, 'superior room P23', 150.00, 0.00, 3, 'food-on-a-table-in-a-hotel-room-PU969F8.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 2),
 (50, 'deluxe room D20', 120.00, 0.00, 3, 'food-on-a-table-in-a-hotel-room-PU969F8.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 3),
 (51, 'deluxe room D21', 120.00, 0.00, 3, 'room1_portrait.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 3),
 (59, 'deluxe room D22', 150.00, 0.00, 3, 'room2_portrait.jpg', 'The generous living room area with couch can accommodate one extra bed. While sitting on lounge chairs of the south-facing balcony, you can enjoy the\r\n                                                                                    stunning views of the Matterhorn, some fresh mountain air and the mild afternoon sun.', 3),
@@ -194,9 +196,10 @@ CREATE TABLE `taikhoan` (
 --
 
 INSERT INTO `taikhoan` (`id_user`, `username`, `password`, `email`, `tel`, `address`, `role`) VALUES
-(1, 'lananh', '12345', '', 838397376, '', 0),
+(1, 'lananh', '12345', 'anhllph19505@fpt.edu.vn', 838397376, '512 tran khat chan,p.Pho Hue, HBT, HN', 0),
 (3, 'lla', '12345', '', 0, '', 0),
-(4, 'lananh261', '123456', '', 0, '', 1);
+(4, 'lananh261', '123456', '', 0, '', 1),
+(5, 'lananh12345', '12345', 'anhllph19505@fpt.edu.vn', 838397376, '512 tran khat chan', 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -263,7 +266,7 @@ ALTER TABLE `binhluan`
 -- AUTO_INCREMENT cho bảng `datphong`
 --
 ALTER TABLE `datphong`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT cho bảng `hoadon`
@@ -293,7 +296,7 @@ ALTER TABLE `phong`
 -- AUTO_INCREMENT cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

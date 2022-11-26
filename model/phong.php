@@ -4,6 +4,7 @@
         pdo_execute($sql);
     }
     function delete_phong($id){
+        // $sql="update phong set id_phong=1";
         $sql="delete from phong where id_phong=".$id;
         pdo_execute($sql);
     }
