@@ -4,6 +4,7 @@
         pdo_execute($sql);
     }
     function delete_phong($id){
+        // $sql="update phong set id_phong=1";
         $sql="delete from phong where id_phong=".$id;
         pdo_execute($sql);
     }
@@ -21,6 +22,7 @@
             $sql.=" and id_loaiphong like '".$idlp."'";
         }
         $sql.=" order by id_phong desc";
+        
         $listp=pdo_query($sql);
         return $listp;
     }
@@ -57,4 +59,3 @@
         }
         pdo_execute($sql);
     }
-?>

@@ -11,8 +11,14 @@
             <div class="timkiemphong" style="margin-bottom:20px;display:flex;">
             <input type="date" name="ngayden" placeholder="Check phòng" style="width:50%;border-radius:5px;border: 1px solid #FFCACA;">
             <input type="date" name="ngaytra" placeholder="Check phòng" style="width:50%;margin-left:10px;border-radius:5px;border: 1px solid #FFCACA;">
-            <input type="submit" name="gui" value="Check" style="padding:10px;margin-left:10px;border: 1px solid #FFCACA;">
-            </div>
+            <input type="submit" name="check" value="Check" style="padding:10px;margin-left:10px;border: 1px solid #FFCACA;">   
+        </div>
+        <div style="color:red; margin-bottom:10px;">
+            <?php
+                if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
+            ?> 
+           
+        </div>
             <div class="row mb10 formdshanghoa" style="width:1050px;">
                 <table>
                     <tr>
@@ -25,26 +31,34 @@
                         <th>SỐ KHÁCH TỐI ĐA</th>
                         <th>TRẠNG THÁI</th>
                     </tr>
+                      
                     <?php
                     foreach ($listp as $phong) {
                         extract($phong);
-                        $suap = "index.php?act=suap&id=" . $id_phong;
-                        $xoap = "index.php?act=xoap&id=" . $id_phong;
-                        $img = "../upload/" . $img;
-                        if (is_file($img)) {
-                            $img = "<img src='" . $img . "' height='80px'>";
+                        if ((($_POST['ngayden'] === $ngayden) || ($_POST['ngaytra'] === $ngaytra)) || (($_POST['ngayden'] === $ngayden) || ($_POST['ngaytra'] <= $ngaytra )) || (($_POST['ngayden'] <= $ngayden) || ($_POST['ngaytra'] <= $ngaytra))){
+                            $sql = "update phong set trangthai='Hết' where id_phong=" . $id_phong;
+                            
+                           
+                        }if ((($_POST['ngayden'] === $ngayden) || ($_POST['ngaytra'] <= $ngaytra)) || (($_POST['ngayden'] <= $ngayden) || ($_POST['ngaytra'] === $ngaytra)) || (($_POST['ngayden'] >= $ngayden) || ($_POST['ngaytra'] <= $ngaytra))){
+                            $sql = "update phong set trangthai='Trống' where id_phong=" . $id_phong;
+                        
                         } else {
-                            $img = "No photo";
+                            $thongbao = 'Tìm kiếm không hợp lệ';
                         }
+                        pdo_query($sql);
+                        die();
+                        var_dump($_POST['ngayden']);
+                        var_dump($_POST['ngaytra']);
+                        
                         echo '<tr>      
                                         <td>' . $id_loaiphong . '</td>
-                                        <td>' . $id_phong . '</td>
+                                        <td>P' . $id_phong . '</td>
                                         <td>' . $name_phong . '</td>
                                         <td>' . $img . '</td>
                                         <td>' . $price . 'vnd/1 đêm</td>
                                         <td>-' . $price_sale . 'vnd</td>
                                         <td>' . $sokhach . 'người</td>
-                                        <td>' . $tinhtrang . '</td>
+                                        <td>'. $trangthai.'</td>
                                     </tr>';
                     }
                     ?>

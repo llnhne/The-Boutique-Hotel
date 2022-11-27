@@ -3,7 +3,7 @@
         <h1 style="padding: 15px 0;">ADMIN </h1>
     </div>
     <div class="row formtittle" style="width:148%;">
-        <h3>DANH SÁCH Bình Luận</h3>
+        <h3>DANH SÁCH BÌNH LUẬN</h3>
     </div>
     <div class="row formcontent" style="width:1040px;">
         <form action="" method="post">
@@ -11,10 +11,10 @@
                 <table>
                     <tr>
                         <th></th>
-                        <th>Mã bình luận</th>
-                        <th>Nội dung</th>
-                        <th>Mã khách hàng</th>
-                        <th>Ngày bình luận </th>
+                        <th>MÃ BÌNH LUẬN</th>
+                        <th>NỘI DUNG</th>
+                        <th>MÃ KHÁCH HÀNG</th>
+                        <th>NGÀY BÌNH LUẬN</th>
                         <th style="background-color: #FFCACA;"></th>
                     </tr>
                     <?php foreach ($listbinhluan as $binhluan) {?>

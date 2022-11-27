@@ -1,14 +1,17 @@
 <?php
 session_start();
 ob_start();
-if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
+// if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
 
     include "../model/pdo.php";
     include "../model/loaiphong.php";
     include "../model/phong.php";
-    include "../model/taikhoan.php";
+    include "../model/datphong.php";
     include "../model/binhluan.php";
+    include "../model/thongke.php";
     include "../model/hoadon.php";
+    include "../model/taikhoan.php";
+    include "../model/hotro.php";
     include "header.php";
     // controller
     if (isset($_GET['act'])) {
@@ -146,67 +149,78 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                 include "phong/list.php";
                 break;
             case 'searchp':
-                if (isset($_POST['gui']) && ($_POST['gui'])) {
-                    $kyw = $_POST['kyw'];
-                    $idlp = $_POST['idlp'];
-                } else {
-                    $kyw = '';
-                    $idlp = 0;
-                }
-                $listlp = loadall_loaiphong();
-                $listp = loadall_phong($kyw, $idlp);
-                include "timkiemphong/list.php";
-                break;
-            case 'dsdp':
-
-                loadall_datphong();
+               
+            case 'listdp':
+                $listdp = loadall_datphong();
+                update_tinhtrang();
                 include "datphong/list.php";
+                break;
+    
+            case 'suadp':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $dp = loadone_datphong($_GET['id']);
+                }
+                include "datphong/update.php";
                 break;
             case 'updatedp':
-                include "datphong/list.php";
-                break;
-            case 'suadp':
+                if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                    $id = $_POST['id'];
+                    $maphong = $_POST['maphong'];
+                    $makhachhang = $_POST['makhachhang'];
+                    $tinhtrang = $_POST['tinhtrang'];
+                    $sokhach = $_POST['sokhach'];
+                    $ngayden = $_POST['ngayden'];
+                    $ngaytra = $_POST['ngaytra'];
+                    update_datphong($id, $maphong, $makhachhang, $sokhach, $ngayden, $ngaytra, $tinhtrang);
+                    $thongbao = "Cập nhật thành công!";
+                }
+                $listdp = loadall_datphong();
                 include "datphong/list.php";
                 break;
             case 'xoadp':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    delete_datphong($_GET['id']);
+                }
+                $listdp = loadall_datphong();
                 include "datphong/list.php";
                 break;
-            case 'dskh':
-                if (isset($_POST['gui']) && ($_POST['gui'])) {
-                    $kyw = $_POST['kyw'];
-                } else {
-                    $kyw = '';
-                }
-                $listtaikhoan = loadall_taikhoan($kyw);
-                include "taikhoan/list.php";
-                break;
-            case 'xoatk':
-                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                    delete_taikhoan($_GET['id']);
-                }
-                $listtaikhoan = loadall_taikhoan("", 0);
-                include "taikhoan/list.php";
-                break;
-            case 'suatk':
-                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                    $tk = loadone_taikhoan($_GET['id']);
-                }
-                include "taikhoan/update.php";
-                break;
-            case 'updatetk':
-                if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
-                    $id = $_POST['id'];
-                    $user = $_POST['user'];
-                    $password = $_POST['password'];
-                    $email = $_POST['email'];
-                    $address = $_POST['address'];
-                    $tel = $_POST['tel'];
-                    update_taikhoan($id, $user, $password, $email, $address, $tel);
-                    $thongbao = "Cập nhật thành công!";
-                }
-                $listtaikhoan = loadall_taikhoan("", 0);
-                include "taikhoan/list.php";
-                break;
+                case 'dskh':
+                    if (isset($_POST['gui']) && ($_POST['gui'])) {
+                        $kyw = $_POST['kyw'];
+                    } else {
+                        $kyw = '';
+                    }
+                    $listtaikhoan = loadall_taikhoan($kyw);
+                    include "taikhoan/list.php";
+                    break;
+                case 'xoatk':
+                    if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                        delete_taikhoan($_GET['id']);
+                    }
+                    $listtaikhoan = loadall_taikhoan("", 0);
+                    include "taikhoan/list.php";
+                    break;
+                case 'suatk':
+                    if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                        $tk = loadone_taikhoan($_GET['id']);
+                    }
+                    include "taikhoan/update.php";
+                    break;
+                case 'updatetk':
+                    if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                        $id = $_POST['id'];
+                        $user = $_POST['user'];
+                        $password = $_POST['password'];
+                        $email = $_POST['email'];
+                        $address = $_POST['address'];
+                        $tel = $_POST['tel'];
+                        update_taikhoan($id, $user, $password, $email, $address, $tel);
+                        $thongbao = "Cập nhật thành công!";
+                    }
+                    $listtaikhoan = loadall_taikhoan("", 0);
+                    include "taikhoan/list.php";
+                    break;
+          
             case 'listhd':
                 $listhoadon = loadall_hoadon();
                 include "hoadon/list.php";
@@ -219,7 +233,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                 include "hoadon/list.php";
                 break;
             case 'listbl':
-                $listbinhluan =loadall_binhluan();
+                $listbinhluan = loadall_binhluan();
                 include "binhluan/list.php";
                 break;
             case 'xoabl':
@@ -229,15 +243,25 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                 $listbinhluan = loadall_binhluan();
                 include "binhluan/list.php";
                 break;
-               
-                // case 'thongke':
-                //     $listthongke = loadall_thongke();
-                //     include "thongke/list.php";
-                //     break;
-                // case 'bieudo':
-                //     $listthongke = loadall_thongke();
-                //     include "thongke/bieudo.php";
-                //     break;
+            case 'dsht':
+                $listhotro = loadall_hotro(0);
+                include "hotro/list.php";
+                break;
+            case 'xoaht':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    delete_hotro($_GET['id']);
+                }
+                $listhotro = loadall_hotro(0);
+                include "hotro/list.php";
+                break;
+            case 'thongke':
+                $listthongke = loadall_thongke();
+                include "thongke/list.php";
+                break;
+            case 'bieudo':
+                $listthongke = loadall_thongke();
+                include "thongke/bieudo.php";
+                break;
                 // case 'chitietdonphong':
                 //     // if(isset($_POST['xemct'])&&($_POST['xemct'])){
                 //     //     $id=$_POST['id'];
@@ -253,8 +277,10 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
                 //     include "../view/cart/chitietdonphong.php";
                 //     break;
             case 'thoat':
-                if (isset($_SESSION['role'])) unset($_SESSION['role']);
-                header('Location: login.php');
+                if (isset($_SESSION['user'])){
+                    unset($_SESSION['user']);
+                }
+                header('Location:/view/max-themes.net/demos/hoteller/hoteller/boutique/index.php');
                 break;
             default:
                 include "home.php";
@@ -264,6 +290,5 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 1) {
     include "home.php";
 
     include "footer.php";
-} else {
-    header('Location: login.php');
-}
+// } else {
+// }
