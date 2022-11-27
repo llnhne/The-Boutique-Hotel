@@ -280,7 +280,7 @@ ob_start();
                 if (isset($_SESSION['user'])){
                     unset($_SESSION['user']);
                 }
-                header('Location:/view/max-themes.net/demos/hoteller/hoteller/boutique/index.php');
+                header('Location:/duan1/view/max-themes.net/demos/hoteller/hoteller/boutique/index.php');
                 break;
             default:
                 include "home.php";

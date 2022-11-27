@@ -39,8 +39,8 @@
         $listphongtk = pdo_query($sql);
         return $listphongtk;
     }
-    function loadall_phongchuadat(){
-        $sql = "select * from phong where id_phong NOT IN (select id_phong from datphong where tinhtrang = 1)";
+    function loadall_phongchuadat($ngaydat , $ngaytra){
+        $sql = "select * from phong where id_phong NOT IN (select id_phong from datphong where tinhtrang = 1 AND ngayden = '$ngaydat' or ngaytra = '$ngaytra')";
         $listphongtk = pdo_query($sql);
         return $listphongtk;
     }

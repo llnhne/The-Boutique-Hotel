@@ -393,18 +393,34 @@
                                                                         if (isset($datecount) && ($datecount != "")) echo $datecount;
                                                                         ?>
                                                                         <?php
-                                                                        if (isset($err) && ($err != "")) echo $err;
+                                                                        if (isset($errdate) && ($errdate != "")) echo $errdate;
                                                                         ?>
                                                                         <?php
-                                                                        if (isset($songay) && ($songay != "")) echo '<h3 style="font-weight:500;">Total days: </h3>' . $songay;
+                                                                        if (isset($songay) && ($songay != "")) echo '<h3 style="font-weight:500;">Tổng số ngày: </h3>' . $songay;
                                                                         ?>
                                                                         <?php
-                                                                        if (isset($tongtien) && ($tongtien != "")) echo '<h3 style="font-weight:500;">The total amount: </h3>' . $format_tongtien;
+                                                                        if (isset($tongtien) && ($tongtien != "")) echo '<h3 style="font-weight:500;">Tổng số tiền: </h3>' . $format_tongtien;
                                                                         ?>
                                                                         <?php
                                                                         if (isset($date) && ($date != "")) echo '<h3 style="font-weight:500;">Thời gian đặt phòng: </h3>' .$date;
                                                                         ?>
-                                                                    </span>
+                                                                        <?php
+                                                                        // echo '<h3 style=";font-weight:500;">';
+                                                                        // if (isset($hr) && ($hr != "")) echo '<h3 style="font-weight:500;">Giờ: </h3>' .$hr;
+                                                                        // if (isset($min) && ($min != "")) echo '<h3 style="font-weight:500;">Phút: </h3>' .$min;
+                                                                        // if (isset($sec) && ($sec != "")) echo '<h3 style="font-weight:500;">Giây: </h3>' .$sec;
+                                                                        ?>
+                                                                        <?php
+                                                                        if (isset($thongtin) && ($thongtin != "")) echo $thongtin;
+                                                                        ?>
+                                                                        <?php
+                                                                            (isset($datphongs) && ($datphongs != ""));
+                                                                            foreach ($datphongs as $dp){
+                                                                                print_r($dp['ngayden']);
+                                                                                print_r($dp['ngaytra']);
+                                                                            }
+                                                                        ?>
+                                                                    </span><br>
                                                                     <?php
                                                                     if (isset($_SESSION['user'])) {
                                                                         extract($_SESSION['user']);
@@ -452,7 +468,7 @@
                                                                         </p>
                                                                         <div class="mphb-errors-wrapper mphb-hide"></div>
                                                                         </form>
-                                                                        <form action="index.php?act=thanhtoan" method="post">
+                                                                        <form action="index.php?act=thanhtoan&idp=<?php echo $room['id_phong']; ?>" method="post">
                                                                             <p class="mphb-reserve-btn-wrapper">
                                                                                 <input class="mphb-reserve-btn button" type="submit" name="thanhtoan" id="thanhtoan" value="--Thanh Toán Qua VNPAY---" />
 

@@ -23,6 +23,7 @@
             </div>
             <h3>Tạo mới đơn hàng</h3>
             <div class="table-responsive">
+            
                 <form action="vnpay_create_payment.php" id="create_form" method="post">
 
                     <div class="form-group">
@@ -37,14 +38,15 @@
                     <div class="form-group">
                         <label for="order_id">Mã hóa đơn</label>
                         <!-- id_bill -->
-                        <input class="form-control" id="order_id" name="order_id" type="text" value="<?php echo date("YmdHis") ?>"/> 
+                        <input class="form-control" id="order_id" name="order_id" type="text" value=""/> 
                     </div>
                     <div class="form-group">
                         <label for="amount">Số tiền</label>
                         <!-- tổng tiền -->
                         <input class="form-control" id="amount"
-                               name="amount" type="number" value="10000"/>
+                               name="amount" type="number" value=""/>
                     </div>
+                    
                     <div class="form-group">
                         <label for="order_desc">Nội dung thanh toán</label>
                         <textarea class="form-control" cols="20" id="order_desc" name="order_desc" rows="2">Noi dung thanh toan</textarea>
@@ -87,7 +89,7 @@
                     <div class="form-group">
                         <label >Thời hạn thanh toán</label>
                         <input class="form-control" id="txtexpire"
-                               name="txtexpire" type="text" value="<?php echo $expire; ?>"/>
+                               name="txtexpire" type="text" value=""/>
                     </div>
                     <div class="form-group">
                         <h3>Thông tin hóa đơn (Billing)</h3>

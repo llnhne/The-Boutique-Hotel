@@ -13,7 +13,7 @@ if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
                     $_SESSION['user'] = $checkuser;
 
                     if ($checkuser['role'] == 1) {
-                        header("location:admin/index.php");
+                        header("location:/duan1/admin/index.php");
                     } else {
                         header('Location: ../index.php?act=home');
                         $thongbao = "Đã đăng nhập thành công!";

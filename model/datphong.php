@@ -52,7 +52,7 @@
         foreach($listdp as $item){
             $idorder = $item['id_order'];
             
-            if($ngaykt === $item['ngayden'] || $ngaykt === $item['ngaytra']){
+            if($ngaykt === $item['ngayden'] || $ngaykt === $item['ngaytra'] || $ngaykt < $item['ngayden'] || $ngaykt < $item['ngaytra']){
                     // nếu true thì cập nhật lại tình trạng ở bảng phòng
                 $updateroom = "update datphong set tinhtrang = 1 where id_order = $idorder";
                 pdo_execute($updateroom);

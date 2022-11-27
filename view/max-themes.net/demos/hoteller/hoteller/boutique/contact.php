@@ -159,25 +159,22 @@
                                                                 <div role="form" class="wpcf7" id="wpcf7-f6-p704-o1" lang="en-US" dir="ltr">
                                                                     <div class="screen-reader-response" role="alert" aria-live="polite"></div>
                                                                     <div style="color:red;">
-                                                                    <?php
-                                                                    if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
-                                                                    ?>
+                                                                        <?php
+                                                                        if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
+                                                                        ?>
                                                                     </div>
                                                                     <form method="post" action="index.php?act=contact">
-
                                                                         <label for="Name">Name:</label>
                                                                         <input type="text" name="name_user" id="name_user" class="input" />
-
                                                                         <label for="Tel">Tel:</label>
                                                                         <input type="text" name="tel" id="tel" class="input" />
                                                                         <span class="thongbao" style="color: red;">
                                                                             <?php
-                                                                            if (isset($errname) && ($errname != "")) echo $errname;
+                                                                            if (isset($errtel) && ($errtel != "")) echo $errtel;
                                                                             ?>
                                                                         </span><br>
                                                                         <label for="Message">Message:</label><br />
                                                                         <textarea name="ghichu" rows="20" cols="20" id="ghichu" class="input"></textarea>
-
                                                                         <input type="submit" name="submit" value="Submit" class="submit-button" />
 
                                                                     </form>
