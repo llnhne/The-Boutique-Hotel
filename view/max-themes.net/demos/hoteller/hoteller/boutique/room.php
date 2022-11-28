@@ -287,6 +287,69 @@
                                     </div>
                                 </div>
                             </section>
+
+<!-- Phần bình luận  -->
+                            <section class=" my-10 ">
+
+                                <div class="border-b-zinc-900 border border-solid border-x-white border-t-white">
+                                    <p class="bg-slate-100 p-3 w-40 ">BÌNH LUẬN</p>
+                                </div>
+                               
+                                <div class=" my-5 w-full">
+                                    <form action="index.php?act=binhluan&id=<?php echo $room['id_phong'];?>" class="w-full border-inherit " method="POST">
+                                        <input type="text" name="iduser" value="<?php echo $_SESSION['user']['id_user']?>" hidden>
+                                       
+                                        <input type="text" name="idroom" value="<?php echo $room['id_phong'];?>" hidden>
+
+                                        <div class="p-4">
+                                            <textarea  name="comment" cols="30" rows="2" type="text" class="w-full py-5 border-none " placeholder="Viết bình luận..."></textarea>
+                                        </div>
+                                        <br>
+                                        <div class="bg-slate-200 p-5 flex ">
+                                            <button name="send" class="send_comment justify-items-end bg-indigo-500 text-white rounded justify-items-end w-60 p-4 ">Gửi bình luận</button>
+                                        </div>
+                                                
+                                    </form>
+                                </div>
+                               
+                                <div class="open_block h-96 overflow-hidden">
+                                    <?php foreach($listbl as $item) {?>
+                                        <?php
+                                            $suabl = "index.php?act=suabl&id=".$item['id_comment'];
+                                            $xoabl = 'index.php?act=xoabl&id= '.$item['id_comment'].'&idp='.$item['id_phong'].'';
+
+                                        ?>
+                                        <div class="pl-24 my-4 ">
+                                            <div class="">
+                                                <div class="flex">
+                                                    <div class="w-16 h-16 border-solid border-2 rounded-full overflow-hidden border-green-600">
+                                                        <img class="w-16" src="./upload/101048866-768x576.jpg" alt="">
+                                                    </div>
+                                                    <p class="ml-5 text-2xl font-bold"><?php echo $item['username']?></p>
+
+                                                </div>
+                                                <div class="p-2 rounded-xl  bg-lime-200 ml-2 ">
+                                                    <p><?php echo $item['noidung']?></p>
+                                                </div>
+                                            </div>
+                                            
+
+
+                                            
+                                            <div class="flex">
+                                                <p><?php echo $item['ngaybinhluan']?></p>
+                                                <p id="like" class="mx-5 font-bold cursor-pointer">Thích</p>
+                                                <p><a onclick="return confirm('Bạn có thực sự muốn xóa không?');" href="' . $xoatk . '" href="<?php echo $suabl ?>" class=" font-bold cursor-pointer">Sửa</a></p>
+                                                <p><a href="<?php echo $xoabl ?>" class=" mx-5 font-bold cursor-pointer">Xóa</a></p>
+
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                                <div id="view" class="font-bold cursor-pointer p-2 text-center py-2 hover:text-slate-400">Xem thêm...</div>
+                            </section>
+
+<!-- kết thúc Phần bình luận -->
                             <section class="elementor-section elementor-top-section elementor-element elementor-element-23c9a038 elementor-section-stretched elementor-section-height-min-height elementor-section-items-bottom elementor-section-boxed elementor-section-height-default" data-id="23c9a038" data-element_type="section" data-settings='{"stretch_section":"section-stretched","background_background":"classic","hoteller_ext_is_background_parallax":"false","hoteller_ext_is_background_on_scroll":"false"}'>
                                 <div class="elementor-container elementor-column-gap-default">
                                     <div class="elementor-row">
@@ -576,3 +639,10 @@
 
 
 </div>
+<script>
+    var view = document.querySelector('#view');
+    var openBlock = document.querySelector('.open_block');
+    view.addEventListener('click', function(){
+        openBlock.style.overflow = 'auto';
+    })
+</script>

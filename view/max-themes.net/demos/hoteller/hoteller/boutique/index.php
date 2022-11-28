@@ -6,6 +6,8 @@ include 'model/loaiphong.php';
 include 'model/phong.php';
 include 'model/hotro.php';
 include 'model/datphong.php';
+include 'model/binhluan.php';
+
 include 'model/taikhoan.php';
 include 'header.php';
 
@@ -72,6 +74,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
         case 'room':
             $id = $_GET['id'];
+            $listbl = load_binhluan($id);
             $room = loadone_phong($id);
             $sql = "select * from datphong where id_phong=$id";
             $datphongs = pdo_query($sql);
@@ -122,7 +125,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             $idorder = $dp['id_order'];
             echo $idorder;
             if (isset($_POST['thanhtoan']) && ($_POST['thanhtoan'])) {
-                header("location: http://localhost/duan1/view/max-themes.net/demos/hoteller/hoteller/boutique/vnpay_php/index.php?idorder=$idorder");
+                header("location: http://localhost:3000/duan1-khachsan/view/max-themes.net/demos/hoteller/hoteller/boutique/vnpay_php/index.php?idorder=$idorder");
             }
             include "room.php";
             break;
@@ -194,6 +197,56 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             include "./taikhoan/quenmk.php";
             break;
+            case 'binhluan':
+                $iduser = $_POST['iduser'];
+                $idroom = $_POST['idroom'];
+                $noidung = $_POST['comment'];
+                $date = getdate();
+                $ngaybinhluan = $date['year']."/". $date['mon']."/".$date['mday'];
+                insert_binhluan($noidung,$iduser,$ngaybinhluan,$idroom);
+                header("location:http://localhost:3000/duan1-khachsan/view/max-themes.net/demos/hoteller/hoteller/boutique/index.php?act=room&id=$idroom");
+    
+                
+                break;
+    
+    
+        case 'suabl':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $tk = loadone_taikhoan($_GET['id']);
+            }
+            include "taikhoan/update.php";
+            break;
+    
+    
+        case 'updatebl':
+            if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                $id = $_POST['id'];
+                $user = $_POST['user'];
+                $password = $_POST['password'];
+                $email = $_POST['email'];
+                $address = $_POST['address'];
+                $tel = $_POST['tel'];
+                update_taikhoan($id, $user, $password, $email, $address, $tel);
+                $thongbao = "Cập nhật thành công!";
+ 
+            }
+            $listtaikhoan = loadall_taikhoan("", 0);
+            include "taikhoan/list.php";
+            break;
+    
+    
+    
+    
+        case 'xoabl':
+            $idroom = $_GET['idp'];
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                delete_binhluan($_GET['id']);
+            }
+    
+    
+                // $listbl = load_binhluan($id);
+            header("location:http://localhost:3000/duan1-khachsan/view/max-themes.net/demos/hoteller/hoteller/boutique/index.php?act=room&id=$idroom");
+            break;
         case 'thoat':
             if (isset($_SESSION['user'])) {
                 unset($_SESSION['user']);
@@ -201,6 +254,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
             include "home.php";
             break;
+        
         default:
             include "home.php";
             break;
