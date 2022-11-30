@@ -44,6 +44,10 @@
                         <input type="text" name="sokhach" value="<?= $sokhach ?> " required>
                     </div>
                     <div class="row mb10">
+                        <label for="">TỔNG TIỀN</label><br>
+                        <input type="tongtien" name="tongtien" style="width:120%;border: 1px solid #FFCACA;padding: 10px;border-radius: 5px;" value="<?= $format_tongtien ?>">
+                    </div>
+                    <div class="row mb10">
                         <label for="">TÌNH TRẠNG</label><br>
                         <input type="text" name="tinhtrang" style="margin-bottom:5px;" value="<?= $tinhtrang ?>">
                     </div>

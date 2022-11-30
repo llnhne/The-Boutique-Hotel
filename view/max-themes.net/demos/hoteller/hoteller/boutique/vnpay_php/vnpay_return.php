@@ -16,7 +16,7 @@
     </head>
     <body>
         <?php
-        require_once("/config.php");
+        require_once("config.php");
         $vnp_SecureHash = $_GET['vnp_SecureHash'];
         $inputData = array();
         foreach ($_GET as $key => $value) {
@@ -83,8 +83,12 @@
                         if ($secureHash == $vnp_SecureHash) {
                             if ($_GET['vnp_ResponseCode'] == '00') {
                                 echo "<span style='color:blue'>GD Thanh cong</span>";
+                                $sql="INSERT INTO hoadon(id_bill,id_order,id_phong,id_user,tongtien,role) values('','$idorder','$id_phong','$id_user','$tongtien','1')";
+                                pdo_execute($sql);
                             } else {
                                 echo "<span style='color:red'>GD Khong thanh cong</span>";
+                                $sql="INSERT INTO hoadon(id_bill,id_order,id_phong,id_user,tongtien,role) values('','$idorder','$id_phong','$id_user','$tongtien','0')";
+                                pdo_execute($sql);
                             }
                         } else {
                             echo "<span style='color:red'>Chu ky khong hop le</span>";

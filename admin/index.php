@@ -171,7 +171,9 @@ ob_start();
                     $sokhach = $_POST['sokhach'];
                     $ngayden = $_POST['ngayden'];
                     $ngaytra = $_POST['ngaytra'];
-                    update_datphong($id, $maphong, $makhachhang, $sokhach, $ngayden, $ngaytra, $tinhtrang);
+                    $tongtien = $_POST['tongtien'];
+                    $giaodich=$_POST['giaodich'];
+                    update_datphong($id, $maphong, $makhachhang, $sokhach, $ngayden, $ngaytra,$tongtien,$giaodich, $tinhtrang);
                     $thongbao = "Cập nhật thành công!";
                 }
                 $listdp = loadall_datphong();
@@ -255,27 +257,15 @@ ob_start();
                 include "hotro/list.php";
                 break;
             case 'thongke':
-                $listthongke = loadall_thongke();
+                $listthongke = loadall_thongke_loaiphong();
+                $listthongkep = loadall_thongke_phong();
+                $listthongkedp = loadall_thongke_datphong();
                 include "thongke/list.php";
                 break;
             case 'bieudo':
-                $listthongke = loadall_thongke();
+                $listthongke = loadall_thongke_loaiphong();
                 include "thongke/bieudo.php";
                 break;
-                // case 'chitietdonphong':
-                //     // if(isset($_POST['xemct'])&&($_POST['xemct'])){
-                //     //     $id=$_POST['id'];
-                //     //     $product_name=$_POST['product_name'];
-                //     //     $price=$_POST['price'];
-                //     //     $img=$_POST['img'];
-                //     //     $soluong=1;
-                //     //     $thanhtien=$soluong * $price;
-                //     //     $spadd=[$id,$product_name,$img,$price,$soluong,$thanhtien];
-                //     //     array_push($_SESSION['mycart'],$spadd);
-
-                //     // }
-                //     include "../view/cart/chitietdonphong.php";
-                //     break;
             case 'thoat':
                 if (isset($_SESSION['user'])){
                     unset($_SESSION['user']);

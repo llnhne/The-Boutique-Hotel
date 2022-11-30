@@ -43,10 +43,10 @@
                                                                             <div class="slide-content">
                                                                                 <div class="caption">
                                                                                     <div class="title">
-                                                                                        <h2>Your new Boutique Hotel in Prague. Plan the journey of your dreams</h2>
+                                                                                        <h2>Khách sạn Boutique mới của bạn ở Praha. Lập kế hoạch hành trình của những giấc mơ của bạn</h2>
                                                                                     </div>
                                                                                     <div class="text">
-                                                                                        The Boutique
+                                                                                        Cửa hàng
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -58,10 +58,10 @@
                                                                             <div class="slide-content">
                                                                                 <div class="caption">
                                                                                     <div class="title">
-                                                                                        <h2>The Benchmark for boutique, small luxury hotel</h2>
+                                                                                        <h2>Điểm chuẩn cho khách sạn boutique, khách sạn nhỏ sang trọng</h2>
                                                                                     </div>
                                                                                     <div class="text">
-                                                                                        Our Rooms
+                                                                                        Loại phòng
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -73,10 +73,10 @@
                                                                             <div class="slide-content">
                                                                                 <div class="caption">
                                                                                     <div class="title">
-                                                                                        <h2>Enjoy home-made cakes from our pastry chef,</h2>
+                                                                                        <h2>Thưởng thức bánh làm tại nhà từ đầu bếp bánh ngọt của chúng tôi,</h2>
                                                                                     </div>
                                                                                     <div class="text">
-                                                                                        Restaurant & Bar
+                                                                                        Nhà hàng & Quán bar
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -123,7 +123,7 @@
                                                                         </p>
 
                                                                         <p class="mphb_sc_search-adults">
-                                                                            <label for="mphb_adults-mphb-search-form-6061a36060295"> Adults </label>
+                                                                            <label for="mphb_adults-mphb-search-form-6061a36060295"> Số người lớn </label>
                                                                             <br />
                                                                             <select id="mphb_adults-mphb-search-form-6061a36060295" name="sokhach">
                                                                                 <option value="1" selected="selected">1</option>
@@ -132,7 +132,7 @@
                                                                             </select>
                                                                         </p>
                                                                         <p class="mphb_sc_search-children">
-                                                                            <label for="mphb_children-mphb-search-form-6061a36060295"> Children </label>
+                                                                            <label for="mphb_children-mphb-search-form-6061a36060295"> Số trẻ em </label>
                                                                             <br />
                                                                             <select id="mphb_children-mphb-search-form-6061a36060295" name="sokhach">
                                                                                 <option value="0" selected="selected">0</option>
@@ -203,22 +203,22 @@
                                                     <div class="elementor-element elementor-element-c5b8fc1 elementor-invisible elementor-widget elementor-widget-heading" data-id="c5b8fc1" data-element_type="widget" data-settings='{"_animation":"fadeInUp","_animation_delay":200,"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
                                                             <h2 class="elementor-heading-title elementor-size-default">
-                                                                The signature services and<br />
-                                                                wonders of Prague
+                                                                Các dịch vụ chữ ký và<br />
+                                                                kỳ quan Praha
                                                             </h2>
                                                         </div>
                                                     </div>
                                                     <div class="elementor-element elementor-element-9916709 elementor-invisible elementor-widget elementor-widget-heading" data-id="9916709" data-element_type="widget" data-settings='{"_animation":"fadeInUp","_animation_delay":400,"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
-                                                            <span class="elementor-heading-title elementor-size-default">Our accommodations are excellent for a trip with friends, family or as a couple</span>
+                                                            <span class="elementor-heading-title elementor-size-default">Chỗ ở của chúng tôi là tuyệt vời cho một chuyến đi với bạn bè, gia đình hoặc một cặp vợ chồng</span>
                                                         </div>
                                                     </div>
                                                     <div class="elementor-element elementor-element-bb8a693 elementor-invisible elementor-widget elementor-widget-text-editor" data-id="bb8a693" data-element_type="widget" data-settings='{"_animation":"fadeInUp","_animation_delay":600,"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="text-editor.default">
                                                         <div class="elementor-widget-container">
                                                             <div class="elementor-text-editor elementor-clearfix">
                                                                 <p class="p1">
-                                                                    The concept and service of the best luxury hotels in Asturias in our sophisticated Urban Double and Unique Junior Suite rooms, with the possibility of
-                                                                    enjoying a furnished terrace in our Double Urban Loft and Unique Junior Loft Suite.
+                                                                Khái niệm và dịch vụ của các khách sạn sang trọng tốt nhất ở Asturias trong các phòng Urban Double và Unique Junior Suite tinh vi của chúng tôi, với khả năng
+                                                                     tận hưởng sân hiên được trang bị bàn ghế trong Căn hộ Gác xép Đô thị Đôi và Căn hộ Gác mái Nhỏ Độc đáo của chúng tôi.
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -232,7 +232,7 @@
                                                     </div>
                                                     <div class="elementor-element elementor-element-33ec55d elementor-invisible elementor-widget elementor-widget-heading" data-id="33ec55d" data-element_type="widget" data-settings='{"_animation":"fadeInUp","_animation_delay":1000,"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
-                                                            <span class="elementor-heading-title elementor-size-default">Hotel Manager</span>
+                                                            <span class="elementor-heading-title elementor-size-default">Quản lý khách sạn</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -253,14 +253,14 @@
                                                                 <header class="c-header c-header--archive c-header--project-list">
                                                                     <div class="c-mouse-vertical-carousel js-carousel u-media-wrapper">
                                                                         <div class="carousel__header">
-                                                                            <h2>Our Rooms</h2>
+                                                                            <h2>Loại Phòng</h2>
                                                                         </div>
 
                                                                         <ul class="c-mouse-vertical-carousel__list js-carousel-list">
                                                                             <li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="0">
                                                                                 <a href="deluxe-room.html">
                                                                                     <p class="c-mouse-vertical-carousel__eyebrow">
-                                                                                        from $199/night
+                                                                                        from 1.500.000/night
                                                                                     </p>
                                                                                     <p class="c-mouse-vertical-carousel__title">
                                                                                         Superior Room
@@ -270,7 +270,7 @@
                                                                             <li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="1">
                                                                                 <a href="deluxe-room.html">
                                                                                     <p class="c-mouse-vertical-carousel__eyebrow">
-                                                                                        from $249/night
+                                                                                        from 1.800.000/night
                                                                                     </p>
                                                                                     <p class="c-mouse-vertical-carousel__title">
                                                                                         Deluxe Room
@@ -280,7 +280,7 @@
                                                                             <li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="2">
                                                                                 <a href="deluxe-room.html">
                                                                                     <p class="c-mouse-vertical-carousel__eyebrow">
-                                                                                        from $299/night
+                                                                                        from 2.000.000/night
                                                                                     </p>
                                                                                     <p class="c-mouse-vertical-carousel__title">
                                                                                         Signature Room
@@ -290,7 +290,7 @@
                                                                             <li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="3">
                                                                                 <a href="deluxe-room.html">
                                                                                     <p class="c-mouse-vertical-carousel__eyebrow">
-                                                                                        from $399/night
+                                                                                        from 3.000.000/night
                                                                                     </p>
                                                                                     <p class="c-mouse-vertical-carousel__title">
                                                                                         Luxury Suite Room
@@ -341,8 +341,8 @@
                                                     <div class="elementor-element elementor-element-8deffd0 elementor-invisible elementor-widget elementor-widget-heading" data-id="8deffd0" data-element_type="widget" data-settings='{"_animation":"fadeInUp","hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
                                                             <h2 class="elementor-heading-title elementor-size-default">
-                                                                Our services and<br />
-                                                                wonders of Prague
+                                                            Dịch vụ của chúng tôi và<br />
+                                                                 kỳ quan Praha
                                                             </h2>
                                                         </div>
                                                     </div>
@@ -350,8 +350,8 @@
                                                         <div class="elementor-widget-container">
                                                             <div class="elementor-text-editor elementor-clearfix">
                                                                 <p>
-                                                                    See-through delicate embroidered organza blue lining luxury acetate-mix stretch pleat detailing. Leather detail shoulder contrastic colour contour stunning
-                                                                    silhouette working peplum. Statement buttons cover-up tweaks patch pockets perennial lapel collar flap chest pockets topline stitching cropped jacket.
+                                                                Chi tiết xếp li co giãn kết hợp axetat sang trọng được thêu tinh tế trong suốt màu xanh organza. Chi tiết da phối viền vai màu tương phản tuyệt đẹp
+                                                                     bóng làm việc peplum. Nút tuyên bố che đậy điều chỉnh túi vá ve áo lâu năm cổ áo vạt túi ngực topline khâu áo khoác cắt xén.
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -361,7 +361,7 @@
                                                             <div class="elementor-button-wrapper">
                                                                 <a href="https://themes.themegoods.com/hoteller/sites/about-us" class="elementor-button-link elementor-button elementor-size-sm" role="button">
                                                                     <span class="elementor-button-content-wrapper">
-                                                                        <span class="elementor-button-text">View more</span>
+                                                                        <span class="elementor-button-text">Xem thêm</span>
                                                                     </span>
                                                                 </a>
                                                             </div>
@@ -381,14 +381,14 @@
                                                 <div class="elementor-widget-wrap">
                                                     <div class="elementor-element elementor-element-57ad2cc elementor-invisible elementor-widget elementor-widget-heading" data-id="57ad2cc" data-element_type="widget" data-settings='{"_animation":"fadeInUp","hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
-                                                            <span class="elementor-heading-title elementor-size-default">Nearby Places</span>
+                                                            <span class="elementor-heading-title elementor-size-default">Những nơi gần đó</span>
                                                         </div>
                                                     </div>
                                                     <div class="elementor-element elementor-element-4d21ea3 elementor-invisible elementor-widget elementor-widget-heading" data-id="4d21ea3" data-element_type="widget" data-settings='{"_animation":"fadeInUp","_animation_delay":200,"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
                                                             <h2 class="elementor-heading-title elementor-size-default">
-                                                                Explore & experience<br />
-                                                                the magical places nearby our hotel
+                                                            Khám phá & trải nghiệm<br />
+                                                                 những nơi kỳ diệu gần khách sạn của chúng tôi
                                                             </h2>
                                                         </div>
                                                     </div>
@@ -401,9 +401,9 @@
                                                         <div class="elementor-widget-container">
                                                             <div class="elementor-text-editor elementor-clearfix">
                                                                 <p class="p1">
-                                                                    If you visit us in low-season, which ranges between end of April to mid-June and end of October to mid-December, you will find a small sleepy village with
-                                                                    about 5’000 locals, surrounded by a quiet beautiful nature, where the bells of the blacknose sheep on the meadows around the village are the only
-                                                                    perceivable noise.
+                                                                Nếu bạn đến thăm chúng tôi vào mùa thấp điểm, khoảng từ cuối tháng 4 đến giữa tháng 6 và cuối tháng 10 đến giữa tháng 12, bạn sẽ tìm thấy một ngôi làng nhỏ buồn ngủ với
+                                                                     khoảng 5000 người dân địa phương, được bao quanh bởi thiên nhiên tươi đẹp yên tĩnh, nơi duy nhất chỉ có tiếng chuông của những chú cừu mũi đen trên đồng cỏ quanh làng
+                                                                     tiếng ồn có thể cảm nhận được.
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -459,8 +459,8 @@
                                                     <div class="elementor-element elementor-element-501d6ad elementor-invisible elementor-widget elementor-widget-heading" data-id="501d6ad" data-element_type="widget" data-settings='{"_animation":"fadeInUp","_animation_delay":200,"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
                                                             <h2 class="elementor-heading-title elementor-size-default">
-                                                                Alpine Hideaway Resort<br />
-                                                                Experience wonders of Prague
+                                                            Khu nghỉ dưỡng Alpine Hideaway<br />
+                                                                 Trải nghiệm kỳ quan của Praha
                                                             </h2>
                                                         </div>
                                                     </div>
@@ -468,8 +468,8 @@
                                                         <div class="elementor-widget-container">
                                                             <div class="elementor-text-editor elementor-clearfix">
                                                                 <p class="p1">
-                                                                    Polished finish elegant court shoe work duty stretchy slingback strap mid kitten heel this ladylike design slingback strap mid kitten heel this ladylike
-                                                                    design. Leather detail shoulder contrast colour contour stunning silhouette working peplum.
+                                                                Bề mặt được đánh bóng, giày công sở thanh lịch, dây quai đeo chéo co giãn ở giữa gót mèo, thiết kế nữ tính này, quai đeo ở giữa, gót mèo, thiết kế quý phái này
+                                                                     thiết kế. Chi tiết da vai màu tương phản đường viền peplum làm việc hình bóng tuyệt đẹp.
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -489,7 +489,7 @@
                                                     <div class="elementor-element elementor-element-46767e3 elementor-widget elementor-widget-heading" data-id="46767e3" data-element_type="widget" data-settings='{"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
                                                             <span class="elementor-heading-title elementor-size-default">
-                                                                Each of our properties are uniquely positioned but are connected through a trail of peerless service
+                                                            Mỗi tài sản của chúng tôi đều có vị trí độc đáo nhưng được kết nối thông qua một chuỗi dịch vụ vô song
                                                             </span>
                                                         </div>
                                                     </div>
@@ -527,15 +527,15 @@
                                                             <div class="tg_flip_box_wrapper square-flip">
                                                                 <div class="square" data-image="upload/food-on-a-table-in-a-hotel-room-PU969F8.jpg">
                                                                     <div class="square-container">
-                                                                        <h2>Free Breakfast Included</h2>
+                                                                        <h2>Bao gồm bữa sáng miễn phí</h2>
                                                                     </div>
                                                                     <div class="flip-overlay"></div>
                                                                 </div>
                                                                 <div class="square2" data-image="upload/food-on-a-table-in-a-hotel-room-PU969F8.jpg">
                                                                     <div class="square-container2">
                                                                         <div class="align-center"></div>
-                                                                        <h2>Breakfast included when booking the Junior Suite</h2>
-                                                                        <a href="index.html" class="boxshadow button">View Offer</a>
+                                                                        <h2>Bao gồm ăn sáng khi đặt phòng Junior Suite</h2>
+                                                                        <a href="index.html" class="boxshadow button">Xem đề nghị</a>
                                                                     </div>
                                                                     <div class="flip-overlay"></div>
                                                                 </div>
@@ -553,14 +553,14 @@
                                                             <div class="tg_flip_box_wrapper square-flip">
                                                                 <div class="square" data-image="upload/room-standard-01.jpg">
                                                                     <div class="square-container">
-                                                                        <h2>10% for advanced booking</h2>
+                                                                        <h2>10% cho đặt phòng trước</h2>
                                                                     </div>
                                                                     <div class="flip-overlay"></div>
                                                                 </div>
                                                                 <div class="square2" data-image="upload/room-standard-01.jpg">
                                                                     <div class="square-container2">
                                                                         <div class="align-center"></div>
-                                                                        <h2>Benefit from a 10% discount, reservations with a minimum of 3 days in advance</h2>
+                                                                        <h2>Hưởng chiết khấu 10%, đặt trước tối thiểu 3 ngày</h2>
                                                                         <a href="index.html" class="boxshadow button">View Offer</a>
                                                                     </div>
                                                                     <div class="flip-overlay"></div>
@@ -579,15 +579,15 @@
                                                             <div class="tg_flip_box_wrapper square-flip">
                                                                 <div class="square" data-image="upload/One-Bedroom-Alpine-Suite-Lake-View.jpg">
                                                                     <div class="square-container">
-                                                                        <h2>15% for non refundable booking</h2>
+                                                                        <h2>15% cho đặt phòng không hoàn lại</h2>
                                                                     </div>
                                                                     <div class="flip-overlay"></div>
                                                                 </div>
                                                                 <div class="square2" data-image="upload/One-Bedroom-Alpine-Suite-Lake-View.jpg">
                                                                     <div class="square-container2">
                                                                         <div class="align-center"></div>
-                                                                        <h2>Benefit from a 15% discount, making your reservations with a minimum of 15 days in advance</h2>
-                                                                        <a href="index.html" class="boxshadow button">View Offer</a>
+                                                                        <h2>Hưởng lợi từ chiết khấu 15%, đặt chỗ trước tối thiểu 15 ngày</h2>
+                                                                        <a href="index.html" class="boxshadow button">Xem đề nghị</a>
                                                                     </div>
                                                                     <div class="flip-overlay"></div>
                                                                 </div>

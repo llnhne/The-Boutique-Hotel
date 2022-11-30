@@ -38,7 +38,7 @@
                                                                                         <div class="slide is-active">
                                                                                             <div class="slide-content">
                                                                                                 <div class="caption">
-                                                                                                    <div class="title"><h2>Family Suite with Matterhorn view on the top floor. Since our last renovation in 2018</h2></div>
+                                                                                                    <div class="title"><h2>Suite Gia đình nhìn ra Matterhorn ở tầng trên cùng. Kể từ lần cải tạo cuối cùng của chúng tôi vào năm 2018</h2></div>
                                                                                                     <div class="text"></div>
                                                                                                 </div>
                                                                                             </div>
@@ -49,7 +49,7 @@
                                                                                         <div class="slide">
                                                                                             <div class="slide-content">
                                                                                                 <div class="caption">
-                                                                                                    <div class="title"><h2>Elegant wooden parquet flooring. From the balconies, stunning mountain views can be enjoyed</h2></div>
+                                                                                                    <div class="title"><h2>Sàn nhà lát gỗ sang trọng. Từ ban công, có thể thưởng thức quang cảnh núi non tuyệt đẹp</h2></div>
                                                                                                     <div class="text"></div>
                                                                                                 </div>
                                                                                             </div>
@@ -60,7 +60,7 @@
                                                                                         <div class="slide">
                                                                                             <div class="slide-content">
                                                                                                 <div class="caption">
-                                                                                                    <div class="title"><h2>All of our accommodation options comprise luxury amenities such as tea &amp; coffee makers, minibars</h2></div>
+                                                                                                    <div class="title"><h2>Tất cả các lựa chọn chỗ ở của chúng tôi bao gồm các tiện nghi sang trọng như trà &amp; máy pha cà phê, minibar</h2></div>
                                                                                                     <div class="text"></div>
                                                                                                 </div>
                                                                                             </div>

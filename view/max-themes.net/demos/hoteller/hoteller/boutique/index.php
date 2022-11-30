@@ -7,6 +7,7 @@ include 'model/phong.php';
 include 'model/hotro.php';
 include 'model/datphong.php';
 include 'model/taikhoan.php';
+include 'model/binhluan.php';
 include 'header.php';
 
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
@@ -30,20 +31,19 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include "about.php";
             break;
         case 'home':
+            // hiển thị danh sách phòng trống
             if (isset($_POST['submit']) && ($_POST['submit'])) {
                 $ngaydat = $_POST['ngayden'];
                 $ngaytra = $_POST['ngaytra'];
                 $datphongs = loadall_phongdadat();
                 foreach ($datphongs as $datphong) {
-
+                    // lấy tất cả các phòng trừ trùng
                     if ($ngaydat === $datphong['ngayden'] && $ngaytra === $datphong['ngaytra']) {
-                        // echo "tìm kiếm của khách có trùng với một số phòng có ngày trả và ngày đến giống với khách tìm kiếm , hiển thị những phòng còn trống";
                         $listpchuadat = loadall_phongchuadat2($ngaydat, $ngaytra);
+                    
                     } else if ($ngaydat != $datphong['ngayden'] && $ngaytra != $datphong['ngaytra']) {
-                        // echo "Ngày khác ngày trong bảng dặt phòng";
                         $listpchuadat = loadall_phongchuadat($ngaydat, $ngaytra);
                     } else if (($datphong['ngayden']  >= $ngaydat && ($datphong['ngayden'] <= $ngaytra && $ngaytra <= $datphong['ngaytra'])) || (($datphong['ngayden'] <= $ngaydat && $ngaydat <= $datphong['ngaytra']) && $ngaytra >= $datphong['ngaytra'])) {
-                        // echo "Ngày khác ngày trong bảng dặt phòng jfakdfhkj";
                         $listpchuadat = loadall_phongchuadat3($ngaydat, $ngaytra);
                     }
                 }
@@ -73,6 +73,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'room':
             $id = $_GET['id'];
             $room = loadone_phong($id);
+            $listbl = load_binhluan($id);
             $sql = "select * from datphong where id_phong=$id";
             $datphongs = pdo_query($sql);
             if (isset($_POST['datphong']) && ($_POST['datphong'])) {
@@ -97,14 +98,15 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     $dateout = strtotime($_POST['ngaytra']);
                     $datediff = abs($datefirst - $dateout);
                     $songay = floor($datediff / (60 * 60 * 24));
-                    $tongtien = $songay * ($price * 23000);
+                    $tongtien = $songay * $price ;
+                    $giaodich='';
                     $format_tongtien = number_format($tongtien);
                     date_default_timezone_set('Asia/Ho_Chi_Minh');
                     $date = date('m/d/Y h:i:s a', time());
                     // $hr  = floor(($rem % 86400) / 3600);
                     // $min = floor(($rem % 3600) / 60);
                     // $sec = ($rem % 60);
-                    insert_datphong($id_phong, $id_user, $sokhach, $ngayden, $ngaytra);
+                    insert_datphong($id_phong, $id_user, $sokhach, $ngayden, $ngaytra,$tongtien,$giaodich);
                     $thongbao = "Vui lòng thanh toán trong 24h để đặt phòng!";
                 } else {
                     $thongtin = "Đã có người đặt trước đó. Vui lòng đặt ngày khác!!!";
@@ -115,20 +117,19 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             include "room.php";
             break;
-        case 'thanhtoan':
-            $idp = $_GET['idp'];
-            $sql = "select * from datphong where id_phong = $idp";
-            $dp = pdo_query_one($sql);
-            $idorder = $dp['id_order'];
-            echo $idorder;
-            if (isset($_POST['thanhtoan']) && ($_POST['thanhtoan'])) {
-                header("location: http://localhost/duan1/view/max-themes.net/demos/hoteller/hoteller/boutique/vnpay_php/index.php?idorder=$idorder");
-            }
-            include "room.php";
-            break;
-        case 'demo':
-            $tomorrow = 1;
-            include "./vnpay_php/index.php";
+            case 'thanhtoan':
+                $idp = $_GET['idp'];
+                $sql = "select * from datphong where id_phong = $idp";
+                $dp = pdo_query_one($sql);
+                $idorder = $dp['id_order'];
+                $tongtien = $dp['tongtien'];
+
+                if (isset($_POST['thanhtoan']) && ($_POST['thanhtoan'])) {
+                    header("location: http://localhost/duan1/view/max-themes.net/demos/hoteller/hoteller/boutique/vnpay_php/index.php?idorder=$idorder");
+                    
+                }
+                include "room.php";
+                break;
             break;
             // case 'comfirm':
             //     $id = $_GET['id'];
@@ -147,8 +148,44 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             //     // var_dump(insert_datphong($id_phong, $id_user, $sokhach, $ngayden, $ngaytra));
             //     include "comfirm.php";
             //     break;
-        case 'thanhtoan':
-            include "sandbox/vnpay_php/index.php";
+        case 'binhluan':
+            $iduser = $_POST['iduser'];
+            $idroom = $_POST['idroom'];
+            $noidung = $_POST['comment'];
+            $date = getdate();
+            $ngaybinhluan = $date['year'] . "/" . $date['mon'] . "/" . $date['mday'];
+            insert_binhluan($noidung, $iduser, $ngaybinhluan, $idroom);
+            header("location:http://localhost/duan1/view/max-themes.net/demos/hoteller/hoteller/boutique/index.php?act=room&id=$idroom");
+            break;
+        case 'suabl':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $tk = loadone_taikhoan($_GET['id']);
+            }
+            include "taikhoan/update.php";
+            break;
+        case 'updatebl':
+            if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                $id = $_POST['id'];
+                $user = $_POST['user'];
+                $password = $_POST['password'];
+                $email = $_POST['email'];
+                $address = $_POST['address'];
+                $tel = $_POST['tel'];
+                update_taikhoan($id, $user, $password, $email, $address, $tel);
+                $thongbao = "Cập nhật thành công!";
+            }
+            $listtaikhoan = loadall_taikhoan("", 0);
+            include "taikhoan/list.php";
+            break;
+        case 'xoabl':
+            $idroom = $_GET['idp'];
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                delete_binhluan($_GET['id']);
+            }
+
+
+            // $listbl = load_binhluan($id);
+            header("location:http://localhost/duan1/view/max-themes.net/demos/hoteller/hoteller/boutique/index.php?act=room&id=$idroom");
             break;
         case 'tk':
             include "taikhoan/info.php";

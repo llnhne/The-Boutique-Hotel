@@ -16,7 +16,7 @@
     </head>
 
     <body>
-        <?php require_once("./config.php"); ?>
+        <?php require_once("config.php"); ?>
         <div class="container">
             <div class="header clearfix">
                 <h3 class="text-muted">VNPAY DEMO</h3>
@@ -38,13 +38,13 @@
                     <div class="form-group">
                         <label for="order_id">Mã hóa đơn</label>
                         <!-- id_bill -->
-                        <input class="form-control" id="order_id" name="order_id" type="text" value=""/> 
+                        <input class="form-control" id="order_id" name="order_id" type="text" value="<?php echo $dp['id_order']?>"/> 
                     </div>
                     <div class="form-group">
                         <label for="amount">Số tiền</label>
                         <!-- tổng tiền -->
                         <input class="form-control" id="amount"
-                               name="amount" type="number" value=""/>
+                               name="amount" type="number" value="<?php echo $dp['tongtien']?>"/>
                     </div>
                     
                     <div class="form-group">
@@ -89,7 +89,7 @@
                     <div class="form-group">
                         <label >Thời hạn thanh toán</label>
                         <input class="form-control" id="txtexpire"
-                               name="txtexpire" type="text" value=""/>
+                               name="txtexpire" type="text" value="<?php echo $expire; ?>"/>
                     </div>
                     <div class="form-group">
                         <h3>Thông tin hóa đơn (Billing)</h3>

@@ -18,7 +18,7 @@
                                                         <div class="elementor-widget-container">
                                                             <h1 class="elementor-heading-title elementor-size-default">
                                                                 · <?php echo $room['name_phong'] ?> ·<br />
-                                                                Designed for natural living
+                                                                Được thiết kế cho cuộc sống tự nhiên
                                                             </h1>
                                                         </div>
                                                     </div>
@@ -36,7 +36,7 @@
                                                 <div class="elementor-widget-wrap">
                                                     <div class="elementor-element elementor-element-1f0d5f9d elementor-invisible elementor-widget elementor-widget-heading" data-id="1f0d5f9d" data-element_type="widget" data-settings='{"_animation":"fadeInLeft","hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
-                                                            <h3 class="elementor-heading-title elementor-size-default">King Bed</h3>
+                                                            <h3 class="elementor-heading-title elementor-size-default">Giường cỡ King</h3>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -47,7 +47,7 @@
                                                 <div class="elementor-widget-wrap">
                                                     <div class="elementor-element elementor-element-3e1c9c92 elementor-invisible elementor-widget elementor-widget-heading" data-id="3e1c9c92" data-element_type="widget" data-settings='{"_animation":"fadeInLeft","hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
-                                                            <h3 class="elementor-heading-title elementor-size-default">Max <?php echo $room['sokhach'] ?> people</h3>
+                                                            <h3 class="elementor-heading-title elementor-size-default">Tối Đa <?php echo $room['sokhach'] ?> people</h3>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -80,7 +80,7 @@
                                                 <div class="elementor-widget-wrap">
                                                     <div class="elementor-element elementor-element-15436ad8 elementor-invisible elementor-widget elementor-widget-heading" data-id="15436ad8" data-element_type="widget" data-settings='{"_animation":"fadeInLeft","_animation_delay":600,"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
-                                                            <h3 class="elementor-heading-title elementor-size-default" name="price">From <?php echo $room['price'] ?>$/night</h3>
+                                                            <h3 class="elementor-heading-title elementor-size-default" name="price">From <?php echo $room['price'] ?>vnd/night</h3>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -116,8 +116,8 @@
                                                     <div class="elementor-element elementor-element-5d213a7d elementor-invisible elementor-widget elementor-widget-heading" data-id="5d213a7d" data-element_type="widget" data-settings='{"_animation":"fadeInUp","hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
                                                             <h2 class="elementor-heading-title elementor-size-default">
-                                                                Our services and<br />
-                                                                wonders of Prague
+                                                            dịch vụ của chúng tôi và<br />
+                                                            kỳ quan Praha
                                                             </h2>
                                                         </div>
                                                     </div>
@@ -133,7 +133,7 @@
                                                             <div class="elementor-button-wrapper">
                                                                 <a href="#booking" class="elementor-button-link elementor-button elementor-size-sm" role="button">
                                                                     <span class="elementor-button-content-wrapper">
-                                                                        <span class="elementor-button-text">Book this room</span>
+                                                                        <span class="elementor-button-text">Đặt phòng</span>
                                                                     </span>
                                                                 </a>
                                                             </div>
@@ -249,14 +249,14 @@
                                                         <div class="elementor-widget-container">
                                                             <div class="elementor-text-editor elementor-clearfix">
                                                                 <p>
-                                                                    40-inch Samsung® LED TV<br />
-                                                                    Electronic safe with charging facility<br />
-                                                                    iHome™ Bluetooth MP3 Player<br />
-                                                                    Iron and ironing board<br />
-                                                                    Mini bar<br />
-                                                                    Non-smoking<br />
-                                                                    USB charging station<br />
-                                                                    Wired and wireless broadband Internet access
+                                                                    TV LED Samsung® 40 inch<br />
+                                                                    Két sắt điện tử có sạc<br />
+                                                                    Máy nghe nhạc MP3 Bluetooth iHome™<br />
+                                                                    Bàn ủi<br />
+                                                                    Tủ lạnh<br />
+                                                                    Không hút thuốc<br />
+                                                                    trạm sạc USB<br />
+                                                                    Truy cập Internet băng thông rộng có dây và không dây
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -287,6 +287,62 @@
                                     </div>
                                 </div>
                             </section>
+                            <section class=" my-10 ">
+
+                                <div class="border-b-zinc-900 border border-solid border-x-white border-t-white">
+                                    <p class="bg-slate-100 p-3 w-40 ">BÌNH LUẬN</p>
+                                </div>
+
+                                <div class=" my-5 w-full">
+                                    <form action="index.php?act=binhluan&id=<?php echo $room['id_phong']; ?>" class="w-full border-inherit " method="POST">
+                                        <input type="text" name="iduser" value="<?php echo $_SESSION['user']['id_user'] ?>" hidden>
+
+                                        <input type="text" name="idroom" value="<?php echo $room['id_phong']; ?>" hidden>
+
+                                        <div class="p-4">
+                                            <textarea name="comment" cols="30" rows="2" type="text" class="w-full py-5 border-none " placeholder="Viết bình luận..."></textarea>
+                                        </div>
+                                        <br>
+                                        <div class="bg-slate-200 p-5 flex ">
+                                            <button name="send" class="send_comment justify-items-end bg-indigo-500 text-white rounded justify-items-end w-60 p-4 ">Gửi bình luận</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                                <div class="open_block h-96 overflow-hidden">
+                                    <?php foreach ($listbl as $item) { ?>
+                                        <?php
+                                        $suabl = "index.php?act=suabl&id=" . $item['id_comment'];
+                                        $xoabl = 'index.php?act=xoabl&id= ' . $item['id_comment'] . '&idp=' . $item['id_phong'] . '';
+
+                                        ?>
+                                        <div class="pl-24 my-4 ">
+                                            <div class="">
+                                                <div class="flex">
+                                                    <div class="w-16 h-16 border-solid border-2 rounded-full overflow-hidden border-green-600">
+                                                        <img class="w-16" src="./upload/101048866-768x576.jpg" alt="">
+                                                    </div>
+                                                    <p class="ml-5 text-2xl font-bold"><?php echo $item['username'] ?></p>
+
+                                                </div>
+                                                <div class="p-2 rounded-xl  bg-lime-200 ml-2 ">
+                                                    <p><?php echo $item['noidung'] ?></p>
+                                                </div>
+                                            </div>
+                                            <div class="flex">
+                                                <p><?php echo $item['ngaybinhluan'] ?></p>
+                                                <p id="like" class="mx-5 font-bold cursor-pointer">Thích</p>
+                                                <p><a  href="' . $xoatk . '" href="<?php echo $suabl ?>" class=" font-bold cursor-pointer">Sửa</a></p>
+                                                <p><a onclick="return confirm('Bạn có thực sự muốn xóa không?');" href="<?php echo $xoabl ?>" class=" mx-5 font-bold cursor-pointer">Xóa</a></p>
+
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                                <div id="view" class="font-bold cursor-pointer p-2 text-center py-2 hover:text-slate-400">Xem thêm...</div>
+                            </section>
+
                             <section class="elementor-section elementor-top-section elementor-element elementor-element-23c9a038 elementor-section-stretched elementor-section-height-min-height elementor-section-items-bottom elementor-section-boxed elementor-section-height-default" data-id="23c9a038" data-element_type="section" data-settings='{"stretch_section":"section-stretched","background_background":"classic","hoteller_ext_is_background_parallax":"false","hoteller_ext_is_background_on_scroll":"false"}'>
                                 <div class="elementor-container elementor-column-gap-default">
                                     <div class="elementor-row">
@@ -296,7 +352,7 @@
                                                     <div class="elementor-element elementor-element-18ace973 elementor-widget elementor-widget-heading" data-id="18ace973" data-element_type="widget" data-settings='{"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
                                                             <span class="elementor-heading-title elementor-size-default">
-                                                                Each of our properties are uniquely positioned but are connected through a trail of peerless service
+                                                            Mỗi tài sản của chúng tôi đều có vị trí độc đáo nhưng được kết nối thông qua một chuỗi dịch vụ vô song
                                                             </span>
                                                         </div>
                                                     </div>
@@ -314,7 +370,7 @@
                                                 <div class="elementor-widget-wrap">
                                                     <div class="elementor-element elementor-element-38bc8d29 elementor-invisible elementor-widget elementor-widget-heading" data-id="38bc8d29" data-element_type="widget" data-settings='{"_animation":"fadeInUp","hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
-                                                            <h2 class="elementor-heading-title elementor-size-default">Ready to book?</h2><br><br>
+                                                            <h2 class="elementor-heading-title elementor-size-default">Sẵn sàng để đặt?</h2><br><br>
                                                         </div>
                                                     </div>
                                                     <div class="elementor-element elementor-element-323c9db6 elementor-invisible elementor-widget elementor-widget-heading" data-id="323c9db6" data-element_type="widget" data-settings='{"_animation":"fadeInUp","_animation_delay":200,"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
@@ -346,7 +402,7 @@
                                                             <input type="text" name="name_phong" value="<?php echo $room['name_phong'] ?>" disabled /><br><br>
 
                                                             <label for="">Giá Phòng:</label><br>
-                                                            <input type="text" name="price" value="<?php echo $room['price'] ?>$/1 night" disabled><br><br>
+                                                            <input type="text" name="price" value="<?php echo $room['price'] ?>vnd/night" disabled><br><br>
                                                             <div id="content"></div>
                                                             <p class="mphb-reserve-btn-wrapper">
                                                                 <input class="mphb-reserve-btn button" type="submit" name="comfirm" id="comfirm" value="Chi Tiết" />
@@ -376,7 +432,7 @@
                                                 <div class="elementor-widget-wrap">
                                                     <div class="elementor-element elementor-element-56c664f7 elementor-widget elementor-widget-heading" data-id="56c664f7" data-element_type="widget" data-settings='{"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
-                                                            <h2 class="elementor-heading-title elementor-size-default">Book Now</h2>
+                                                            <h2 class="elementor-heading-title elementor-size-default">Đặt bây giờ</h2>
                                                         </div>
                                                     </div>
                                                     <div class="elementor-element elementor-element-12e657b2 elementor-widget elementor-widget-shortcode" data-id="12e657b2" data-element_type="widget" data-settings='{"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="shortcode.default">
@@ -402,7 +458,7 @@
                                                                         if (isset($tongtien) && ($tongtien != "")) echo '<h3 style="font-weight:500;">Tổng số tiền: </h3>' . $format_tongtien;
                                                                         ?>
                                                                         <?php
-                                                                        if (isset($date) && ($date != "")) echo '<h3 style="font-weight:500;">Thời gian đặt phòng: </h3>' .$date;
+                                                                        if (isset($date) && ($date != "")) echo '<h3 style="font-weight:500;">Thời gian đặt phòng: </h3>' . $date;
                                                                         ?>
                                                                         <?php
                                                                         // echo '<h3 style=";font-weight:500;">';
@@ -414,11 +470,11 @@
                                                                         if (isset($thongtin) && ($thongtin != "")) echo $thongtin;
                                                                         ?>
                                                                         <?php
-                                                                            (isset($datphongs) && ($datphongs != ""));
-                                                                            foreach ($datphongs as $dp){
-                                                                                print_r($dp['ngayden']);
-                                                                                print_r($dp['ngaytra']);
-                                                                            }
+                                                                        (isset($datphongs) && ($datphongs != ""));
+                                                                        foreach ($datphongs as $dp) {
+                                                                            print_r($dp['ngayden']);
+                                                                            print_r($dp['ngaytra']);
+                                                                        }
                                                                         ?>
                                                                     </span><br>
                                                                     <?php
@@ -426,24 +482,24 @@
                                                                         extract($_SESSION['user']);
                                                                     ?>
                                                                         <p class="mphb-required-fields-tip">
-                                                                            <small>Required fields are followed by <abbr title="required">*</abbr></small>
+                                                                            <small>Các trường bắt buộc được theo sau bởi <abbr title="required">*</abbr></small>
                                                                         </p>
                                                                         <p class="mphb-check-in-date-wrapper">
-                                                                            <label for="mphb_check_in_date-6061a3921343a"> Check-in Date <abbr title="Formatted as dd/mm/yyyy">*</abbr> </label>
+                                                                            <label for="mphb_check_in_date-6061a3921343a"> Ngày đến <abbr title="Formatted as dd/mm/yyyy">*</abbr> </label>
                                                                             <br />
                                                                             <input id="mphb_check_in_date-6061a3921343a" type="date" class="mphb-datepick" name="ngayden" value="" required="required" autocomplete="off" placeholder="Check-in Date" />
 
                                                                         </p>
 
                                                                         <p class="mphb-check-out-date-wrapper">
-                                                                            <label for="mphb_check_out_date-6061a3921343a"> Check-out Date <abbr title="Formatted as dd/mm/yyyy">*</abbr> </label>
+                                                                            <label for="mphb_check_out_date-6061a3921343a"> Ngày trả <abbr title="Formatted as dd/mm/yyyy">*</abbr> </label>
                                                                             <br />
                                                                             <input id="mphb_check_out_date-6061a3921343a" type="date" class="mphb-datepick" name="ngaytra" value="" required="required" autocomplete="off" placeholder="Check-out Date" />
 
                                                                         </p>
 
                                                                         <p class="mphb-adults-wrapper mphb-capacity-wrapper">
-                                                                            <label for="mphb_adults-6061a3921343a"> Adults </label>
+                                                                            <label for="mphb_adults-6061a3921343a"> Người lớn </label>
                                                                             <br />
                                                                             <select id="mphb_adults-6061a3921343a" name="sokhach">
                                                                                 <option value="1">1</option>
@@ -453,7 +509,7 @@
                                                                             </select>
                                                                         </p>
                                                                         <p class="mphb-children-wrapper mphb-capacity-wrapper">
-                                                                            <label for="mphb_children-6061a3921343a"> Children </label>
+                                                                            <label for="mphb_children-6061a3921343a"> Trẻ em </label>
                                                                             <br />
                                                                             <select id="mphb_children-6061a3921343a" name="mphb_children">
                                                                                 <option value="0">0</option>
@@ -510,7 +566,7 @@
                                                                             <li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="0">
                                                                                 <a href="https://max-themes.net/demos/hoteller/hoteller/superior-room/index.htm">
                                                                                     <p class="c-mouse-vertical-carousel__eyebrow">
-                                                                                        from $199/night
+                                                                                        from 1.500.000vnd/night
                                                                                     </p>
                                                                                     <p class="c-mouse-vertical-carousel__title">
                                                                                         Superior Room
@@ -520,7 +576,7 @@
                                                                             <li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="1">
                                                                                 <a href="index.html">
                                                                                     <p class="c-mouse-vertical-carousel__eyebrow">
-                                                                                        from $249/night
+                                                                                        from 1.800.000vnd/night
                                                                                     </p>
                                                                                     <p class="c-mouse-vertical-carousel__title">
                                                                                         Deluxe Room
@@ -530,7 +586,7 @@
                                                                             <li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="2">
                                                                                 <a href="https://max-themes.net/demos/hoteller/hoteller/signature-room/index.htm">
                                                                                     <p class="c-mouse-vertical-carousel__eyebrow">
-                                                                                        from $299/night
+                                                                                        from 2.000.000vnd/night
                                                                                     </p>
                                                                                     <p class="c-mouse-vertical-carousel__title">
                                                                                         Signature Room
@@ -540,7 +596,7 @@
                                                                             <li class="c-mouse-vertical-carousel__list-item js-carousel-list-item" data-item-id="3">
                                                                                 <a href="https://max-themes.net/demos/hoteller/hoteller/luxury-suite-room/index.htm">
                                                                                     <p class="c-mouse-vertical-carousel__eyebrow">
-                                                                                        from $399/night
+                                                                                        from 3.000.000vnd/night
                                                                                     </p>
                                                                                     <p class="c-mouse-vertical-carousel__title">
                                                                                         Luxury Suite Room

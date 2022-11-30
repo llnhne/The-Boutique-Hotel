@@ -17,8 +17,9 @@
                         <th>SỐ KHÁCH</th>
                         <th>NGÀY ĐẾN</th>
                         <th>NGÀY TRẢ</th>
-                        <th>TÌNH TRẠNG</th>
-                        <th></th>
+                        <th>TỔNG TIỀN</th>
+                       
+                        <th>ACTION</th>
                     </tr>
                     <?php
                     foreach ($listdp as $datphong) {
@@ -33,7 +34,8 @@
                                         <td>' . $sokhach . 'người</td>
                                         <td>' . $ngayden . '</td>
                                         <td>' . $ngaytra . '</td>
-                                        <td>' . $tinhtrang . '</td>
+                                        <td>' . $tongtien . 'vnd</td>
+                                       
                                         <td><a href="' . $suadp . '"><input type="button" value="Sửa"></a>  <a onclick="return DELETE()" href="' . $xoadp . '"><input type="button" value="Xóa"></a></td>
                                     </tr>';
                     }

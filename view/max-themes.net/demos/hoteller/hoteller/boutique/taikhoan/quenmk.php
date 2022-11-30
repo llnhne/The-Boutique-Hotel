@@ -150,7 +150,7 @@ of Simple CSS Waves-->
             </div>
             <div class="form4" style="text-align:center;">
                 <button class="bg-gradient-to-r from-purple-500 to-pink-500 " style="border: 1px solid #fff;border-radius: 10px;padding: 8px 35px; cursor: pointer">
-                    <a href="../index.php?act=home" style="color: #FFCACA;text-decoration: none;">Back to home</a>
+                    <a href="../index.php?act=home" style="color: #FFCACA;text-decoration: none;">Trở về trang chủ</a>
                 </button>
             </div>
             <div class="" style="text-align:center;color: red;">

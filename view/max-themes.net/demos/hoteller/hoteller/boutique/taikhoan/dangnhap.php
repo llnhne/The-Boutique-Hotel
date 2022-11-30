@@ -155,17 +155,17 @@ of Simple CSS Waves-->
     <div class="ct-img" style="margin-top: 20px;">
         <div class="ct" style="border-radius:20px;;height:50%;width:180%;margin-left:-43%;margin-top:15%; ">
             <div class="font" style="text-align: center;
-        font-size: 2.5vw;color:#fff;margin-top:5%;"><Label>Log in to your account</Label></div><br>
+        font-size: 2.5vw;color:#fff;margin-top:5%;"><Label>Đăng nhập tài khoản</Label></div><br>
             <form action="" method="post">
                 <div class="form1" style="text-align:center;">
-                    <label for="" style="color: #fff;margin-left:-38%;">Username</label><br>
+                    <label for="" style="color: #fff;margin-left:-38%;">Tên đăng nhập</label><br>
                     <input type="text" name="username" class="bg-inherit" style="padding: 8px 0;width:50%;border-radius:10px;border:1px solid #FFCACA" required><br><br>
                     <label for="" style="color: #fff;margin-left:-38%;">Password</label><br>
                     <input type="password" class="bg-inherit" name="password" style="padding: 8px 0;width:50%;border-radius:10px;border:1px solid #FFCACA" required>
                 </div><br>
                 <div class="flex form2" style="text-align:center;">
                     <input type="checkbox" name="checkbox" id="">
-                    <label for="" style="color: #fff;">Remember account? / </label><br><br>
+                    <label for="" style="color: #fff;">Ghi nhớ tài khoản? / </label><br><br>
                     <label class="mx-2 text-white hover:text-black " for=""><a href="./quenmk.php"> Quên mật khẩu !</a></label><br><br>
 
                     
@@ -177,7 +177,7 @@ of Simple CSS Waves-->
                     <!-- <button style="background-color: #FFCACA;border: 1px solid #FFCACA;border-radius: 10px;padding: 8px 35px;"><a href="index.php?act=dangky" style="color: #fff;text-decoration: none;">Register</a></button><br><br> -->
                 </div>
                 <div class="form4" style="text-align:center;">
-                    <button class="bg-gradient-to-r from-purple-500 to-pink-500" style="border: 1px solid #fff;border-radius: 10px;padding: 8px 35px;"><a href="../index.php?act=home" style="color: #FFCACA;text-decoration: none;">Back to home</a></button>
+                    <button class="bg-gradient-to-r from-purple-500 to-pink-500" style="border: 1px solid #fff;border-radius: 10px;padding: 8px 35px;"><a href="../index.php?act=home" style="color: #FFCACA;text-decoration: none;">Trở về trang chủ</a></button>
                 </div>
                 <div class="" style="text-align:center;color: red;">
                 <?php

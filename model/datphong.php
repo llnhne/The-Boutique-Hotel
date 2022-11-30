@@ -1,7 +1,6 @@
 <?php
-    function insert_datphong($id_phong, $id_user,$sokhach,$ngayden,$ngaytra){
-        $sql = "INSERT INTO datphong(id_order,id_phong,id_user,sokhach,ngayden,ngaytra,tinhtrang) values('','$id_phong','$id_user','$sokhach','$ngayden','$ngaytra', '')";
-        $sql = "INSERT INTO datphong(id_phong,id_user,sokhach,ngayden,ngaytra) values ('$id_phong','$id_user','$sokhach','$ngayden','$ngaytra')";
+    function insert_datphong($id_phong, $id_user,$sokhach,$ngayden,$ngaytra,$tongtien){
+        $sql = "INSERT INTO datphong(id_order,id_phong,id_user,sokhach,ngayden,ngaytra,tongtien,tinhtrang) values('','$id_phong','$id_user','$sokhach','$ngayden','$ngaytra','$tongtien', '')";
         pdo_execute($sql);
     }
     function delete_datphong($id){
@@ -24,9 +23,9 @@
         $dp=pdo_query_one($sql);
         return $dp;
     }
-    function update_datphong($id,$maphong,$makhachhang,$sokhach,$ngayden,$ngaytra,$tinhtrang){
+    function update_datphong($id,$maphong,$makhachhang,$sokhach,$ngayden,$ngaytra,$tongtien,$giaodich,$tinhtrang){
         $sql="UPDATE datphong
-            SET id_phong = $maphong,id_user = '$makhachhang',sokhach = '$sokhach',ngayden = '$ngayden',ngaytra = '$ngaytra',tinhtrang = '$tinhtrang'
+            SET id_phong = $maphong,id_user = '$makhachhang',sokhach = '$sokhach',ngayden = '$ngayden',ngaytra = '$ngaytra',tongtien = '$tongtien',giaodich = '$giaodich',tinhtrang = '$tinhtrang'
             WHERE id_order=$id";
         pdo_execute($sql);
     }

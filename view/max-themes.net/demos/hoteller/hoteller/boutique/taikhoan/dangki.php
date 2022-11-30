@@ -131,14 +131,14 @@ of Simple CSS Waves-->
     <div class="ct-img" style="margin-top: 20px;">
     <div class="ct" style="border-radius:20px;;height:50%;width:180%;margin-left:-43%;margin-top:15%; ">
         <div class="font" style="text-align: center;font-size: 2.5vw;color:#fff;margin-top:5%;">
-            <Label>Register an account </Label>
+            <Label>Đăng ký tài khoản </Label>
         </div>
         <br>
         <form action="../index.php?act=dangki" method="post">
             <div class="form1" style="text-align:center;">
             <input type="hidden" name="id">
                 <div>
-                  <label for="" class="text-lg" style="color: #fff;margin-left:-38%; ">Username</label><br>
+                  <label for="" class="text-lg" style="color: #fff;margin-left:-38%; ">Tên đăng nhập</label><br>
                   <input type="text" name="username" class="bg-inherit" style="padding: 8px 0;width:50%;border-radius:10px;border:1px solid #FFCACA" required>
                 </div>
                 
@@ -177,7 +177,7 @@ of Simple CSS Waves-->
             </div>
             <div class="form4" style="text-align:center;">
                 <button class="bg-gradient-to-r from-purple-500 to-pink-500 " style="border: 1px solid #fff;border-radius: 10px;padding: 8px 35px; cursor: pointer">
-                    <a href="../index.php?act=home" style="color: #FFCACA;text-decoration: none;">Back to home</a>
+                    <a href="../index.php?act=home" style="color: #FFCACA;text-decoration: none;">Trở về trang chủ</a>
                 </button>
             </div>
             <div class="" style="text-align:center;color: red;">

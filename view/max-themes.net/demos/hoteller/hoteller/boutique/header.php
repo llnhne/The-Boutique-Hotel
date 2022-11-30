@@ -97,7 +97,7 @@
                     <ul id="mobile_main_menu" class="mobile_main_nav">
                         <li class="header__navbar-item header__navbar-user">
                             <a href="index.php?act=ourrooms">
-                                Our Rooms
+                                Loại phòng
                             </a>
                             <ol class="header__navbar-user-menu">
                                 <?php
@@ -115,9 +115,9 @@
                             </ol>
 
                         </li>
-                        <li class="menu-item"><a href="index.php?act=dining">Dining</a></li>
-                        <li class="menu-item"><a href="index.php?act=about">About The Hotel</a></li>
-                        <li class="menu-item"><a href="index.php?act=contact">Contact</a></li>
+                        <li class="menu-item"><a href="index.php?act=dining">Ăn uống</a></li>
+                        <li class="menu-item"><a href="index.php?act=about">Thông tin</a></li>
+                        <li class="menu-item"><a href="index.php?act=contact">Liên Hệ</a></li>
                         <li class="menu-item"><a href="index.php?act=booknow">Book Now</a></li>
                     </ul>
                 </div>
@@ -156,7 +156,7 @@
                                                                     <ul id="nav_menu37" class="nav">
                                                                         <li class="header__navbar-item header__navbar-user">
                                                                             <a href="index.php?act=ourrooms">
-                                                                                Our Rooms
+                                                                                Loại phòng
 
                                                                             </a>
                                                                             <ol class="header__navbar-user-menu">
@@ -174,9 +174,9 @@
                                                                                 } ?>
                                                                             </ol>
                                                                         </li>
-                                                                        <li class="menu-item"><a href="index.php?act=dining">Dining</a></li>
-                                                                        <li class="menu-item"><a href="index.php?act=about">About The Hotel</a></li>
-                                                                        <li class="menu-item"><a href="index.php?act=contact">Contact</a></li>
+                                                                        <li class="menu-item"><a href="index.php?act=dining">Ăn uống</a></li>
+                                                                        <li class="menu-item"><a href="index.php?act=about">Thông tin</a></li>
+                                                                        <li class="menu-item"><a href="index.php?act=contact">Liên hệ</a></li>
                                                                         <li class="menu-item"><a href="index.php?act=booknow">Book Now </a></li>
                                                                         <?php if (isset($_SESSION['user'])) { ?>
                                                                             <li class="header__navbar-item header__navbar-user">
@@ -206,7 +206,7 @@
 
                                                                                 <ol class="header__navbar-user-menu">
                                                                                     <li class="header__navbar-user-item">
-                                                                                        <a class="header__navbar-item-link" href="./taikhoan/dangki.php">ĐĂNG KÍ </a>
+                                                                                        <a class="header__navbar-item-link" href="./taikhoan/dangki.php">ĐĂNG KÝ </a>
                                                                                     </li>
 
 
@@ -268,7 +268,7 @@
                                                                     <ul id="nav_menu38" class="nav">
                                                                         <li class="header__navbar-item header__navbar-user">
                                                                             <a href="index.php?act=ourrooms">
-                                                                                Our Rooms
+                                                                                Loại phòng
                                                                             </a>
                                                                             <ol class="header__navbar-user-menu">
                                                                                 <?php
@@ -286,9 +286,9 @@
                                                                             </ol>
 
                                                                         </li>
-                                                                        <li class="menu-item"><a href="index.php?act=dining">Dining</a></li>
-                                                                        <li class="menu-item"><a href="index.php?act=about">About The Hotel</a></li>
-                                                                        <li class="menu-item"><a href="index.php?act=contact">Contact</a></li>
+                                                                        <li class="menu-item"><a href="index.php?act=dining">Ăn uống</a></li>
+                                                                        <li class="menu-item"><a href="index.php?act=about">Thông tin</a></li>
+                                                                        <li class="menu-item"><a href="index.php?act=contact">Liên hệ</a></li>
                                                                         <li class="menu-item"><a href="index.php?act=booknow">Book Now</a></li>
                                                                         <?php if (isset($_SESSION['user'])) { ?>
                                                                             <li class="header__navbar-item header__navbar-user">
@@ -318,7 +318,7 @@
 
                                                                                 <ol class="header__navbar-user-menu">
                                                                                     <li class="header__navbar-user-item">
-                                                                                        <a class="header__navbar-item-link" href="./taikhoan/dangki.php">ĐĂNG KÍ/ </a>
+                                                                                        <a class="header__navbar-item-link" href="./taikhoan/dangki.php">ĐĂNG KÝ/ </a>
                                                                                     </li>
                                                                                     <li class="header__navbar-user-item header__navbar-user-item--separate">
                                                                                         <a href="./taikhoan/dangnhap.php">ĐĂNG NHẬP</a>

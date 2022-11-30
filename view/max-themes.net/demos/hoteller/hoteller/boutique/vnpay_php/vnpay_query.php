@@ -40,7 +40,7 @@
              * To change this template file, choose Tools | Templates
              * and open the template in the editor.
              */
-            require_once("./config.php");
+            require_once("config.php");
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $orderid = $_POST["orderid"];

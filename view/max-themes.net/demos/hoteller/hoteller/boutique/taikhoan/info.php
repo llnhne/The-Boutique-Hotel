@@ -31,12 +31,12 @@
 
         </div>
         <div class="flex w-96 ml-5">
-            <label class="text-xl" for="">Address : </label><br>
+            <label class="text-xl" for="">Địa chỉ : </label><br>
             <h2 class="mx-3 text-xl"><?php echo $_SESSION['user']['address']?></h2>
 
         </div>
         <div class="flex w-96 ml-5">
-            <label class="text-xl" for="">Phone number : </label><br>
+            <label class="text-xl" for="">Số điện thoại : </label><br>
             <h2 class="mx-3 text-xl"><?php echo $_SESSION['user']['tel']?></h2>
 
         </div>

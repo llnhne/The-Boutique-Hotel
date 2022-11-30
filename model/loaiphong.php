@@ -4,13 +4,12 @@
         pdo_execute($sql);
     }
     function delete_loaiphong($id){
-        $query="update phong set id_loaiphong = 1 where id_loaiphong=".$id;
+        $query="update loaiphong set id_loaiphong = 1 where id_loaiphong=".$id;
         pdo_execute($query);
         $sql="delete from loaiphong where id_loaiphong=".$id;
         pdo_execute($sql);
     }
-    function loadall_loaiphong(){
-        
+    function loadall_loaiphong(){ 
         if(isset($_POST['kyw']) && $_POST['kyw'] != ""){
             $search = $_POST['kyw'];
             $query = "select * from loaiphong where name_loaiphong like '%$search%'";
@@ -18,16 +17,13 @@
             return $listlp;
 
         }
-       
         if(empty($listlp)){
             $query="SELECT * FROM loaiphong order by id_loaiphong desc";
             $listlp=pdo_query($query);
             return $listlp;
 
         }
-        
     }
-   
     function loadone_loaiphong($id){
         $sql="select * from loaiphong where id_loaiphong=".$id;
         $lp=pdo_query_one($sql);
