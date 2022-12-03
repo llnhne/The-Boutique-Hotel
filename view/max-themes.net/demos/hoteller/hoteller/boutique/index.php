@@ -139,23 +139,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             insert_hoadon($id, $id_phong, $id_user, $tongtien, $role);
             include 'vnpay_php/index.php';
             break;
-            // case 'comfirm':
-            //     $id = $_GET['id'];
-            //     $room = loadone_phong($id);
-            //     $id_user = $_SESSION['user']['id_user'];
-            //     $sokhach = $_POST['sokhach'];
-            //     $price = $room['price'];
-            //     $ngayden = $_POST['ngayden'];
-            //     $ngaytra = $_POST['ngaytra'];
-            //     $id_phong = $room['id_phong'];
-            //     $datefirst = strtotime($_POST['ngayden']);
-            //     $dateout = strtotime($_POST['ngaytra']);
-            //     $datediff = abs($datefirst - $dateout);
-            //     $songay = floor($datediff / (60 * 60 * 24));
-            //     $tongtien = $songay * ($price * 23000);
-            //     // var_dump(insert_datphong($id_phong, $id_user, $sokhach, $ngayden, $ngaytra));
-            //     include "comfirm.php";
-            //     break;
         case 'binhluan':
             $iduser = $_POST['iduser'];
             $idroom = $_POST['idroom'];
@@ -190,8 +173,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 delete_binhluan($_GET['id']);
             }
-
-
             // $listbl = load_binhluan($id);
             header("location:http://localhost/duan1/view/max-themes.net/demos/hoteller/hoteller/boutique/index.php?act=room&id=$idroom");
             break;
@@ -243,25 +224,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                         $thongbao = "Tài khoản đã tồn tại!";
                     } else if ($check === false) {
                         insert_taikhoan($user, $pass, $email, $tel, $address);
-                        $thongbao = "Đã đăng kí thành công!.Vui lòng đăng nhập để thực hiện các chức năng";
+                        header("location:http://localhost/duan1/view/max-themes.net/demos/hoteller/hoteller/boutique/taikhoan/dangnhap.php");
                     }
                 }
             }
-
-            // if (isset($_POST['dangki']) && ($_POST['dangki'])) {
-
-            //     $user = $_POST['username'];
-            //     $email = $_POST['email'];
-            //     $pass = $_POST['password'];
-            //     $tel = $_POST['phone'];
-            //     $address = $_POST['add'];
-
-            //     // echo $user,$pass, $email,$tel,$address;
-            //     insert_taikhoan($user, $pass, $email, $tel, $address);
-            //     $thongbao = "Đã đăng kí thành công!.Vui lòng đăng nhập để thực hiện các chức năng";
-            // }
-            include "./taikhoan/dangki.php";
-            // header("location:./taikhoan/dangki.php");
+            include "taikhoan/dangki.php";
             break;
         case 'capnhat':
             $id = $_POST['id'];

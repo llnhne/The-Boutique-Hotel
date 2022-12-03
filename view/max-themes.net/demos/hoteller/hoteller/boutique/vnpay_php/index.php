@@ -1,6 +1,7 @@
 <?php
     include "../model/pdo.php";
     $id = $_GET['idorder'];
+    
     $sql="select tongtien from datphong where id_order = $id";
     $hd=pdo_query_one($sql);
     // echo'<pre>';

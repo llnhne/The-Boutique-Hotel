@@ -315,7 +315,7 @@
                                         } else {
                                         ?>
                                             <div>
-                                                <button style="background-color:#06283D;border:1px solid #DFF6FF;"><a style="padding: 10px 20px;color:#DFF6FF;text-decoration:none;" href="taikhoan/dangnhap.php">Đăng Nhập Để Đặt Phòng</a> </button>
+                                                <button style="background-color:#06283D;border:1px solid #DFF6FF;"><a style="padding: 10px 20px;color:#DFF6FF;text-decoration:none;" href="taikhoan/dangnhap.php">Đăng Nhập Để Bình Luận</a> </button>
                                             </div>
                                         <?php } ?>
                                     </form>
