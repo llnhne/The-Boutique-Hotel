@@ -31,20 +31,25 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include "about.php";
             break;
         case 'home':
-            // hiển thị danh sách phòng trống
             if (isset($_POST['submit']) && ($_POST['submit'])) {
                 $ngaydat = $_POST['ngayden'];
                 $ngaytra = $_POST['ngaytra'];
+                // echo $ngaydat;
+                // echo $ngaytra;
                 $datphongs = loadall_phongdadat();
                 foreach ($datphongs as $datphong) {
-                    // lấy tất cả các phòng trừ trùng
-                    if ($ngaydat === $datphong['ngayden'] && $ngaytra === $datphong['ngaytra']) {
+                    if (($ngaydat < $datphong['ngayden'] && $ngaytra === $datphong['ngayden']) || ($ngaytra > $datphong['ngaytra'] && ($ngaydat === $datphong['ngaytra']))) {
+                        $listpchuadat = loadall_phongchuadat();
+                    } else if ((($ngaydat < $datphong['ngayden'] && $ngaytra > $datphong['ngaytra'])) || ($ngaydat > $datphong['ngayden'] && $ngaytra > $datphong['ngaytra'])) {
+                        $listpchuadat = loadall_phongchuadat();
+                    } else if (($ngaydat === $datphong['ngayden'] && $ngaytra === $datphong['ngaytra'])) {
+                        $listpchuadat = loadall_phongchuadat1($ngaydat, $ngaytra);
+                    } else if ($ngaydat === $datphong['ngayden'] || $ngaytra === $datphong['ngaytra']) {
                         $listpchuadat = loadall_phongchuadat2($ngaydat, $ngaytra);
-                    
-                    } else if ($ngaydat != $datphong['ngayden'] && $ngaytra != $datphong['ngaytra']) {
-                        $listpchuadat = loadall_phongchuadat($ngaydat, $ngaytra);
-                    } else if (($datphong['ngayden']  >= $ngaydat && ($datphong['ngayden'] <= $ngaytra && $ngaytra <= $datphong['ngaytra'])) || (($datphong['ngayden'] <= $ngaydat && $ngaydat <= $datphong['ngaytra']) && $ngaytra >= $datphong['ngaytra'])) {
+                    } else if ($ngaydat > $datphong['ngayden'] && $ngaytra < $datphong['ngaytra']) {
                         $listpchuadat = loadall_phongchuadat3($ngaydat, $ngaytra);
+                    } else if ((($ngaydat > $datphong['ngayden'] && $ngaydat < $datphong['ngaytra']) && $ngaytra > $datphong['ngaytra']) || ($ngaydat < $datphong['ngayden'] && ($ngaytra > $datphong['ngayden'] && $ngaytra < $datphong['ngaytra']))) {
+                        $listpchuadat = loadall_phongchuadat();
                     }
                 }
             }
@@ -98,15 +103,15 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     $dateout = strtotime($_POST['ngaytra']);
                     $datediff = abs($datefirst - $dateout);
                     $songay = floor($datediff / (60 * 60 * 24));
-                    $tongtien = $songay * $price ;
-                    $giaodich='';
+                    $tongtien = $songay * $price;
+                    $giaodich = '';
                     $format_tongtien = number_format($tongtien);
                     date_default_timezone_set('Asia/Ho_Chi_Minh');
                     $date = date('m/d/Y h:i:s a', time());
                     // $hr  = floor(($rem % 86400) / 3600);
                     // $min = floor(($rem % 3600) / 60);
                     // $sec = ($rem % 60);
-                    insert_datphong($id_phong, $id_user, $sokhach, $ngayden, $ngaytra,$tongtien,$giaodich);
+                    insert_datphong($id_phong, $id_user, $sokhach, $ngayden, $ngaytra, $tongtien, $giaodich);
                     $thongbao = "Vui lòng thanh toán trong 24h để đặt phòng!";
                 } else {
                     $thongtin = "Đã có người đặt trước đó. Vui lòng đặt ngày khác!!!";
@@ -117,19 +122,22 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             include "room.php";
             break;
-            case 'thanhtoan':
-                $idp = $_GET['idp'];
-                $sql = "select * from datphong where id_phong = $idp";
-                $dp = pdo_query_one($sql);
-                $idorder = $dp['id_order'];
-                $tongtien = $dp['tongtien'];
-
-                if (isset($_POST['thanhtoan']) && ($_POST['thanhtoan'])) {
-                    header("location: http://localhost/duan1/view/max-themes.net/demos/hoteller/hoteller/boutique/vnpay_php/index.php?idorder=$idorder");
-                    
-                }
-                include "room.php";
-                break;
+        case 'thanhtoan':
+            $idp = $_GET['idp'];
+            $sql = "select * from datphong where id_phong = $idp";
+            $dp = pdo_query_one($sql);
+            $idorder = $dp['id_order'];
+            $tongtien = $dp['tongtien'];
+            if (isset($_POST['thanhtoan']) && ($_POST['thanhtoan'])) {
+                header("location: http://localhost/duan1/view/max-themes.net/demos/hoteller/hoteller/boutique/vnpay_php/index.php?idorder=$idorder");
+            }
+            include "room.php";
+            break;
+        case 'hoadon':
+            $tongtien = $_POST['amount'];
+            $id = $_GET['idorder'];
+            insert_hoadon($id, $id_phong, $id_user, $tongtien, $role);
+            include 'vnpay_php/index.php';
             break;
             // case 'comfirm':
             //     $id = $_GET['id'];
@@ -190,19 +198,70 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'tk':
             include "taikhoan/info.php";
             break;
+            // sua lai dang ki
         case 'dangki':
+            $error = array();
+            $data = array();
             if (isset($_POST['dangki']) && ($_POST['dangki'])) {
-
-                $user = $_POST['username'];
-                $email = $_POST['email'];
-                $pass = $_POST['password'];
-                $tel = $_POST['phone'];
-                $address = $_POST['add'];
-                // echo $user,$pass, $email,$tel,$address;
-                insert_taikhoan($user, $pass, $email, $tel, $address);
-                $thongbao = "Đã đăng kí thành công!.Vui lòng đăng nhập để thực hiện các chức năng";
+                $data['username'] = isset($_POST['username']) ? $_POST['username'] : '';
+                $data['email'] = isset($_POST['email']) ? $_POST['email'] : '';
+                $data['password'] = isset($_POST['password']) ? $_POST['password'] : '';
+                $data['phone'] = isset($_POST['phone']) ? $_POST['phone'] : '';
+                $data['add'] = isset($_POST['add']) ? $_POST['add'] : '';
+                if (empty($data['username'])) {
+                    $error['username'] = 'Vui lòng nhập tên';
+                }
+                if (empty($data['email'])) {
+                    $error['email'] = 'Vui lòng nhập địa chỉ email email';
+                }
+                if (empty($data['password'])) {
+                    $error['password'] = 'Vui lòng nhập mật khẩu';
+                }
+                if (empty($data['phone'])) {
+                    $error['phone'] = 'Vui lòng nhập số điện thoại';
+                }
+                if (empty($data['add'])) {
+                    $error['add'] = 'Vui lòng nhập địa chỉ';
+                }
+                if (!$error) {
+                    $user = $_POST['username'];
+                    $email = $_POST['email'];
+                    $pass = $_POST['password'];
+                    $tel = $_POST['phone'];
+                    $address = $_POST['add'];
+                    $sql = "select * from taikhoan";
+                    $listtaikhoan = pdo_query($sql);
+                    $check = false;
+                    foreach ($listtaikhoan as $taikhoan) {
+                        if ($taikhoan['username'] == $user && $taikhoan['password'] == $pass) {
+                            $check = true;
+                        } else {
+                            $check = false;
+                        }
+                    }
+                    if ($check === true) {
+                        $thongbao = "Tài khoản đã tồn tại!";
+                    } else if ($check === false) {
+                        insert_taikhoan($user, $pass, $email, $tel, $address);
+                        $thongbao = "Đã đăng kí thành công!.Vui lòng đăng nhập để thực hiện các chức năng";
+                    }
+                }
             }
+
+            // if (isset($_POST['dangki']) && ($_POST['dangki'])) {
+
+            //     $user = $_POST['username'];
+            //     $email = $_POST['email'];
+            //     $pass = $_POST['password'];
+            //     $tel = $_POST['phone'];
+            //     $address = $_POST['add'];
+
+            //     // echo $user,$pass, $email,$tel,$address;
+            //     insert_taikhoan($user, $pass, $email, $tel, $address);
+            //     $thongbao = "Đã đăng kí thành công!.Vui lòng đăng nhập để thực hiện các chức năng";
+            // }
             include "./taikhoan/dangki.php";
+            // header("location:./taikhoan/dangki.php");
             break;
         case 'capnhat':
             $id = $_POST['id'];
@@ -213,7 +272,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             $tel = $_POST['tel'];
             // echo $id, $user, $password, $email, $address, $tel;
             $update = update_taikhoan($id, $user, $password, $email, $address, $tel);
-            $_SESSION['user'] = $update;
             include "home.php";
             break;
         case 'quenmk':

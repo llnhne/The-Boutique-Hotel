@@ -10,7 +10,7 @@
             <div class="row mb10 formdshanghoa" style="width:100%">
                 <table>
                     <tr>
-                        <th></th>
+                        <th>GIAO DỊCH</th>
                         <th>MÃ HÓA ĐƠN</th>
                         <th>MÃ ĐẶT PHÒNG</th>
                         <th>MÃ PHÒNG</th>
@@ -24,7 +24,7 @@
                         <?php $xoahd = "index.php?act=xoahd&id=" . $id_bill;?>
 
                         <tr>
-                                        <td><input type="checkbox" name="name"></td>
+                                        <td><?php echo  $role ?></td>
                                         <td><?php echo  $id_bill ?></td>
                                         <td><?php echo   $id_order ?></td>
                                         <td><?php echo   $id_phong ?></td>

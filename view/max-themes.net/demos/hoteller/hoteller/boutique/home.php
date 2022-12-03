@@ -162,7 +162,7 @@
 
                             <section class="grid grid-cols-3 my-4 gap-2 ">
 
-                                <?php if (isset($listpchuadat)) { ?>
+                            <?php if (isset($listpchuadat)) { ?>
                                     <?php foreach ($listpchuadat as $item) { ?>
                                         <div class="shadow-lg p-2 ">
                                             <div>
@@ -186,9 +186,8 @@
                                     <?php } ?>
                                 <?php } ?>
 
-
+                           
                             </section>
-
                             <section class="elementor-section elementor-top-section elementor-element elementor-element-f194cea elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="f194cea" data-element_type="section" data-settings='{"hoteller_ext_is_background_parallax":"false","hoteller_ext_is_background_on_scroll":"false"}'>
                                 <div class="elementor-container elementor-column-gap-default">
                                     <div class="elementor-row">

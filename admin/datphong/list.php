@@ -10,7 +10,7 @@
             <div class="row mb10 formdshanghoa" style="width:1050px;">
                 <table>
                     <tr>
-                        <th></th>
+                        <th>GIAO DỊCH</th>
                         <th>MÃ ĐẶT PHÒNG</th>
                         <th>MÃ PHÒNG</th>
                         <th>MÃ KHÁCH HÀNG</th>
@@ -26,8 +26,10 @@
                         extract($datphong);
                         $suadp = "index.php?act=suadp&id=" . $id_order;
                         $xoadp = "index.php?act=xoadp&id=" . $id_order;
+                        
+
                         echo '<tr>
-                                        <td><input type="checkbox" name="name"></td>
+                                        <td>'.$giaodich.'</td>
                                         <td>' . $id_order . '</td>
                                         <td>P' . $id_phong . '</td>
                                         <td>' . $id_user . '</td>

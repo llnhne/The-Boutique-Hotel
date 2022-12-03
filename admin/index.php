@@ -174,7 +174,6 @@ ob_start();
                     $tongtien = $_POST['tongtien'];
                     $giaodich=$_POST['giaodich'];
                     update_datphong($id, $maphong, $makhachhang, $sokhach, $ngayden, $ngaytra,$tongtien,$giaodich, $tinhtrang);
-                    $thongbao = "Cập nhật thành công!";
                 }
                 $listdp = loadall_datphong();
                 include "datphong/list.php";
@@ -255,6 +254,12 @@ ob_start();
                 }
                 $listhotro = loadall_hotro(0);
                 include "hotro/list.php";
+                break;
+            case 'datt':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $datt=update_giaodich();
+                }
+                include "datphong/update.php";
                 break;
             case 'thongke':
                 $listthongke = loadall_thongke_loaiphong();

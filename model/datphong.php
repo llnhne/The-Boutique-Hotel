@@ -62,4 +62,8 @@
             }
         }
     }
+    function update_giaodich(){
+        $sql = "update datphong set giaodich = 1 where id = ";
+        pdo_execute($sql);
+    }
 ?>

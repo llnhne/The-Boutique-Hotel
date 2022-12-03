@@ -1,3 +1,4 @@
+
 <!-- Begin content -->
 <div id="page_content_wrapper" class="noheader">
     <div class="inner">
@@ -293,12 +294,16 @@
                                     <p class="bg-slate-100 p-3 w-40 ">BÌNH LUẬN</p>
                                 </div>
 
-                                <div class=" my-5 w-full">
+                                <div class=" my-5 w-full">  
                                     <form action="index.php?act=binhluan&id=<?php echo $room['id_phong']; ?>" class="w-full border-inherit " method="POST">
+                                    <?php
+                                        if (isset($_SESSION['user'])) {
+                                            extract($_SESSION['user']);
+                                        ?>
                                         <input type="text" name="iduser" value="<?php echo $_SESSION['user']['id_user'] ?>" hidden>
 
                                         <input type="text" name="idroom" value="<?php echo $room['id_phong']; ?>" hidden>
-
+                                        
                                         <div class="p-4">
                                             <textarea name="comment" cols="30" rows="2" type="text" class="w-full py-5 border-none " placeholder="Viết bình luận..."></textarea>
                                         </div>
@@ -306,7 +311,13 @@
                                         <div class="bg-slate-200 p-5 flex ">
                                             <button name="send" class="send_comment justify-items-end bg-indigo-500 text-white rounded justify-items-end w-60 p-4 ">Gửi bình luận</button>
                                         </div>
-
+                                        <?php
+                                        } else {
+                                        ?>
+                                            <div>
+                                                <button style="background-color:#06283D;border:1px solid #DFF6FF;"><a style="padding: 10px 20px;color:#DFF6FF;text-decoration:none;" href="taikhoan/dangnhap.php">Đăng Nhập Để Đặt Phòng</a> </button>
+                                            </div>
+                                        <?php } ?>
                                     </form>
                                 </div>
 
@@ -390,6 +401,7 @@
                                                                 $email = "";
                                                                 $tel = "";
                                                             }
+                                                            
                                                             ?>
                                                             <input type="hidden" name="id_user" value="<?= $id_user ?>">
                                                             <label for="">Tên Khách Hàng:</label><br>
@@ -534,7 +546,7 @@
                                                                     } else {
                                                                     ?>
                                                                         <div>
-                                                                            <button style="background-color:#06283D;margin-left:8px;border:1px solid #DFF6FF;border-radius:5px;"><a style="padding: 10px 20px;color:#DFF6FF;text-decoration:none;" href="taikhoan/dangnhap.php">Đăng Nhập Để Đặt Phòng</a> </button>
+                                                                            <button style="background-color:#06283D;margin-left:8px;border:1px solid #DFF6FF;"><a style="padding: 10px 20px;color:#DFF6FF;text-decoration:none;" href="taikhoan/dangnhap.php">Đăng Nhập Để Đặt Phòng</a> </button>
                                                                         </div>
                                                                     <?php } ?>
                                                                 </div>

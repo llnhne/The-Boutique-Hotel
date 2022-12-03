@@ -27,6 +27,10 @@
                         <label for="">MÃ KHÁCH HÀNG<br></label>
                         <input type="text" name="makhachhang" style="width:120%;" value="<?= $id_user ?>" required>
                     </div>
+                    <div class="row mb10">
+                        <label for="">TỔNG TIỀN</label><br>
+                        <input type="tongtien" name="tongtien" style="width:120%;border: 1px solid #FFCACA;padding: 10px;border-radius: 5px;" value="<?= $tongtien ?>">
+                    </div>
                 </div>
                 <div class="row mb10 content2">
                     <div class="row mb10">
@@ -37,16 +41,20 @@
                         <label for="">NGÀY TRẢ</label><br>
                         <input type="date" name="ngaytra" style="width:120%;border: 1px solid #FFCACA;padding: 10px;border-radius: 5px;" value="<?= $ngaytra ?>">
                     </div>
+                    <div class="row mb10">
+                        <label for="">GIAO DỊCH</label><br>
+                        <select name="giaodich" id="" style="border:1px solid #FFCACA;">
+                            <option value="">Chưa Thanh Toán</option>
+                            <option value="">Đã Thanh Toán</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="row mb10 content3">
                     <div class="row mb10">
                         <label for="">SỐ KHÁCH</label><br>
                         <input type="text" name="sokhach" value="<?= $sokhach ?> " required>
                     </div>
-                    <div class="row mb10">
-                        <label for="">TỔNG TIỀN</label><br>
-                        <input type="tongtien" name="tongtien" style="width:120%;border: 1px solid #FFCACA;padding: 10px;border-radius: 5px;" value="<?= $format_tongtien ?>">
-                    </div>
+                    
                     <div class="row mb10">
                         <label for="">TÌNH TRẠNG</label><br>
                         <input type="text" name="tinhtrang" style="margin-bottom:5px;" value="<?= $tinhtrang ?>">

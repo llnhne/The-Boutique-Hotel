@@ -54,7 +54,7 @@
                 <div class="form-group">
 
                     <label >Số tiền:</label>
-                    <label><?php echo $_GET['vnp_Amount'] ?></label>
+                    <label><?php echo $tongtien ?></label>
                 </div>  
                 <div class="form-group">
                     <label >Nội dung thanh toán:</label>
@@ -83,12 +83,10 @@
                         if ($secureHash == $vnp_SecureHash) {
                             if ($_GET['vnp_ResponseCode'] == '00') {
                                 echo "<span style='color:blue'>GD Thanh cong</span>";
-                                $sql="INSERT INTO hoadon(id_bill,id_order,id_phong,id_user,tongtien,role) values('','$idorder','$id_phong','$id_user','$tongtien','1')";
-                                pdo_execute($sql);
+                                
                             } else {
                                 echo "<span style='color:red'>GD Khong thanh cong</span>";
-                                $sql="INSERT INTO hoadon(id_bill,id_order,id_phong,id_user,tongtien,role) values('','$idorder','$id_phong','$id_user','$tongtien','0')";
-                                pdo_execute($sql);
+                                
                             }
                         } else {
                             echo "<span style='color:red'>Chu ky khong hop le</span>";

@@ -1,3 +1,11 @@
+<?php
+    include "../model/pdo.php";
+    $id = $_GET['idorder'];
+    $sql="select tongtien from datphong where id_order = $id";
+    $hd=pdo_query_one($sql);
+    // echo'<pre>';
+    // var_dump($hd);
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -23,8 +31,8 @@
             </div>
             <h3>Tạo mới đơn hàng</h3>
             <div class="table-responsive">
-            
-                <form action="vnpay_create_payment.php" id="create_form" method="post">
+
+                <form action="vnpay_create_payment.php?hoadon" id="create_form" method="post">
 
                     <div class="form-group">
                         <label for="language">Loại hàng hóa </label>
@@ -37,14 +45,14 @@
                     </div>
                     <div class="form-group">
                         <label for="order_id">Mã hóa đơn</label>
-                        <!-- id_bill -->
-                        <input class="form-control" id="order_id" name="order_id" type="text" value="<?php echo $dp['id_order']?>"/> 
+                        <!-- id_order -->
+                        <input class="form-control" id="order_id" name="order_id" type="text" value="<?php echo $id;?>"/> 
                     </div>
                     <div class="form-group">
                         <label for="amount">Số tiền</label>
                         <!-- tổng tiền -->
                         <input class="form-control" id="amount"
-                               name="amount" type="number" value="<?php echo $dp['tongtien']?>"/>
+                               name="amount" type="number" value="<?php echo $hd['tongtien']?>"/>
                     </div>
                     
                     <div class="form-group">
