@@ -7,7 +7,7 @@
     </div>
     <div class="row formcontent" style="width:1040px;">
         <form action="" method="post">
-            <div class="row mb10 formdshanghoa" style="width:100%">
+            <div class="row mb10 formdshanghoa" style="width:104%">
                 <table>
                     <tr>
                         <th>GIAO DỊCH</th>

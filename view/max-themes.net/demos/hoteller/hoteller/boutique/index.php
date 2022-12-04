@@ -87,7 +87,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $check = true;
                 false;
                 foreach ($datphongs as $dp) {
-                    if ($dp['ngayden'] > $ngaytra || $dp['ngaytra'] < $ngayden) {
+                    if (($dp['ngayden'] > $ngaytra || $dp['ngaytra'] < $ngayden) && ($ngayden < $ngaytra)) {
                         $check = true;
                     } else {
                         $check = false;
@@ -107,14 +107,16 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     $giaodich = '';
                     $format_tongtien = number_format($tongtien);
                     date_default_timezone_set('Asia/Ho_Chi_Minh');
-                    $date = date('m/d/Y h:i:s a', time());
+                    $date = date('d/m/Y h:i:s a', time());
+                    $date2= strtotime('+1 month',strtotime($date)) ;
+                    $date2= date('m/d/Y h:i:s a',$date2);
                     // $hr  = floor(($rem % 86400) / 3600);
                     // $min = floor(($rem % 3600) / 60);
                     // $sec = ($rem % 60);
                     insert_datphong($id_phong, $id_user, $sokhach, $ngayden, $ngaytra, $tongtien, $giaodich);
-                    $thongbao = "Vui lòng thanh toán trong 24h để đặt phòng!";
+                    $thongbao = "Đặt Phòng Thành Công.Vui lòng thanh toán!!!";
                 } else {
-                    $thongtin = "Đã có người đặt trước đó. Vui lòng đặt ngày khác!!!";
+                    $thongtin = "Đặt Phòng Thất Bại.Vui lòng đặt ngày khác!!!";
                 }
                 // }else{
                 //     $errdate ="Ngày nhập không hợp lệ";
@@ -180,56 +182,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include "taikhoan/info.php";
             break;
             // sua lai dang ki
-        case 'dangki':
-            $error = array();
-            $data = array();
-            if (isset($_POST['dangki']) && ($_POST['dangki'])) {
-                $data['username'] = isset($_POST['username']) ? $_POST['username'] : '';
-                $data['email'] = isset($_POST['email']) ? $_POST['email'] : '';
-                $data['password'] = isset($_POST['password']) ? $_POST['password'] : '';
-                $data['phone'] = isset($_POST['phone']) ? $_POST['phone'] : '';
-                $data['add'] = isset($_POST['add']) ? $_POST['add'] : '';
-                if (empty($data['username'])) {
-                    $error['username'] = 'Vui lòng nhập tên';
-                }
-                if (empty($data['email'])) {
-                    $error['email'] = 'Vui lòng nhập địa chỉ email email';
-                }
-                if (empty($data['password'])) {
-                    $error['password'] = 'Vui lòng nhập mật khẩu';
-                }
-                if (empty($data['phone'])) {
-                    $error['phone'] = 'Vui lòng nhập số điện thoại';
-                }
-                if (empty($data['add'])) {
-                    $error['add'] = 'Vui lòng nhập địa chỉ';
-                }
-                if (!$error) {
-                    $user = $_POST['username'];
-                    $email = $_POST['email'];
-                    $pass = $_POST['password'];
-                    $tel = $_POST['phone'];
-                    $address = $_POST['add'];
-                    $sql = "select * from taikhoan";
-                    $listtaikhoan = pdo_query($sql);
-                    $check = false;
-                    foreach ($listtaikhoan as $taikhoan) {
-                        if ($taikhoan['username'] == $user && $taikhoan['password'] == $pass) {
-                            $check = true;
-                        } else {
-                            $check = false;
-                        }
-                    }
-                    if ($check === true) {
-                        $thongbao = "Tài khoản đã tồn tại!";
-                    } else if ($check === false) {
-                        insert_taikhoan($user, $pass, $email, $tel, $address);
-                        header("location:http://localhost/duan1/view/max-themes.net/demos/hoteller/hoteller/boutique/taikhoan/dangnhap.php");
-                    }
-                }
-            }
-            include "taikhoan/dangki.php";
-            break;
         case 'capnhat':
             $id = $_POST['id'];
             $user = $_POST['user'];

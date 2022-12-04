@@ -2,25 +2,52 @@
 session_start();
 include '../model/pdo.php';
 include '../model/taikhoan.php';
+$error = array();
+$data = array();
 if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
-                $user = $_POST['username'];
-                $pass = $_POST['password'];
-                // echo $user, $pass;
-                $checkuser = checkUser($user, $pass);
-                // echo "<pre>";
-                // var_dump($checkuser);
-                if (is_array($checkuser)) {
+                $data['username'] = isset($_POST['username']) ? $_POST['username'] : '';
+                $data['password'] = isset($_POST['password']) ? $_POST['password'] : '';
+                function is_password($password) {
+                  $parttern = "/^([A-Z]){1}([\w_\.!@#$%^&*()]+){5,31}$/";
+                  if (preg_match($parttern, $password))
+                      return true;
+                } 
+                if (empty($data['username'])) {
+                  $error['username'] = 'Vui lòng nhập tên';
+                }
+                
+                if (empty($data['password'])) {
+                  $error['password'] = 'Vui lòng nhập mật khẩu';
+                }else {
+                    // Kiểm tra định dạng password
+                    if (!is_password($_POST['password'])) {
+                        $error['password'] = "Password không đúng định dạng";
+                    } else {
+                        $password = $_POST['password'];
+                    }
+                }
+                if (!$error) {
+                  $user = $_POST['username'];
+                  $pass = $_POST['password'];
+                  $checkuser = checkUser($user, $pass);
+                  if (is_array($checkuser)) {
                     $_SESSION['user'] = $checkuser;
 
                     if ($checkuser['role'] == 1) {
-                        header("location:/duan1/admin/index.php");
+                        header("location:/duan1-khachsan/admin/index.php");
                     } else {
-                        header('Location: ../index.php?act=home');
                         $thongbao = "Đã đăng nhập thành công!";
                     }
-                } else {
+                  } else {
                     $thongbao = "Tài khoản không tồn tại. Vui lòng kiểm tra đăng ký";
+                  }  
                 }
+                
+                // echo $user, $pass;
+
+                // echo "<pre>";
+                // var_dump($checkuser);
+                
             }
             ?>
 <!DOCTYPE html>
@@ -32,6 +59,7 @@ if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
     <title>Document</title>
     <link rel="stylesheet" href="path/to/your/charts.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
     <style>
         @import url(//fonts.googleapis.com/css?family=Lato:300:400);
@@ -61,7 +89,7 @@ p {
 }
 .logo {
   width:50px;
-  fill:white;
+fill:white;
   padding-right:15px;
   display:inline-block;
   vertical-align: middle;
@@ -155,17 +183,42 @@ of Simple CSS Waves-->
     <div class="ct-img" style="margin-top: 20px;">
         <div class="ct" style="border-radius:20px;;height:50%;width:180%;margin-left:-43%;margin-top:15%; ">
             <div class="font" style="text-align: center;
-        font-size: 2.5vw;color:#fff;margin-top:5%;"><Label>Đăng nhập tài khoản</Label></div><br>
+        font-size: 2.5vw;color:#fff;margin-top:5%;"><Label>Log in to your account</Label></div><br>
             <form action="" method="post">
                 <div class="form1" style="text-align:center;">
-                    <label for="" style="color: #fff;margin-left:-38%;">Tên đăng nhập</label><br>
-                    <input type="text" name="username" class="bg-inherit" style="padding: 8px 0;width:50%;border-radius:10px;border:1px solid #FFCACA" required><br><br>
-                    <label for="" style="color: #fff;margin-left:-38%;">Password</label><br>
-                    <input type="password" class="bg-inherit" name="password" style="padding: 8px 0;width:50%;border-radius:10px;border:1px solid #FFCACA" required>
+                    <div>
+                      <label for="" style="color: #fff;margin-left:-38%;">Username</label><br>
+                      <input type="text" name="username" class="bg-inherit" style="padding: 8px 0;width:50%;border-radius:10px;border:1px solid #FFCACA" value="<?php echo isset($data['username']) ? $data['username'] : ''; ?>" ><br>
+                      <span style="color: white;">
+                        <?php echo isset($error['username']) ? $error['username'] : ''; ?>
+                      </span>
+                    </div>
+                    <div>
+                      <label for="" style="color: #fff;margin-left:-38%;">Password</label><br>
+                      <input type="password" class="bg-inherit" name="password" style="padding: 8px 0;width:50%;border-radius:10px;border:1px solid #FFCACA" value="<?php echo isset($data['password']) ? $data['password'] : ''; ?>"><br>
+                      <span style="color: white;">
+                        <?php echo isset($error['password']) ? $error['password'] : ''; ?>
+</span>
+                    </div>
+                    
                 </div><br>
+                <?php
+                    if(isset($thongbao)&&($thongbao!="")){?>
+                    
+                      <div class="w-96 h-52 text-center fixed inset-y-60 inset-x-1/3 rounded-lg shadow-2xl border-solid z-10 bg-white" style="margin-left:73px;">
+                        <i class="text-black py-3  text-5xl text-center fa-sharp fa-solid fa-circle-check"></i>
+                        <p class="text-black pb-5 text-2xl text-center"><?php echo $thongbao;?></p>
+
+                        <div class="form4" style="text-align:center;">
+                          <button class="bg-gradient-to-r from-purple-500 to-pink-500" style="border: 1px solid #fff;border-radius: 10px;padding: 5px 35px;"><a href="../index.php?act=home" style="color: #FFCACA;text-decoration: none;">Back to home</a></button>
+                        </div>
+                      </div>
+                  
+                <?php } ?>
+                
                 <div class="flex form2" style="text-align:center;">
                     <input type="checkbox" name="checkbox" id="">
-                    <label for="" style="color: #fff;">Ghi nhớ tài khoản? / </label><br><br>
+                    <label for="" style="color: #fff;">Remember account? / </label><br><br>
                     <label class="mx-2 text-white hover:text-black " for=""><a href="./quenmk.php"> Quên mật khẩu !</a></label><br><br>
 
                     
@@ -177,7 +230,7 @@ of Simple CSS Waves-->
                     <!-- <button style="background-color: #FFCACA;border: 1px solid #FFCACA;border-radius: 10px;padding: 8px 35px;"><a href="index.php?act=dangky" style="color: #fff;text-decoration: none;">Register</a></button><br><br> -->
                 </div>
                 <div class="form4" style="text-align:center;">
-                    <button class="bg-gradient-to-r from-purple-500 to-pink-500" style="border: 1px solid #fff;border-radius: 10px;padding: 8px 35px;"><a href="../index.php?act=home" style="color: #FFCACA;text-decoration: none;">Trở về trang chủ</a></button>
+                    <button class="bg-gradient-to-r from-purple-500 to-pink-500" style="border: 1px solid #fff;border-radius: 10px;padding: 8px 35px;"><a href="../index.php?act=home" style="color: #FFCACA;text-decoration: none;">Back to home</a></button>
                 </div>
                 <div class="" style="text-align:center;color: red;">
                 <?php
@@ -195,7 +248,7 @@ of Simple CSS Waves-->
     
     <!--Waves Container-->
     <div>
-    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
     <defs>
     <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />

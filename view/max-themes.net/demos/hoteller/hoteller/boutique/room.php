@@ -1,4 +1,3 @@
-
 <!-- Begin content -->
 <div id="page_content_wrapper" class="noheader">
     <div class="inner">
@@ -81,7 +80,7 @@
                                                 <div class="elementor-widget-wrap">
                                                     <div class="elementor-element elementor-element-15436ad8 elementor-invisible elementor-widget elementor-widget-heading" data-id="15436ad8" data-element_type="widget" data-settings='{"_animation":"fadeInLeft","_animation_delay":600,"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
-                                                            <h3 class="elementor-heading-title elementor-size-default" name="price">From <?php echo $room['price'] ?>vnd/night</h3>
+                                                            <h3 class="elementor-heading-title elementor-size-default" name="price"><?php echo number_format($room['price']) ?>vnd/night</h3>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -117,8 +116,8 @@
                                                     <div class="elementor-element elementor-element-5d213a7d elementor-invisible elementor-widget elementor-widget-heading" data-id="5d213a7d" data-element_type="widget" data-settings='{"_animation":"fadeInUp","hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
                                                             <h2 class="elementor-heading-title elementor-size-default">
-                                                            dịch vụ của chúng tôi và<br />
-                                                            kỳ quan Praha
+                                                                dịch vụ của chúng tôi và<br />
+                                                                kỳ quan Praha
                                                             </h2>
                                                         </div>
                                                     </div>
@@ -294,23 +293,23 @@
                                     <p class="bg-slate-100 p-3 w-40 ">BÌNH LUẬN</p>
                                 </div>
 
-                                <div class=" my-5 w-full">  
+                                <div class=" my-5 w-full">
                                     <form action="index.php?act=binhluan&id=<?php echo $room['id_phong']; ?>" class="w-full border-inherit " method="POST">
-                                    <?php
+                                        <?php
                                         if (isset($_SESSION['user'])) {
                                             extract($_SESSION['user']);
                                         ?>
-                                        <input type="text" name="iduser" value="<?php echo $_SESSION['user']['id_user'] ?>" hidden>
+                                            <input type="text" name="iduser" value="<?php echo $_SESSION['user']['id_user'] ?>" hidden>
 
-                                        <input type="text" name="idroom" value="<?php echo $room['id_phong']; ?>" hidden>
-                                        
-                                        <div class="p-4">
-                                            <textarea name="comment" cols="30" rows="2" type="text" class="w-full py-5 border-none " placeholder="Viết bình luận..."></textarea>
-                                        </div>
-                                        <br>
-                                        <div class="bg-slate-200 p-5 flex ">
-                                            <button name="send" class="send_comment justify-items-end bg-indigo-500 text-white rounded justify-items-end w-60 p-4 ">Gửi bình luận</button>
-                                        </div>
+                                            <input type="text" name="idroom" value="<?php echo $room['id_phong']; ?>" hidden>
+
+                                            <div class="p-4">
+                                                <textarea name="comment" cols="30" rows="2" type="text" class="w-full py-5 border-none " placeholder="Viết bình luận..."></textarea>
+                                            </div>
+                                            <br>
+                                            <div class="bg-slate-200 p-5 flex ">
+                                                <button name="send" class="send_comment justify-items-end bg-indigo-500 text-white rounded justify-items-end w-60 p-4 ">Gửi bình luận</button>
+                                            </div>
                                         <?php
                                         } else {
                                         ?>
@@ -344,7 +343,7 @@
                                             <div class="flex">
                                                 <p><?php echo $item['ngaybinhluan'] ?></p>
                                                 <p id="like" class="mx-5 font-bold cursor-pointer">Thích</p>
-                                                <p><a  href="' . $xoatk . '" href="<?php echo $suabl ?>" class=" font-bold cursor-pointer">Sửa</a></p>
+                                                <p><a href="' . $xoatk . '" href="<?php echo $suabl ?>" class=" font-bold cursor-pointer">Sửa</a></p>
                                                 <p><a onclick="return confirm('Bạn có thực sự muốn xóa không?');" href="<?php echo $xoabl ?>" class=" mx-5 font-bold cursor-pointer">Xóa</a></p>
 
                                             </div>
@@ -363,7 +362,7 @@
                                                     <div class="elementor-element elementor-element-18ace973 elementor-widget elementor-widget-heading" data-id="18ace973" data-element_type="widget" data-settings='{"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
                                                             <span class="elementor-heading-title elementor-size-default">
-                                                            Mỗi tài sản của chúng tôi đều có vị trí độc đáo nhưng được kết nối thông qua một chuỗi dịch vụ vô song
+                                                                Mỗi tài sản của chúng tôi đều có vị trí độc đáo nhưng được kết nối thông qua một chuỗi dịch vụ vô song
                                                             </span>
                                                         </div>
                                                     </div>
@@ -381,7 +380,7 @@
                                                 <div class="elementor-widget-wrap">
                                                     <div class="elementor-element elementor-element-38bc8d29 elementor-invisible elementor-widget elementor-widget-heading" data-id="38bc8d29" data-element_type="widget" data-settings='{"_animation":"fadeInUp","hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
                                                         <div class="elementor-widget-container">
-                                                            <h2 class="elementor-heading-title elementor-size-default">Sẵn sàng để đặt?</h2><br><br>
+                                                            <h2 class="elementor-heading-title elementor-size-default">Thông Tin</h2><br><br>
                                                         </div>
                                                     </div>
                                                     <div class="elementor-element elementor-element-323c9db6 elementor-invisible elementor-widget elementor-widget-heading" data-id="323c9db6" data-element_type="widget" data-settings='{"_animation":"fadeInUp","_animation_delay":200,"hoteller_ext_is_scrollme":"false","hoteller_ext_is_smoove":"false","hoteller_ext_is_parallax_mouse":"false","hoteller_ext_is_infinite":"false","hoteller_ext_is_fadeout_animation":"false"}' data-widget_type="heading.default">
@@ -401,20 +400,28 @@
                                                                 $email = "";
                                                                 $tel = "";
                                                             }
-                                                            
+
                                                             ?>
                                                             <input type="hidden" name="id_user" value="<?= $id_user ?>">
-                                                            <label for="">Tên Khách Hàng:</label><br>
-                                                            <input type="text" name="username" value="<?= $username ?>"><br><br>
-                                                            <label for="">Số Điện Thoại:</label><br>
-                                                            <input type="text" name="tel" value="<?= $tel ?>"><br><br>
+
+                                                            <label for="">Ngày đã được đặt:</label><br>
+                                                            <div style="display:flex;flex-wrap: wrap;">
+                                                                <?php
+                                                                (isset($datphongs) && ($datphongs != ""));
+                                                                foreach ($datphongs as $dp) {
+                                                                    $ngayden1 = $dp['ngayden'];
+                                                                    $ngayden2 = $dp['ngaytra'];
+                                                                    if (isset($ngayden1) && ($ngayden1 != "")) echo '<input style="text-align:center;" type="date" value="' . $ngayden1 . '" disabled>';
+                                                                    if (isset($ngayden2) && ($ngayden2 != "")) echo '<input style="border-right:1px solid #000;text-align:center;" type="date" value="' . $ngayden2 . '" disabled>';
+                                                                } ?>
+                                                            </div><br>
                                                             <input type="hidden" name="idphong" value="<?php echo $room['id_phong'] ?>">
 
                                                             <label for="">Tên Phòng:</label><br>
                                                             <input type="text" name="name_phong" value="<?php echo $room['name_phong'] ?>" disabled /><br><br>
-
                                                             <label for="">Giá Phòng:</label><br>
-                                                            <input type="text" name="price" value="<?php echo $room['price'] ?>vnd/night" disabled><br><br>
+                                                            <input type="text" name="price" value="<?php echo number_format($room['price']) ?>vnd/night" disabled><br><br>
+
                                                             <div id="content"></div>
                                                             <p class="mphb-reserve-btn-wrapper">
                                                                 <input class="mphb-reserve-btn button" type="submit" name="comfirm" id="comfirm" value="Chi Tiết" />
@@ -451,44 +458,49 @@
                                                         <div class="elementor-widget-container">
                                                             <div class="elementor-shortcode">
                                                                 <div class="mphb_sc_booking_form-wrapper">
-                                                                    <span class="thongbao" style="color:red;font-weight:bold;">
-                                                                        <?php
-                                                                        if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
-                                                                        ?>
-                                                                    </span>
-                                                                    <span class="thongbao" style="color:#A9A9A9;">
-                                                                        <?php
-                                                                        if (isset($datecount) && ($datecount != "")) echo $datecount;
-                                                                        ?>
-                                                                        <?php
-                                                                        if (isset($errdate) && ($errdate != "")) echo $errdate;
-                                                                        ?>
-                                                                        <?php
-                                                                        if (isset($songay) && ($songay != "")) echo '<h3 style="font-weight:500;">Tổng số ngày: </h3>' . $songay;
-                                                                        ?>
-                                                                        <?php
-                                                                        if (isset($tongtien) && ($tongtien != "")) echo '<h3 style="font-weight:500;">Tổng số tiền: </h3>' . $format_tongtien;
-                                                                        ?>
-                                                                        <?php
-                                                                        if (isset($date) && ($date != "")) echo '<h3 style="font-weight:500;">Thời gian đặt phòng: </h3>' . $date;
-                                                                        ?>
-                                                                        <?php
-                                                                        // echo '<h3 style=";font-weight:500;">';
-                                                                        // if (isset($hr) && ($hr != "")) echo '<h3 style="font-weight:500;">Giờ: </h3>' .$hr;
-                                                                        // if (isset($min) && ($min != "")) echo '<h3 style="font-weight:500;">Phút: </h3>' .$min;
-                                                                        // if (isset($sec) && ($sec != "")) echo '<h3 style="font-weight:500;">Giây: </h3>' .$sec;
-                                                                        ?>
-                                                                        <?php
-                                                                        if (isset($thongtin) && ($thongtin != "")) echo $thongtin;
-                                                                        ?>
-                                                                        <?php
-                                                                        (isset($datphongs) && ($datphongs != ""));
-                                                                        foreach ($datphongs as $dp) {
-                                                                            print_r($dp['ngayden']);
-                                                                            print_r($dp['ngaytra']);
-                                                                        }
-                                                                        ?>
-                                                                    </span><br>
+                                                                    <?php
+                                                                    if (isset($thongbao) && ($thongbao != "")) { ?>
+
+                                                                        <div class="w-2/5 h-1/2 fixed inset-y-60 inset-x-1/3 rounded-lg shadow-2xl border-solid z-10 bg-white text-center" style="margin-left:-73px;">
+                                                                            <i class="text-green-600 py-5  text-5xl text-center fa-sharp fa-solid fa-circle-check"></i>
+                                                                            <p class="text-green-600 font-bold text-5xl text-center">
+                                                                                <?php if (isset($thongbao) && ($thongbao != "")) echo $thongbao; ?>
+                                                                            </p>
+                                                                            <p class="text-red text-3xl text-center" style="margin-top:-15px;">
+                                                                                <?php if (isset($date2) && ($date2 != "")) echo '<h3 style="font-weight:700;color:red;font-size:large;">Hạn thanh toán:  ' . $date2 . ' </h3>'; ?>
+                                                                            </p>
+                                                                            <p class="text-black text-xl text-center" style="margin-top:-30px;">
+                                                                                <?php if (isset($datecount) && ($datecount != "")) echo $datecount; ?>
+                                                                            </p>
+                                                                            <p class="text-black text-xl text-center" style="margin-top:-20px;">
+                                                                                <?php if (isset($errdate) && ($errdate != "")) echo $errdate; ?>
+                                                                            </p>
+                                                                            <p class="text-black text-xl text-center" style="margin-top:5px;">
+                                                                                <?php if (isset($songay) && ($songay != "")) echo '<h3 style="font-weight:700;">Tổng số ngày ở:  ' . $songay . ' </h3>'; ?>
+                                                                            </p>
+                                                                            <p class="text-black text-xl text-center" style="margin-top:-20px;">
+                                                                                <?php if (isset($sokhach) && ($sokhach != "")) echo '<h3 style="font-weight:700;">Số khách:  ' . $sokhach . ' </h3>'; ?>
+                                                                            </p>
+                                                                            <p class="text-black text-xl text-center" style="margin-top:-20px;">
+                                                                                <?php if (isset($date) && ($date != "")) echo '<h3 style="font-weight:700;">Thời gian đặt:  ' . $date . ' </h3>'; ?>
+                                                                            </p>
+                                                                            <p class="text-black text-xl text-center" style="margin-top:-20px;">
+                                                                                <?php if (isset($ngayden) && ($ngayden != "")) echo '<h3 style="font-weight:700;">Ngày đến:  ' . $ngayden . ' </h3>'; ?>
+                                                                            </p>
+                                                                            <p class="text-black text-2xl text-center" style="margin-top:-25px;">
+                                                                                <?php if (isset($ngaytra) && ($ngaytra != "")) echo '<h3 style="font-weight:700;">Ngày trả:  ' . $ngaytra . ' </h3>'; ?>
+                                                                            </p>
+                                                                            <div class="form4" style="text-align:center;margin-top:20px;">
+                                                                                <form action="index.php?act=thanhtoan&idp=<?php echo $room['id_phong']; ?>" method="post">
+                                                                                    <p class="mphb-reserve-btn-wrapper">
+                                                                                        <input class="mphb-reserve-btn button" type="submit" name="thanhtoan" id="thanhtoan" value="--Thanh Toán Qua VNPAY---" />
+                                                                                    </p>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    <?php }
+                                                                        if (isset($thongtin) && ($thongtin != "")) echo '<h3 style="font-weight:500;color:#A9A9A9;">' . $thongtin . '</h3>';
+                                                                    ?>
                                                                     <?php
                                                                     if (isset($_SESSION['user'])) {
                                                                         extract($_SESSION['user']);
@@ -499,14 +511,14 @@
                                                                         <p class="mphb-check-in-date-wrapper">
                                                                             <label for="mphb_check_in_date-6061a3921343a"> Ngày đến <abbr title="Formatted as dd/mm/yyyy">*</abbr> </label>
                                                                             <br />
-                                                                            <input id="mphb_check_in_date-6061a3921343a" type="date" class="mphb-datepick" name="ngayden" value="" required="required" autocomplete="off" placeholder="Check-in Date" />
+                                                                            <input id="mphb_check_in_date-6061a3921343a" type="date" class="mphb-datepick" name="ngayden" value="<?= $ngayden ?>" required="required" autocomplete="off" placeholder="Check-in Date" />
 
                                                                         </p>
 
                                                                         <p class="mphb-check-out-date-wrapper">
                                                                             <label for="mphb_check_out_date-6061a3921343a"> Ngày trả <abbr title="Formatted as dd/mm/yyyy">*</abbr> </label>
                                                                             <br />
-                                                                            <input id="mphb_check_out_date-6061a3921343a" type="date" class="mphb-datepick" name="ngaytra" value="" required="required" autocomplete="off" placeholder="Check-out Date" />
+                                                                            <input id="mphb_check_out_date-6061a3921343a" type="date" class="mphb-datepick" name="ngaytra" value="<?= $ngaytra ?>" required="required" autocomplete="off" placeholder="Check-out Date" />
 
                                                                         </p>
 
@@ -531,17 +543,17 @@
                                                                         </p>
 
                                                                         <p class="mphb-reserve-btn-wrapper">
-                                                                            <input class="mphb-reserve-btn button" type="submit" name="datphong" id="datphong" value="Đặt Phòng" />
+                                                                            <input onclick="return XACNHAN()" class="mphb-reserve-btn button" type="submit" name="datphong" id="datphong" value="Đặt Phòng" />
                                                                             <span class="mphb-preloader mphb-hide"></span>
                                                                         </p>
                                                                         <div class="mphb-errors-wrapper mphb-hide"></div>
                                                                         </form>
-                                                                        <form action="index.php?act=thanhtoan&idp=<?php echo $room['id_phong']; ?>" method="post">
-                                                                            <p class="mphb-reserve-btn-wrapper">
-                                                                                <input class="mphb-reserve-btn button" type="submit" name="thanhtoan" id="thanhtoan" value="--Thanh Toán Qua VNPAY---" />
+                                                                        <script>
+                                                                            function XACNHAN(datphong) {
+                                                                                return confirm("Bạn muốn đặt phòng" + "?");
+                                                                            }
+                                                                        </script>
 
-                                                                            </p>
-                                                                        </form>
                                                                     <?php
                                                                     } else {
                                                                     ?>

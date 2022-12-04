@@ -72,7 +72,7 @@
             </div>
             <div class="row mb10">
                 <label for="">MÔ TẢ</label><br>
-                <textarea name="mota" id="" cols="155%" rows="10" style="border:1px solid #FFCACA;"></textarea>
+                <textarea name="mota" id="" cols="131%" rows="10" style="border:1px solid #FFCACA;"></textarea>
             </div>
             <div class="row mb10">
                 <input type="submit" name="themmoi" value="THÊM MỚI">
