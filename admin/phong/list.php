@@ -8,8 +8,9 @@
 
     <div class="row formcontent">
         <form action="index.php?act=listp" method="post">
-            <input type="text" name="kyw" placeholder="Tìm kiếm phòng" style="width:50%;">
-            <select name="idlp" style="padding:10px;width:30%;margin-bottom:20px;border-radius:5px;border: 1px solid #FFCACA;color:#372948;">
+            <div class="tk" style="display:flex;">
+            <input type="text" name="kyw" placeholder="Tìm kiếm phòng" style="width:70%;">
+            <select name="idlp" style="margin-left:20px;padding:10px;width:50%;border-radius:5px;border: 1px solid #FFCACA;color:#372948;">
                 <option value="0" selected>Tất cả</option>
                 <?php
                 foreach ($listlp as $loaiphong) {
@@ -18,7 +19,8 @@
                 }
                 ?>
             </select>
-            <input type="submit" name="gui" value="Tìm Kiếm" style="padding:10px;">
+            <input type="submit" name="gui" value="Tìm Kiếm" style="margin-left:20px;">
+            </div><br><br>
             <div class="row mb10 formdshanghoa" style="width:1050px;">
                 <table>
                     <tr>
@@ -30,7 +32,7 @@
                         <th>GIÁ SALE</th>
                         <th>SỐ KHÁCH TỐI ĐA</th>
                         <th>MÔ TẢ</th>
-                        <th></th>
+                        <th>ACTION</th>
                     </tr>
                     <?php
                     foreach ($listp as $phong) {
@@ -48,7 +50,7 @@
                                         <td>P' . $id_phong . '</td>
                                         <td>' . $name_phong . '</td>
                                         <td>' . $img . '</td>
-                                        <td>' . $price . 'vnd</td>
+                                        <td>' . number_format($price) . 'vnd</td>
                                         <td>-' . $price_sale . 'vnd</td>
                                         <td>' . $sokhach . 'người</td>
                                         <td>' . $mota . '</td>

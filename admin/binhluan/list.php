@@ -6,45 +6,34 @@
         <h3>DANH SÁCH BÌNH LUẬN</h3>
     </div>
     <div class="row formcontent" style="width:1040px;">
-        <form action="" method="post">
+        <form action="index.php?act=listbl" method="post">
             <div class="row mb10 formdshanghoa" style="width:104%">
                 <table>
                     <tr>
-                        <th></th>
                         <th>MÃ BÌNH LUẬN</th>
                         <th>NỘI DUNG</th>
                         <th>MÃ KHÁCH HÀNG</th>
                         <th>NGÀY BÌNH LUẬN</th>
-                        <th style="background-color: #FFCACA;"></th>
+                        <th>MÃ PHÒNG</th>
+                        <th style="background-color: #FFCACA;">ACTION</th>
                     </tr>
-                    <?php foreach ($listbinhluan as $binhluan) {?>
+                    <?php foreach ($listbl as $binhluan) {?>
                         <?php extract($binhluan);?>
                         <?php $xoabl = "index.php?act=xoabl&id=" . $id_comment;?>
-
                         <tr>
-                                        <td><input type="checkbox" name="name"></td>
                                         <td><?php echo  $id_comment ?></td>
                                         <td><?php echo   $noidung ?></td>
                                         <td><?php echo   $id_user ?></td>
                                         <td><?php echo   $ngaybinhluan ?></td>
-
-                                        
+                                        <td>P<?php echo   $id_phong ?></td>
                                         <td>
                                             <a onclick="return confirm('Bạn có thực sự muốn xóa không?');" href="<?php echo $xoabl ?>">
                                                 <input type="button" value="Xóa">
                                             </a>
                                         </td>
                                     </tr>
-                   <?php } ?>
-                    
+                   <?php } ?>      
                 </table>
-            </div>
-            <div class="row mb10">
-                <input type="button" id="btn1" value="Chọn tất cả">
-
-                
-                <input type="button" id="btn2" value="Bỏ chọn tất cả">
-                <input type="button" value="Xóa các mục đã chọn">
             </div>
         </form>
       

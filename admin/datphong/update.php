@@ -44,8 +44,8 @@
                     <div class="row mb10">
                         <label for="">GIAO DỊCH</label><br>
                         <select name="giaodich" id="" style="border:1px solid #FFCACA;">
-                            <option value="">Chưa Thanh Toán</option>
-                            <option value="">Đã Thanh Toán</option>
+                            <option value="0">Chưa Thanh Toán</option>
+                            <option value="1">Đã Thanh Toán</option>
                         </select>
                     </div>
                 </div>

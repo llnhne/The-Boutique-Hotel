@@ -26,13 +26,54 @@
         $listp=pdo_query($sql);
         return $listp;
     }
+    function loadall_phong_timkiem(){
+        $sql= "select phong.id_phong,phong.name_phong,phong.img,phong.sokhach,phong.price,phong.price,phong.trangthai,phong.id_loaiphong,phong.price_sale,datphong.ngayden,datphong.ngaytra from datphong
+            inner join phong on datphong.id_phong=phong.id_phong";
+        // $sql.= "upadate phong set trangthai ='' where id_phong=".$id_phong;
+        $listsearch=pdo_query($sql);
+        return $listsearch;
+    }
     function loadone_phong($id){
         $sql="select * from phong where id_phong=".$id;
         $p=pdo_query_one($sql);
         return $p;
     }
+    // đã đặt
+    function loadall_phongdadat2($ngaydat , $ngaytra){
+        $sql =  "select * from phong where id_phong IN (select id_phong from datphong where tinhtrang = 1 AND ngayden = '$ngaydat' AND ngaytra = '$ngaytra' )";
+        $listphongdd = pdo_query($sql);
+        return $listphongdd;
+    }
+    // 
+    // chưa đặt
+    function loadall_phongchuadat(){
+        $sql = "select * from phong where id_phong ";
+        $listphongtk = pdo_query($sql);
+        return $listphongtk;
+    }
+    function loadall_phongchuadat1($ngaydat , $ngaytra){
+        $sql = "select * from phong where id_phong NOT IN (select id_phong from datphong where tinhtrang = 1 AND ngayden = '$ngaydat' AND ngaytra = '$ngaytra' )";
+        $listphongtk = pdo_query($sql);
+        return $listphongtk;
+    }
+    function loadall_phongchuadat2($ngaydat , $ngaytra){
+        $sql = "select * from phong where id_phong NOT IN (select id_phong from datphong where tinhtrang = 1 AND ngayden > '$ngaydat' OR ngaytra < '$ngaytra' )";
+        $listphongtk = pdo_query($sql);
+        return $listphongtk;
+    }
+    function loadall_phongchuadat3($ngaydat , $ngaytra){
+        $sql = "select * from phong where id_phong NOT IN (select id_phong from datphong where tinhtrang = 1 AND ngayden <= '$ngaydat' AND ngaytra >= '$ngaytra')";
+        $listphongtk = pdo_query($sql);
+        return $listphongtk;
+    }
+    // 
     function load_phong_cungloai($id,$idlp){
         $sql="select * from phong where id_loaiphong=".$idlp." AND id_phong <> ".$id;
+        $listp=pdo_query($sql);
+        return $listp;
+    }
+    function load_phongview_cungloai($id){
+        $sql="select * from phong where id_loaiphong=".$id." ";
         $listp=pdo_query($sql);
         return $listp;
     }

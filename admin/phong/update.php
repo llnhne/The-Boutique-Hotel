@@ -69,13 +69,13 @@ if (is_file($img)) {
                     <div class="row mb10">
                         <label for="">HÌNH ẢNH</label><br>
                         <input type="file" name="img" style="margin-bottom:5px;">
-                        <?= $img ?>
+                        <div class="img" style="width:50px;height:100px;"><?= $img ?></div>
                     </div>
                 </div>
             </div>
             <div class="row mb10">
                 <label for="">MÔ TẢ</label><br>
-                <textarea name="mota" id="" cols="155%" rows="10" style="border:1px solid #FFCACA;"><?= $mota ?></textarea>
+                <textarea name="mota" id="" cols="128%" rows="10" style="border:1px solid #FFCACA;"><?= $mota ?></textarea>
             </div>
             <div class="row mb10">
                 <input type="hidden" value="<?= $id_phong ?>" name="id">

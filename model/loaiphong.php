@@ -4,7 +4,7 @@
         pdo_execute($sql);
     }
     function delete_loaiphong($id){
-        $query="update loaiphong set id_loaiphong = 1 where id_loaiphong=".$id;
+        $query="update phong set id_loaiphong = 1 where id_loaiphong=".$id;
         pdo_execute($query);
         $sql="delete from loaiphong where id_loaiphong=".$id;
         pdo_execute($sql);
@@ -23,6 +23,12 @@
             return $listlp;
 
         }
+    }
+    function loadall_loaiphong_ourrooms(){   
+        $sql="select * from loaiphong order by id_loaiphong desc limit 0,4";
+        $listlp=pdo_query($sql);
+        return $listlp;
+
     }
     function loadone_loaiphong($id){
         $sql="select * from loaiphong where id_loaiphong=".$id;

@@ -8,13 +8,14 @@
     <div class="row formcontent" style="width:1500px;">
         <form action="index.php?act=listlp" method="post">
             <input type="text" name="kyw" placeholder="Tìm kiếm loại phòng" style="width:39%; margin-bottom:20px">
+            <input type="submit" name="gui" value="Tìm Kiếm" style="padding:10px;"><br><br>
             <div class="row mb10 formdsloaihang">
                 <table>
                     <tr>
                         <th></th>
                         <th>MÃ LOẠI PHÒNG</th>
                         <th>TÊN LOẠI PHÒNG</th>
-                        <th></th>
+                        <th>ACTION</th>
                     </tr>
                     <?php
                     foreach ($listlp as $loaiphong) {

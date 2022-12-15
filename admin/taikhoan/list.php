@@ -20,7 +20,7 @@
                         <th>ĐỊA CHỈ</th>
                         <th>ĐIỆN THOẠI</th>
                         <th>ROLE</th>
-                        <th style="background-color: #FFCACA;"></th>
+                        <th style="background-color: #FFCACA;">ACTION</th>
                     </tr>
                     <?php
                     foreach ($listtaikhoan as $taikhoan) {

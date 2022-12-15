@@ -6,7 +6,7 @@
         <h3>DANH SÁCH HÓA ĐƠN</h3>
     </div>
     <div class="row formcontent" style="width:1040px;">
-        <form action="" method="post">
+        <form action="index.php?act=listhd" method="post">
             <div class="row mb10 formdshanghoa" style="width:104%">
                 <table>
                     <tr>
@@ -16,28 +16,33 @@
                         <th>MÃ PHÒNG</th>
                         <th>MÃ KHÁCH HÀNG</th>
                         <th>TỔNG TIỀN</th>
-                        
-                        <th style="background-color: #FFCACA;"></th>
+                        <th style="background-color: #FFCACA;">ACTION</th>
                     </tr>
-                    <?php foreach ($listhoadon as $hoadon) {?>
+                    <?php foreach ($listhd as $hoadon) {?>
                         <?php extract($hoadon);?>
                         <?php $xoahd = "index.php?act=xoahd&id=" . $id_bill;?>
-
+                        <?php $suahd = "index.php?act=suahd&id=" . $id_bill;?>
+                        <?php if ($role == 0) {
+                            $role = "Thất Bại";
+                        }
+                            if ($role == 1) {
+                                $role = "Thành Công";
+                        }
+                        ?>
                         <tr>
                                         <td><?php echo  $role ?></td>
                                         <td><?php echo  $id_bill ?></td>
                                         <td><?php echo   $id_order ?></td>
-                                        <td><?php echo   $id_phong ?></td>
+                                        <td>P<?php echo   $id_phong ?></td>
                                         <td><?php echo   $id_user ?></td>
-                                        <td><?php echo   $tongtien ?></td>
+                                        <td><?php echo   number_format($tongtien) ?>vnd</td>
 
                                         
                                         <td>
                                             <a onclick="return confirm('Bạn có thực sự muốn xóa không?');" href="<?php echo $xoahd ?>">
-
-                                            
                                                 <input type="button" value="Xóa">
                                             </a>
+                                            <a href="<?php echo $suahd ?>"><input type="button" value="Sửa"></a>
                                         </td>
                                     </tr>
                    <?php } ?>

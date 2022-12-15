@@ -8,7 +8,7 @@
     <div class="row formcontent">
         <form action="index.php?act=thongke" method="post">
             <div class="row mb10 formdshanghoa" style="width:1050px;"><br>
-                <h3>THỐNG KÊ LOẠI PHÒNG</h3>
+                <h3 style="font-weight: 600;">THỐNG KÊ LOẠI PHÒNG</h3>
                 <table>
                     <tr>
                         <th>MÃ LOẠI PHÒNG</th>
@@ -25,21 +25,21 @@
                                         <td>' . $malp . '</td>
                                         <td>' . $tenlp . '</td>
                                         <td>' . $countp . '</td>
-                                        <td>' . $maxprice . '</td>
-                                        <td>' . $minprice . '</td>
-                                        <td>' . $avgprice . '</td>
+                                        <td>' . number_format($maxprice) . 'vnd</td>
+                                        <td>' . number_format($minprice) . 'vnd</td>
+                                        <td>' . number_format($avgprice) . 'vnd</td>
                                     </tr>';
                     }
                     ?>
                 </table><br><br>
-                <h3>THỐNG KÊ PHÒNG</h3>
+                <h3 style="font-weight: 600;">THỐNG KÊ PHÒNG</h3>
                 <table>
                     <tr>
                         <th>MÃ PHÒNG</th>
                         <th>TÊN PHÒNG</th>
                         <th>GIÁ</th>
                         <th>SỐ KHÁCH TỐI ĐA</th>
-                        <th>GIÁ SALE</th>
+                        <th>MÃ LOẠI PHÒNG</th>
                     </tr>
                     <?php
                     foreach ($listthongkep as $thongke) {
@@ -47,16 +47,17 @@
                         echo '<tr>
                                         <td>' . $map . '</td>
                                         <td>' . $tenp . '</td>
-                                        <td>' . $price . '</td>
-                                        <td>' . $sokhach . '</td>
-                                        <td>' . $price_sale . '</td>
+                                        <td>' . number_format($price) . 'vnd</td>
+                                        <td>' . $sokhach . '/người</td>
+                                        <td>' . $id_loaiphong . '</td>
                                     </tr>';
                     }
                     ?>
                 </table><br><br>
-                <h3>THỐNG KÊ ĐẶT PHÒNG</h3>
+                <h3 style="font-weight: 600;">THỐNG KÊ ĐẶT PHÒNG</h3>
                 <table>
                     <tr>
+                        <th>MÃ LOẠI PHÒNG</th>
                         <th>MÃ PHÒNG</th>
                         <th>MÃ KHÁCH HÀNG</th>
                         <th>SỐ KHÁCH</th>
@@ -66,10 +67,11 @@
                     foreach ($listthongkedp as $thongke) {
                         extract($thongke);
                         echo '<tr>
+                                        <td></td>
                                         <td>' . $map . '</td>
                                         <td>' . $tenkh . '</td>
-                                        <td>' . $sokhach . '</td>
-                                        <td>' . $tongtien . '</td>
+                                        <td>' . $sokhach . 'người</td>
+                                        <td>' . number_format($tongtien) . 'vnd</td>
                                     </tr>';
                     }
                     ?>

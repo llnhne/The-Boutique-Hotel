@@ -14,7 +14,7 @@
                         <th>TÊN KHÁCH HÀNG</th>
                         <th>SỐ ĐIỆN THOẠI</th>
                         <th>MESSAGE</th>
-                        <th style="background-color: #FFCACA;"></th>
+                        <th style="background-color: #FFCACA;">ACTION</th>
                     </tr>
                     <?php
                     foreach ($listhotro as $hotro) {

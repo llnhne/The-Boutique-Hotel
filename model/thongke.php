@@ -20,7 +20,7 @@
         return $listthongke;
     }
     function loadall_thongke_phong(){
-        $sql= "select phong.id_phong as map,phong.name_phong as tenp, phong.price as price, phong.sokhach as sokhach,phong.price_sale as price_sale";
+        $sql= "select phong.id_phong as map,phong.name_phong as tenp, phong.price as price, phong.sokhach as sokhach,phong.id_loaiphong as id_loaiphong";
         $sql.=" from phong left join loaiphong on loaiphong.id_loaiphong=phong.id_loaiphong";
         $sql.=" group by phong.id_phong order by phong.id_phong desc";
         $listthongkep=pdo_query($sql);

@@ -18,12 +18,17 @@
                         <th>NGÀY ĐẾN</th>
                         <th>NGÀY TRẢ</th>
                         <th>TỔNG TIỀN</th>
-                       
                         <th>ACTION</th>
                     </tr>
                     <?php
                     foreach ($listdp as $datphong) {
                         extract($datphong);
+                        if ($giaodich == 0) {
+                            $giaodich = "Chưa thanh toán";
+                        }
+                        if ($giaodich == 1) {
+                            $giaodich = "Đã thanh toán";
+                        }
                         $suadp = "index.php?act=suadp&id=" . $id_order;
                         $xoadp = "index.php?act=xoadp&id=" . $id_order;
                         
@@ -36,7 +41,7 @@
                                         <td>' . $sokhach . 'người</td>
                                         <td>' . $ngayden . '</td>
                                         <td>' . $ngaytra . '</td>
-                                        <td>' . $tongtien . 'vnd</td>
+                                        <td>' . number_format($tongtien) . 'vnd</td>
                                        
                                         <td><a href="' . $suadp . '"><input type="button" value="Sửa"></a>  <a onclick="return DELETE()" href="' . $xoadp . '"><input type="button" value="Xóa"></a></td>
                                     </tr>';
